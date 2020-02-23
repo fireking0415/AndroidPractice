@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#207e82"
+            android:gravity="center"
+            android:padding="30dip"
+            android:text="Y＝A*sin(ωt+Φ)"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"/>
+
+    <org.fireking.ap.custom.bezier.view.SinusoidalWaveView
+            android:id="@+id/sinusoidalWaveView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:layout_marginLeft="25dip"
+            android:layout_marginRight="25dip"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+        <TextView
+                android:layout_width="50dip"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="A"/>
+
+        <SeekBar
+                android:id="@+id/seekBarA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:layout_marginLeft="25dip"
+            android:layout_marginRight="25dip"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+        <TextView
+                android:layout_width="50dip"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="W"/>
+
+        <SeekBar
+                android:id="@+id/seekbarW"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="16"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:layout_marginLeft="25dip"
+            android:layout_marginRight="25dip"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+        <TextView
+                android:layout_width="50dip"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Φ"/>
+
+        <SeekBar
+                android:id="@+id/seekBarR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="100"/>
+
+    </LinearLayout>
+</LinearLayout>

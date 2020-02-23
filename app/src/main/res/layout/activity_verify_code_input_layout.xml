@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".custom.viewgroup.VerifyCodeInputLayoutActivity">
+
+    <TextView
+            android:text="默认效果"
+            android:padding="12dip"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <org.fireking.ap.custom.viewgroup.view.VerifyCodeInputLayout
+            android:id="@+id/verifyCodeInputLayout"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:text="自定义效果"
+            android:padding="12dip"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <org.fireking.ap.custom.viewgroup.view.VerifyCodeInputLayout
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            app:maxLength="8"
+            app:textColor="@color/colorPrimary"
+            app:textSize="18sp"
+            app:dividerDrawable="@drawable/custom_divider"
+            app:inputBoxSize="40dp"
+            app:itemSelector="@drawable/custom_text_selector"
+            android:layout_height="wrap_content"/>
+
+</LinearLayout>

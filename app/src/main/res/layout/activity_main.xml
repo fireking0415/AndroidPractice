@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rvContentList"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F8F8"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnCanvas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Canvas基本使用" />
+
+        <Button
+            android:id="@+id/btnPath"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Path基本使用" />
+
+        <Button
+            android:id="@+id/btnFlip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Flip基本使用" />
+
+        <Button
+            android:id="@+id/btnBezier"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bezier基本使用" />
+
+        <Button
+            android:id="@+id/btnViewGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="自定义ViewGroup" />
+
+        <Button
+            android:id="@+id/btnNested"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nested机制" />
+
+        <Button
+            android:id="@+id/btnRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RecyclerView使用" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

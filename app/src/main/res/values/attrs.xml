@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="VerifyCodeInputLayout">
+        <attr name="textSize" format="dimension" />
+        <attr name="textColor" format="color" />
+        <attr name="inputBoxSize" format="dimension" />
+        <attr name="dividerDrawable" format="reference" />
+        <attr name="maxLength" format="integer" />
+        <attr name="itemSelector" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="ShadowContainer">
+        <attr name="containerShadowColor" format="color" />
+        <attr name="containerShadowRadius" format="dimension" />
+        <attr name="containerDeltaLength" format="dimension" />
+        <attr name="containerCornerRadius" format="dimension" />
+        <attr name="deltaX" format="dimension" />
+        <attr name="deltaY" format="dimension" />
+        <attr name="enable" format="boolean" />
+    </declare-styleable>
+</resources>

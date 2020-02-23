@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.fireking.ap.custom.nested.ElemeDetailLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/elemeDetail"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@mipmap/meinv"
+        android:orientation="vertical"
+        android:layout_height="230dip">
+
+        <TextView
+            android:id="@+id/edv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#0066cc"
+            android:padding="10dp"
+            android:text="魔兽世界"
+            android:textColor="#ffffff"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/edv_header"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/edv_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#0066cc"
+            android:padding="10dp"
+            android:text="拍卖行"
+            android:textColor="#ffffff"
+            android:textSize="18dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff" />
+    </LinearLayout>
+</org.fireking.ap.custom.nested.ElemeDetailLayout>
