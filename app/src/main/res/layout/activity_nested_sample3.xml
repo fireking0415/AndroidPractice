@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.fireking.ap.custom.nested.NestedSample3Parent xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".custom.nested.NestedSample3Activity">
+
+    <org.fireking.ap.custom.nested.NestedSample3Child
+        android:id="@+id/nested_sample3_child"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="center"
+            android:src="@mipmap/meinv" />
+
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+    </org.fireking.ap.custom.nested.NestedSample3Child>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_content_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:itemCount="20"
+        tools:listitem="@layout/nested_sample2_item" />
+
+
+</org.fireking.ap.custom.nested.NestedSample3Parent>

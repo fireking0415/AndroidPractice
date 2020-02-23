@@ -10,13 +10,19 @@
     <Button
         android:id="@+id/btnNested1"
         android:layout_width="match_parent"
-        android:text="Nested练习1"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="Nested练习1" />
 
     <Button
         android:id="@+id/btnNested2"
-        android:text="Nested练习2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="Nested练习2" />
+
+    <Button
+        android:id="@+id/btnNested3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nested练习3" />
 
 </LinearLayout>
