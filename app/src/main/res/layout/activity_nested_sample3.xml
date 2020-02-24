@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".custom.nested.NestedSample3Activity">
 
     <org.fireking.ap.custom.nested.NestedSample3Child
@@ -17,12 +18,6 @@
             android:scaleType="center"
             android:src="@mipmap/meinv" />
 
-        <CalendarView
-            android:id="@+id/calendarView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone" />
-
     </org.fireking.ap.custom.nested.NestedSample3Child>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -31,6 +26,5 @@
         android:layout_height="match_parent"
         tools:itemCount="20"
         tools:listitem="@layout/nested_sample2_item" />
-
 
 </org.fireking.ap.custom.nested.NestedSample3Parent>
