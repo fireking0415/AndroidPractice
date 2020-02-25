@@ -10,5 +10,5 @@
         android:id="@+id/btnCalendarV1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="万年历首页(RecyclerView + RecyclerView)" />
+        android:text="万年历首页（NestedScrollView + ViewPager）" />
 </LinearLayout>

@@ -39,6 +39,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'com.github.hackware1993:MagicIndicator:1.5.0'
     implementation 'io.github.meetsl:SCardView:1.2'
+    implementation 'com.necer.ncalendar:ncalendar:4.3.8'
 
     implementation('com.alibaba.android:vlayout:1.2.8@aar') {
         transitive = true

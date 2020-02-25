@@ -40,5 +40,12 @@ public class NestedActivity extends AppCompatActivity {
                 NestedSample3Activity.start(NestedActivity.this);
             }
         });
+
+        findViewById(R.id.btnNested4).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NestedSample4Activity.start(NestedActivity.this);
+            }
+        });
     }
 }

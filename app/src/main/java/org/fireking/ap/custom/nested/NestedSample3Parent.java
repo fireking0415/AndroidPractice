@@ -7,6 +7,7 @@ import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.view.NestedScrollingParent2;
 import androidx.core.view.NestedScrollingParentHelper;
 import androidx.core.view.ViewCompat;
@@ -65,6 +66,9 @@ public class NestedSample3Parent extends LinearLayout implements NestedScrolling
 
     @Override
     public void onNestedScroll(@NonNull View target, int dxConsumed, int dyConsumed, int dxUnconsumed, int dyUnconsumed, int type) {
+        if (dyUnconsumed > 0) {
+            scrollBy(0, -dyUnconsumed);
+        }
     }
 
     @Override

@@ -25,4 +25,9 @@
         android:layout_height="wrap_content"
         android:text="Nested练习3" />
 
+    <Button
+        android:id="@+id/btnNested4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nested练习4" />
 </LinearLayout>

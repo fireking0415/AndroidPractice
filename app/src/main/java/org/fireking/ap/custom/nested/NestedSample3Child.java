@@ -20,6 +20,9 @@ public class NestedSample3Child extends LinearLayout implements NestedScrollingC
     private int mLastTouchX;
     private int mLastTouchY;
 
+    private int[] consumed = new int[2];
+    private int[] offsetInWindow = new int[2];
+
     public NestedSample3Child(Context context) {
         this(context, null);
     }
@@ -49,8 +52,11 @@ public class NestedSample3Child extends LinearLayout implements NestedScrollingC
                 break;
             case MotionEvent.ACTION_MOVE:
                 //询问父组件是否消费
-                if (dispatchNestedPreScroll()) {
-
+                int dx = (int) event.getRawX() - mLastTouchX;
+                int dy = (int) event.getRawY() - mLastTouchY;
+                if (dispatchNestedPreScroll(dx, dy, consumed, offsetInWindow, TYPE_TOUCH)) {
+                    dx -= consumed[0];
+                    dy -= consumed[1];
                 }
                 break;
             case MotionEvent.ACTION_CANCEL:

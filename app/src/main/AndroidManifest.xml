@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".custom.nested.NestedSample3Activity"></activity>
+        <activity android:name=".custom.nested.NestedSample4Activity"></activity>
+        <activity android:name=".custom.nested.NestedSample3Activity" />
         <activity android:name=".custom.nested.NestedSample2Activity" />
         <activity android:name=".custom.nested.NestedSample1Activity" />
         <activity android:name=".custom.nested.NestedActivity" />

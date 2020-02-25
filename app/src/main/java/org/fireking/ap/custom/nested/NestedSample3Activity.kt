@@ -22,7 +22,7 @@ class NestedSample3Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_nested_sample3)
 
-        rv_content_list.layoutManager = LinearLayoutManager(this)
-        rv_content_list.adapter = MainAdapter()
+        contentList.layoutManager = LinearLayoutManager(this)
+        contentList.adapter = MainAdapter()
     }
 }
