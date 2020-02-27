@@ -3,6 +3,7 @@ package org.fireking.ap.custom.recyclerview;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -50,13 +51,18 @@ public class WanNianLiRecyclerView2Activity extends AppCompatActivity {
         rv_content_list = findViewById(R.id.rv_content_list);
 
         VirtualLayoutManager layoutManager = new VirtualLayoutManager(this);
+        rv_content_list.setLayoutManager(new LinearLayoutManager(this) {
+            @Override
+            public boolean canScrollVertically() {
+                return super.canScrollVertically() && !mDisallowIntercept;
+            }
+        });
+
         RecyclerView.RecycledViewPool recycledViewPool = new RecyclerView.RecycledViewPool();
         rv_content_list.setRecycledViewPool(recycledViewPool);
         recycledViewPool.setMaxRecycledViews(0, 10);
 
         delegateAdapter = new DelegateAdapter(layoutManager);
-
-        rv_content_list.setLayoutManager(new LinearLayoutManager(this));
         rv_content_list.setAdapter(delegateAdapter);
 
         //月份日历
@@ -82,13 +88,9 @@ public class WanNianLiRecyclerView2Activity extends AppCompatActivity {
         rv_content_list.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
             @Override
             public boolean onInterceptTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
-                if (mDisallowIntercept) {
-                    mDisallowIntercept = false;
-                    return true;
-                }
-                LinearLayoutManager linearLayoutManager = (LinearLayoutManager) rv.getLayoutManager();
-                if (linearLayoutManager != null) {
-                    int firstItemPosition = linearLayoutManager.findFirstVisibleItemPosition();
+                LinearLayoutManager virtualLayoutManager = (LinearLayoutManager) rv.getLayoutManager();
+                if (virtualLayoutManager != null) {
+                    int firstItemPosition = virtualLayoutManager.findFirstVisibleItemPosition();
                     RecyclerView.ViewHolder viewHolder = rv.findViewHolderForAdapterPosition(firstItemPosition);
                     if (viewHolder != null) {
                         if (viewHolder instanceof NewsPagerAdapter.NewsPagerViewHolder) {
