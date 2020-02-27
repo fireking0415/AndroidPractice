@@ -25,5 +25,9 @@ class RecyclerViewSampleActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btnCalendarV1).setOnClickListener {
             WanNianLiHomeActivity.start(this)
         }
+
+        findViewById<Button>(R.id.btnCalendarV2).setOnClickListener{
+            WanNianLiRecyclerView2Activity.start(this)
+        }
     }
 }

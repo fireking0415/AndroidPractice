@@ -34,12 +34,12 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation "org.jetbrains.anko:anko:0.10.5"
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.necer.ncalendar:ncalendar:4.3.8'
     implementation 'com.github.1002326270xc:LayoutManager-FlowLayout:v1.8'
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'com.github.hackware1993:MagicIndicator:1.5.0'
     implementation 'io.github.meetsl:SCardView:1.2'
-    implementation 'com.necer.ncalendar:ncalendar:4.3.8'
 
     implementation('com.alibaba.android:vlayout:1.2.8@aar') {
         transitive = true
