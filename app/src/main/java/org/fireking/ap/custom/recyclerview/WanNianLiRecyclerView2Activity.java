@@ -3,8 +3,14 @@ package org.fireking.ap.custom.recyclerview;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -28,6 +34,9 @@ public class WanNianLiRecyclerView2Activity extends AppCompatActivity {
     private BannerAdapter bannerAdapter;
     private BigImageAdAdapter bigImageAdAdapter;
     private NewsPagerAdapter newsPagerAdapter;
+
+    private boolean mDisallowIntercept;
+
 
     public static void start(Context context) {
         context.startActivity(new Intent(context, WanNianLiRecyclerView2Activity.class));
@@ -67,7 +76,37 @@ public class WanNianLiRecyclerView2Activity extends AppCompatActivity {
         delegateAdapter.addAdapter(bigImageAdAdapter);
 
         //新闻列表
-        newsPagerAdapter = new NewsPagerAdapter();
+        newsPagerAdapter = new NewsPagerAdapter(this);
         delegateAdapter.addAdapter(newsPagerAdapter);
+
+        rv_content_list.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
+            @Override
+            public boolean onInterceptTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
+                if (mDisallowIntercept) {
+                    mDisallowIntercept = false;
+                    return true;
+                }
+                LinearLayoutManager linearLayoutManager = (LinearLayoutManager) rv.getLayoutManager();
+                if (linearLayoutManager != null) {
+                    int firstItemPosition = linearLayoutManager.findFirstVisibleItemPosition();
+                    RecyclerView.ViewHolder viewHolder = rv.findViewHolderForAdapterPosition(firstItemPosition);
+                    if (viewHolder != null) {
+                        if (viewHolder instanceof NewsPagerAdapter.NewsPagerViewHolder) {
+                            ((ViewGroup) viewHolder.itemView).requestDisallowInterceptTouchEvent(true);
+                        }
+                    }
+                }
+                return false;
+            }
+
+            @Override
+            public void onTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
+            }
+
+            @Override
+            public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+                mDisallowIntercept = disallowIntercept;
+            }
+        });
     }
 }
