@@ -4,11 +4,23 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/tvRefreshCount"
+        android:layout_width="match_parent"
+        android:layout_height="32dip"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:text="为您推荐12条新闻"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        android:visibility="gone" />
+
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/smartRefreshLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+        <org.fireking.ap.custom.recyclerview.v2.ClassicsHeader
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

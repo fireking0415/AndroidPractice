@@ -1,16 +1,27 @@
 package org.fireking.ap.custom.recyclerview.v2;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 import org.fireking.ap.R;
 import org.greenrobot.eventbus.EventBus;
@@ -23,6 +34,8 @@ public class NewsFragment extends Fragment {
     private NewsAdapter mNewsAdapter;
 
     private String mTitle;
+    private TextView tvRefreshCount;
+    private SmartRefreshLayout smartRefreshLayout;
 
     public static class ResetRecyclerViewPositionEvent {
 
@@ -70,6 +83,21 @@ public class NewsFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        tvRefreshCount = view.findViewById(R.id.tvRefreshCount);
+        smartRefreshLayout = view.findViewById(R.id.smartRefreshLayout);
+
+        smartRefreshLayout.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh(@NonNull RefreshLayout refreshLayout) {
+                new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        smartRefreshLayout.finishRefresh();
+                    }
+                }, 3000);
+            }
+        });
 
         mNewsAdapter = new NewsAdapter(mTitle);
 
