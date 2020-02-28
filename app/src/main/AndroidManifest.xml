@@ -9,15 +9,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".custom.recyclerview.WanNianLiRecyclerView2Activity"></activity>
-        <activity android:name=".custom.nested.NestedSample4Activity" />
-        <activity android:name=".custom.nested.NestedSample3Activity" />
-        <activity android:name=".custom.nested.NestedSample2Activity" />
-        <activity android:name=".custom.nested.NestedSample1Activity" />
-        <activity android:name=".custom.nested.NestedActivity" />
+        <activity
+            android:name=".custom.recyclerview.WanNianLiRecyclerView2Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".custom.nested.NestedSample4Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".custom.nested.NestedSample3Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".custom.nested.NestedSample2Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".custom.nested.NestedSample1Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".custom.nested.NestedActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".custom.recyclerview.WanNianLiHomeActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".custom.viewgroup.ShaderCardActivity"
             android:screenOrientation="portrait" />

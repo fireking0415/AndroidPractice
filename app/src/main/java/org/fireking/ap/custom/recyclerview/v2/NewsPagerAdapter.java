@@ -91,6 +91,7 @@ public class NewsPagerAdapter extends DelegateAdapter.Adapter<NewsPagerAdapter.N
 
         private void initViewPager() {
             view_pager.setAdapter(new NewsFragmentPagerAdapter(fragmentActivity.getSupportFragmentManager(), mTitleDataList));
+            view_pager.setOffscreenPageLimit(mTitleDataList.size());
         }
 
         private void initViewPagerIndicator() {

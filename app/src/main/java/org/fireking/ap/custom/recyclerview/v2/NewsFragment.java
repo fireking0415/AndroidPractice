@@ -1,6 +1,7 @@
 package org.fireking.ap.custom.recyclerview.v2;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import org.fireking.ap.R;
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 public class NewsFragment extends Fragment {
 
@@ -19,6 +23,10 @@ public class NewsFragment extends Fragment {
     private NewsAdapter mNewsAdapter;
 
     private String mTitle;
+
+    public static class ResetRecyclerViewPositionEvent {
+
+    }
 
     public static Fragment createFragment(String title) {
         Fragment fragment = new NewsFragment();
@@ -34,6 +42,23 @@ public class NewsFragment extends Fragment {
         if (getArguments() != null) {
             mTitle = getArguments().getString("title");
         }
+        EventBus.getDefault().register(this);
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onResetRecyclerViewPositionEvent(ResetRecyclerViewPositionEvent event) {
+        if (event != null && inner_recyclerView != null) {
+            LinearLayoutManager layoutManager = (LinearLayoutManager) inner_recyclerView.getLayoutManager();
+            if (layoutManager != null) {
+                layoutManager.scrollToPositionWithOffset(0, 0);
+            }
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
     }
 
     @Nullable

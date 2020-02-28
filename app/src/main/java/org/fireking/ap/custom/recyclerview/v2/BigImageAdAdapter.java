@@ -3,6 +3,10 @@ package org.fireking.ap.custom.recyclerview.v2;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -27,8 +31,14 @@ public class BigImageAdAdapter extends DelegateAdapter.Adapter<BigImageAdAdapter
     }
 
     @Override
-    public void onBindViewHolder(@NonNull BigImageAdViewHolder holder, int position) {
-
+    public void onBindViewHolder(@NonNull final BigImageAdViewHolder holder, int position) {
+        holder.btnCloseAd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                holder.rl_ad_container.setLayoutParams(new FrameLayout.LayoutParams(0, 0));
+                notifyDataSetChanged();
+            }
+        });
     }
 
     @Override
@@ -38,8 +48,17 @@ public class BigImageAdAdapter extends DelegateAdapter.Adapter<BigImageAdAdapter
 
     public static class BigImageAdViewHolder extends RecyclerView.ViewHolder {
 
+        private Button btnCloseAd;
+        private RelativeLayout rl_ad_container;
+
         public BigImageAdViewHolder(@NonNull View itemView) {
             super(itemView);
+            btnCloseAd = itemView.findViewById(R.id.btnCloseAd);
+            rl_ad_container = itemView.findViewById(R.id.rl_ad_container);
+        }
+
+        public boolean isBigImageAdShow() {
+            return rl_ad_container.getLayoutParams().height != 0;
         }
     }
 }
