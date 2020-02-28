@@ -18,11 +18,13 @@
             android:background="@color/colorPrimary">
 
             <TextView
+                android:id="@+id/tvMonth"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:text="2020年2月"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                android:textSize="30sp" />
         </RelativeLayout>
 
         <RelativeLayout

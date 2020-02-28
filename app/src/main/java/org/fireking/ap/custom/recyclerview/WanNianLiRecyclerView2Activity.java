@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.alibaba.android.vlayout.DelegateAdapter;
 import com.alibaba.android.vlayout.VirtualLayoutManager;
 import com.gyf.barlibrary.ImmersionBar;
+import com.haibin.calendarview.CalendarView;
 
 import org.fireking.ap.R;
 import org.fireking.ap.custom.recyclerview.v2.BannerAdapter;
@@ -45,6 +47,7 @@ public class WanNianLiRecyclerView2Activity extends AppCompatActivity {
     private RelativeLayout calendar_title_bar;
     private RelativeLayout news_title_bar;
     private Button btnBackToCalendar;
+    private TextView tvMonth;
 
     private ImmersionBar immersionBar;
 
@@ -100,6 +103,7 @@ public class WanNianLiRecyclerView2Activity extends AppCompatActivity {
         news_title_bar = findViewById(R.id.news_title_bar);
         rv_content_list = findViewById(R.id.rv_content_list);
         btnBackToCalendar = findViewById(R.id.btnBackToCalendar);
+        tvMonth = findViewById(R.id.tvMonth);
     }
 
     private void initRecyclerViewPool() {
@@ -113,7 +117,12 @@ public class WanNianLiRecyclerView2Activity extends AppCompatActivity {
         rv_content_list.setAdapter(delegateAdapter);
 
         //月份日历
-        monthCalendarAdapter = new MonthCalendarAdapter();
+        monthCalendarAdapter = new MonthCalendarAdapter(new CalendarView.OnMonthChangeListener() {
+            @Override
+            public void onMonthChange(int year, int month) {
+                tvMonth.setText(year + "年" + month + "月");
+            }
+        });
         delegateAdapter.addAdapter(monthCalendarAdapter);
 
         //选中日期-当日运势
@@ -137,10 +146,12 @@ public class WanNianLiRecyclerView2Activity extends AppCompatActivity {
         rv_content_list.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+                Log.e("info", "newState---->" + newState);
             }
 
             @Override
             public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                Log.e("info", "onScrolled---->" + dx + ", " + dy + ", " + recyclerView.getScrollState());
                 VirtualLayoutManager virtualLayoutManager = (VirtualLayoutManager) recyclerView.getLayoutManager();
                 if (virtualLayoutManager != null) {
                     int firstItemPosition = virtualLayoutManager.findFirstVisibleItemPosition();
