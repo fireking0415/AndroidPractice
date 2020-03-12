@@ -8,6 +8,8 @@ import org.fireking.ap.custom.basic.CanvasBasicActivity
 import org.fireking.ap.custom.bezier.BasicBezierActivity
 import org.fireking.ap.custom.flip.BasicFlipActivity
 import org.fireking.ap.custom.nested.NestedActivity
+import org.fireking.ap.custom.newfunction.NewFunctionActivity
+import org.fireking.ap.custom.newfunction.ViewBindingSampleActivity
 import org.fireking.ap.custom.path.BasicPathActivity
 import org.fireking.ap.custom.recyclerview.RecyclerViewSampleActivity
 import org.fireking.ap.custom.viewgroup.CustomViewGroupActivity
@@ -44,6 +46,10 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.btnRecyclerView).setOnClickListener {
             RecyclerViewSampleActivity.start(this@MainActivity)
+        }
+
+        findViewById<Button>(R.id.btnNewFunction).setOnClickListener {
+            NewFunctionActivity.start(this@MainActivity)
         }
 
     }

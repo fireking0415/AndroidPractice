@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".custom.newfunction.NewFunctionActivity"></activity>
+        <activity android:name=".custom.newfunction.ViewBindingSampleActivity" />
         <activity
             android:name=".custom.recyclerview.WanNianLiRecyclerView2Activity"
             android:screenOrientation="portrait"
