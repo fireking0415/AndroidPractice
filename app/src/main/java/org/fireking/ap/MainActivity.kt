@@ -3,16 +3,15 @@ package org.fireking.ap
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import net.lucode.hackware.magicindicator.MagicIndicator
 import org.fireking.ap.custom.basic.CanvasBasicActivity
 import org.fireking.ap.custom.bezier.BasicBezierActivity
 import org.fireking.ap.custom.flip.BasicFlipActivity
 import org.fireking.ap.custom.nested.NestedActivity
 import org.fireking.ap.custom.newfunction.NewFunctionActivity
-import org.fireking.ap.custom.newfunction.ViewBindingSampleActivity
 import org.fireking.ap.custom.path.BasicPathActivity
 import org.fireking.ap.custom.recyclerview.RecyclerViewSampleActivity
 import org.fireking.ap.custom.viewgroup.CustomViewGroupActivity
+import org.fireking.ap.custom.windowmanager.WindowManagerSampleActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -46,6 +45,10 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.btnRecyclerView).setOnClickListener {
             RecyclerViewSampleActivity.start(this@MainActivity)
+        }
+
+        findViewById<Button>(R.id.btnWindowManager).setOnClickListener {
+            WindowManagerSampleActivity.start(this@MainActivity)
         }
 
         findViewById<Button>(R.id.btnNewFunction).setOnClickListener {

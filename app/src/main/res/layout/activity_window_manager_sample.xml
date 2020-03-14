@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".custom.windowmanager.WindowManagerSampleActivity">
+
+    <Button
+        android:id="@+id/btnAppInnerWindowManager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="在应用内展示的WindowManager，不需要授权" />
+</LinearLayout>
