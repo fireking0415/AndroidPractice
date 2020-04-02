@@ -34,4 +34,20 @@
         app:year_view_month_text_color="#ff0000"
         app:year_view_month_text_size="20sp"
         app:year_view_scheme_color="#f17706" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_margin="3dip"
+        android:background="#9f53d2">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="正月二十"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
 </LinearLayout>

@@ -16,5 +16,11 @@
         android:id="@+id/btnCalendarV2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="万年历首页（RecyclerView嵌套实现）" />
+        android:text="万年历首页（RecyclerView嵌套实现）VLayout" />
+
+    <Button
+        android:id="@+id/btnCalendarV3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="万年历首页（RecyclerView嵌套实现）原生" />
 </LinearLayout>

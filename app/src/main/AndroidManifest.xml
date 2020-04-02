@@ -9,9 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".custom.windowmanager.WindowManagerSampleActivity" />
-        <activity android:name=".custom.newfunction.NewFunctionActivity" />
-        <activity android:name=".custom.newfunction.ViewBindingSampleActivity" />
+        <activity
+            android:name=".custom.recyclerview.WanNianLiRecyclerView3Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".custom.windowmanager.WindowManagerSampleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".custom.newfunction.NewFunctionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".custom.newfunction.ViewBindingSampleActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".custom.recyclerview.WanNianLiRecyclerView2Activity"
             android:screenOrientation="portrait"
