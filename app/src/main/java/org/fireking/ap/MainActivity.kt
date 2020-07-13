@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import org.fireking.ap.custom.anim.AnimActivity
 import org.fireking.ap.custom.basic.CanvasBasicActivity
 import org.fireking.ap.custom.bezier.BasicBezierActivity
+import org.fireking.ap.custom.constraintlayout.ConstraintLayoutSample
 import org.fireking.ap.custom.flip.BasicFlipActivity
 import org.fireking.ap.custom.nested.NestedActivity
 import org.fireking.ap.custom.newfunction.NewFunctionActivity
@@ -55,6 +56,10 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.btnWindowManager).setOnClickListener {
             WindowManagerSampleActivity.start(this@MainActivity)
+        }
+
+        findViewById<Button>(R.id.btnConstraintLayout).setOnClickListener {
+            ConstraintLayoutSample.start(this@MainActivity)
         }
 
         findViewById<Button>(R.id.btnAnim).setOnClickListener {

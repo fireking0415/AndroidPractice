@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".custom.anim.AnimActivity"></activity>
+        <activity android:name=".custom.viewgroup.TextAndViewAlignActivity"></activity>
+        <activity android:name=".custom.constraintlayout.ConstaintLayoutV1" />
+        <activity android:name=".custom.constraintlayout.ConstraintLayoutSample" />
+        <activity android:name=".custom.anim.AnimActivity" />
         <activity android:name=".custom.notification.NotificationActivity" />
         <activity
             android:name=".custom.recyclerview.WanNianLiRecyclerView3Activity"

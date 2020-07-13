@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_custom_view_group.*
 import org.fireking.ap.R
 import org.jetbrains.anko.intentFor
 
@@ -32,6 +33,10 @@ class CustomViewGroupActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.btnCardView).setOnClickListener {
             ShaderCardActivity.start(this@CustomViewGroupActivity)
+        }
+
+        btnTextAndView.setOnClickListener {
+            TextAndViewAlignActivity.start(this@CustomViewGroupActivity)
         }
     }
 }

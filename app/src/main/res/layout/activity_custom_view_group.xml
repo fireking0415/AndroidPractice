@@ -1,31 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".custom.viewgroup.CustomViewGroupActivity">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".custom.viewgroup.CustomViewGroupActivity">
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnVerifyCodeInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:text="方形输入框" />
 
         <Button
-                android:id="@+id/btnVerifyCodeInput"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="方形输入框" />
+            android:id="@+id/btnRadarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="雷达扫描" />
 
         <Button
-                android:id="@+id/btnRadarLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="雷达扫描" />
+            android:id="@+id/btnCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="android原生CardView" />
 
         <Button
-                android:id="@+id/btnCardView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="android原生CardView" />
+            android:id="@+id/btnTextAndView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="文字+布局对齐" />
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>
