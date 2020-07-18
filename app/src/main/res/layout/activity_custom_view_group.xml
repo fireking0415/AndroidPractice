@@ -33,5 +33,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="文字+布局对齐" />
+
+        <Button
+            android:id="@+id/btnDouyinHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="仿抖音直播呼吸头像" />
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

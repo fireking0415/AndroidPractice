@@ -38,5 +38,9 @@ class CustomViewGroupActivity : AppCompatActivity() {
         btnTextAndView.setOnClickListener {
             TextAndViewAlignActivity.start(this@CustomViewGroupActivity)
         }
+
+        btnDouyinHeader.setOnClickListener {
+            DouyinHeartPortraitActivity.start(this@CustomViewGroupActivity)
+        }
     }
 }

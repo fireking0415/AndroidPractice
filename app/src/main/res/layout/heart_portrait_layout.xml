@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <org.fireking.ap.custom.viewgroup.view.ZoomInAnimatorImageView
+        android:id="@+id/ivHeaderPortrait"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="12dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_meizi" />
+
+    <org.fireking.ap.custom.viewgroup.view.WaveBackgroundView
+        android:id="@+id/waveBackgroundView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</FrameLayout>
