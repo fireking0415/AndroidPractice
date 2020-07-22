@@ -23,4 +23,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="万年历首页（RecyclerView嵌套实现）原生" />
+
+    <Button
+        android:id="@+id/btnDiffUtil"
+        android:layout_width="match_parent"
+        android:text="测试DiffUtil"
+        android:layout_height="wrap_content" />
 </LinearLayout>

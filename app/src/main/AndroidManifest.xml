@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".custom.viewgroup.DouyinHeartPortraitActivity"></activity>
+        <activity android:name=".custom.recyclerview.diffutil.DiffUtilActivity"></activity>
+        <activity android:name=".custom.viewgroup.DouyinHeartPortraitActivity" />
         <activity android:name=".custom.viewgroup.TextAndViewAlignActivity" />
         <activity android:name=".custom.constraintlayout.ConstaintLayoutV1" />
         <activity android:name=".custom.constraintlayout.ConstraintLayoutSample" />

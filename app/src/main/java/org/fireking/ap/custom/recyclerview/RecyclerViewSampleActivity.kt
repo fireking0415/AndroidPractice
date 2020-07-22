@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import org.fireking.ap.R
+import org.fireking.ap.custom.recyclerview.diffutil.DiffUtilActivity
 
 class RecyclerViewSampleActivity : AppCompatActivity() {
 
@@ -32,6 +33,10 @@ class RecyclerViewSampleActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.btnCalendarV3).setOnClickListener {
             WanNianLiRecyclerView3Activity.start(this)
+        }
+
+        findViewById<Button>(R.id.btnDiffUtil).setOnClickListener {
+            DiffUtilActivity.start(this@RecyclerViewSampleActivity)
         }
     }
 }
