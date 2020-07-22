@@ -5,7 +5,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_recycler_view_sample.*
 import org.fireking.ap.R
+import org.fireking.ap.custom.recyclerview.diffutil.DiffUtil2Activity
 import org.fireking.ap.custom.recyclerview.diffutil.DiffUtilActivity
 
 class RecyclerViewSampleActivity : AppCompatActivity() {
@@ -37,6 +39,10 @@ class RecyclerViewSampleActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.btnDiffUtil).setOnClickListener {
             DiffUtilActivity.start(this@RecyclerViewSampleActivity)
+        }
+
+        btnDiffUtil2.setOnClickListener {
+            DiffUtil2Activity.start(this@RecyclerViewSampleActivity)
         }
     }
 }

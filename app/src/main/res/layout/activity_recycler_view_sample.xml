@@ -27,6 +27,12 @@
     <Button
         android:id="@+id/btnDiffUtil"
         android:layout_width="match_parent"
-        android:text="测试DiffUtil"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="测试DiffUtil" />
+
+    <Button
+        android:id="@+id/btnDiffUtil2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="测试DiffUtil-2" />
 </LinearLayout>

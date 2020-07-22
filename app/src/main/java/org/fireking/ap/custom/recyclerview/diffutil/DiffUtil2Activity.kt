@@ -2,49 +2,29 @@ package org.fireking.ap.custom.recyclerview.diffutil
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_diff_util.*
 import org.fireking.ap.R
 import org.jetbrains.anko.intentFor
 
-class DiffUtilActivity : AppCompatActivity() {
+class DiffUtil2Activity : AppCompatActivity() {
 
-    private lateinit var mDiffUtilAdapter: DiffUtilAdapter
+    private lateinit var mDiffUtilAdapter: DiffUtil2Adapter
 
     companion object {
         @JvmStatic
         fun start(context: Context) {
-            context.startActivity(context.intentFor<DiffUtilActivity>())
+            context.startActivity(context.intentFor<DiffUtil2Activity>())
         }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_diff_util)
-
-        val diffCallback = object : DiffUtil.ItemCallback<DiffBean>() {
-            override fun areItemsTheSame(oldItem: DiffBean, newItem: DiffBean): Boolean {
-                Log.e(
-                    "info",
-                    "===================areItemsTheSame--》${oldItem.id}:${newItem.id}-->${oldItem.id == newItem.id}"
-                )
-                return oldItem.id == newItem.id
-            }
-
-            override fun areContentsTheSame(oldItem: DiffBean, newItem: DiffBean): Boolean {
-//                Log.e(
-//                    "info",
-//                    "===================areContentsTheSame--》${oldItem.id}:${newItem.id}-->${oldItem.id == newItem.id}"
-//                )
-                return oldItem == newItem
-            }
-        }
+        setContentView(R.layout.activity_diff_util2)
 
         rv_content_list.layoutManager = LinearLayoutManager(this)
-        mDiffUtilAdapter = DiffUtilAdapter(diffCallback)
+        mDiffUtilAdapter = DiffUtil2Adapter()
         rv_content_list.adapter = mDiffUtilAdapter
 
         val result2 = ArrayList<DiffBean>()
