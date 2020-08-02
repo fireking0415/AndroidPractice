@@ -71,7 +71,12 @@ class DiffUtilActivity : AppCompatActivity() {
         }
 
         val result4 = ArrayList<DiffBean>()
-        result4.add(DiffBean(8, "测试8"))
+        result4.add(DiffBean(1, "测试1"))
+        result4.add(DiffBean(2, "测试1"))
+        result4.add(DiffBean(3, "测试2"))
+        result4.add(DiffBean(4, "测试4444"))
+        result4.add(DiffBean(5, "测试5"))
+        result4.add(DiffBean(6, "测试666"))
         btnAdd.setOnClickListener {
             mDiffUtilAdapter.submitList(result4)
         }

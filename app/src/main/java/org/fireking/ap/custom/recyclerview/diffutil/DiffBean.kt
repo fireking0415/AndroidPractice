@@ -12,8 +12,8 @@ package org.fireking.ap.custom.recyclerview.diffutil
  * @author Wanggang
  */
 data class DiffBean(
-    val id: Int,
-    val title: String
+    var id: Int,
+    var title: String
 ){
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
