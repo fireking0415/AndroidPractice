@@ -35,4 +35,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="测试DiffUtil-2" />
+
+    <Button
+        android:id="@+id/btnSticky"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="测试吸顶状态" />
 </LinearLayout>

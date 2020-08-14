@@ -44,5 +44,9 @@ class RecyclerViewSampleActivity : AppCompatActivity() {
         btnDiffUtil2.setOnClickListener {
             DiffUtil2Activity.start(this@RecyclerViewSampleActivity)
         }
+
+        btnSticky.setOnClickListener {
+            RecyclerViewStickyActivity.start(this@RecyclerViewSampleActivity)
+        }
     }
 }

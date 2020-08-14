@@ -10,12 +10,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import org.fireking.ap.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder> {
 
     private String title;
 
+    private List<String> temps = new ArrayList<>();
+
     public NewsAdapter(String mTitle) {
         this.title = mTitle;
+        for (int i = 0; i < 20; i++) {
+            temps.add("test");
+        }
     }
 
     @NonNull
@@ -26,12 +34,17 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull NewsViewHolder holder, int position) {
-        holder.bind(title);
+        holder.bind(temps.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return 40;
+        return temps.size();
+    }
+
+    public void addItem() {
+        temps.add(10, "");
+        notifyItemRangeInserted(10, 1);
     }
 
     public static class NewsViewHolder extends RecyclerView.ViewHolder {
