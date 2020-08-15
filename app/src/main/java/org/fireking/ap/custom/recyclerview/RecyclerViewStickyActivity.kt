@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_recycler_view_sticky.*
 import org.fireking.ap.R
-import org.fireking.ap.custom.recyclerview.v2.NewsAdapter
+import org.fireking.ap.custom.recyclerview.v2.News2Adapter
 import org.jetbrains.anko.intentFor
 
 class RecyclerViewStickyActivity : AppCompatActivity() {
@@ -20,7 +20,7 @@ class RecyclerViewStickyActivity : AppCompatActivity() {
         }
     }
 
-    private lateinit var newAdapter: NewsAdapter
+    private lateinit var newAdapter: News2Adapter
     private var isSticky: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +31,7 @@ class RecyclerViewStickyActivity : AppCompatActivity() {
             newAdapter.addItem()
         }
 
-        newAdapter = NewsAdapter("测试Sticky")
+        newAdapter = News2Adapter()
         recyclerView.layoutManager = object : LinearLayoutManager(this) {
             override fun canScrollVertically(): Boolean {
                 return super.canScrollVertically() && !isSticky
