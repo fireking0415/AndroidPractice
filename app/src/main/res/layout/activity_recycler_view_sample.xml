@@ -41,4 +41,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="测试吸顶状态" />
+
+    <Button
+        android:id="@+id/btnOOM"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="测试Viewpager + RecyclerView内存释放" />
 </LinearLayout>

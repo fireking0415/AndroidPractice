@@ -48,5 +48,9 @@ class RecyclerViewSampleActivity : AppCompatActivity() {
         btnSticky.setOnClickListener {
             RecyclerViewStickyActivity.start(this@RecyclerViewSampleActivity)
         }
+
+        btnOOM.setOnClickListener {
+            ViewPagerRecyclerOOMViewActivity.start(this@RecyclerViewSampleActivity)
+        }
     }
 }
