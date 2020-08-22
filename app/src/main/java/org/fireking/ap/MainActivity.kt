@@ -13,6 +13,7 @@ import org.fireking.ap.custom.newfunction.NewFunctionActivity
 import org.fireking.ap.custom.notification.NotificationActivity
 import org.fireking.ap.custom.path.BasicPathActivity
 import org.fireking.ap.custom.recyclerview.RecyclerViewSampleActivity
+import org.fireking.ap.custom.viewevent.ViewEventSampleActivity
 import org.fireking.ap.custom.viewgroup.CustomViewGroupActivity
 import org.fireking.ap.custom.windowmanager.WindowManagerSampleActivity
 
@@ -68,6 +69,10 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.btnNewFunction).setOnClickListener {
             NewFunctionActivity.start(this@MainActivity)
+        }
+
+        findViewById<Button>(R.id.btnViewEvent).setOnClickListener {
+            ViewEventSampleActivity.start(this@MainActivity)
         }
 
     }
