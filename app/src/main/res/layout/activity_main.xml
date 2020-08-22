@@ -90,5 +90,11 @@
             android:layout_height="wrap_content"
             android:text="事件冲突处理" />
 
+        <Button
+            android:id="@+id/btnRestudy"
+            android:layout_width="match_parent"
+            android:text="重学Android"
+            android:layout_height="wrap_content" />
+
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>
