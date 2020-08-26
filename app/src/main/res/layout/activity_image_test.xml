@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".custom.ImageTestActivity">
+
+    <Button
+        android:id="@+id/btnLoad1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="方式一加载" />
+
+    <Button
+        android:id="@+id/btnLoad2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="方式二加载" />
+
+    <ImageView
+        android:id="@+id/iv_imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="200dip"
+        tools:background="#334455" />
+
+    <ImageView
+        android:id="@+id/iv_imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="200dip"
+        android:layout_marginTop="3dp"
+        tools:background="#334455" />
+</LinearLayout>
