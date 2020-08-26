@@ -3,6 +3,7 @@ package org.fireking.ap
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_main.*
 import org.fireking.ap.custom.anim.AnimActivity
 import org.fireking.ap.custom.basic.CanvasBasicActivity
 import org.fireking.ap.custom.bezier.BasicBezierActivity
@@ -13,6 +14,7 @@ import org.fireking.ap.custom.newfunction.NewFunctionActivity
 import org.fireking.ap.custom.notification.NotificationActivity
 import org.fireking.ap.custom.path.BasicPathActivity
 import org.fireking.ap.custom.recyclerview.RecyclerViewSampleActivity
+import org.fireking.ap.custom.thread.ThreadActivity
 import org.fireking.ap.custom.viewgroup.CustomViewGroupActivity
 import org.fireking.ap.custom.windowmanager.WindowManagerSampleActivity
 
@@ -70,6 +72,9 @@ class MainActivity : AppCompatActivity() {
             NewFunctionActivity.start(this@MainActivity)
         }
 
+        btnThread.setOnClickListener {
+            ThreadActivity.start(this@MainActivity)
+        }
     }
 
 }

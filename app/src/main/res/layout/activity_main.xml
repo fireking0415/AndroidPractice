@@ -84,5 +84,11 @@
             android:layout_height="wrap_content"
             android:text="新功能验证" />
 
+        <Button
+            android:id="@+id/btnThread"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="线程" />
+
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>
