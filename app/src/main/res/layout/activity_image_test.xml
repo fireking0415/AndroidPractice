@@ -18,6 +18,12 @@
         android:layout_height="wrap_content"
         android:text="方式二加载" />
 
+    <Button
+        android:id="@+id/btnLoad3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="方式三加载" />
+
     <ImageView
         android:id="@+id/iv_imageView1"
         android:layout_width="match_parent"
@@ -26,6 +32,13 @@
 
     <ImageView
         android:id="@+id/iv_imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="200dip"
+        android:layout_marginTop="3dp"
+        tools:background="#334455" />
+
+    <ImageView
+        android:id="@+id/iv_imageView3"
         android:layout_width="match_parent"
         android:layout_height="200dip"
         android:layout_marginTop="3dp"
