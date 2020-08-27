@@ -13,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.bumptech.glide.request.target.DrawableImageViewTarget;
 import com.bumptech.glide.request.target.ImageViewTarget;
 import com.bumptech.glide.request.transition.Transition;
 
@@ -71,12 +70,18 @@ public class ImageTestActivity extends AppCompatActivity {
                 Glide.with(ImageTestActivity.this).asDrawable()
                         .load("https://wxt.sinaimg.cn/mw1024/006hHB37ly1g6q0tznscjj30j60mbtc8.jpg")
                         .skipMemoryCache(true)
+                        .override(200, 200)
                         .diskCacheStrategy(DiskCacheStrategy.NONE)
-                        .into(new DrawableImageViewTarget(iv_imageView1) {
+                        .into(new ImageViewTarget<Drawable>(iv_imageView1) {
 
                             @Override
                             public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
                                 super.onResourceReady(resource, transition);
+                            }
+
+                            @Override
+                            protected void setResource(@Nullable Drawable resource) {
+                                iv_imageView1.setImageDrawable(resource);
                             }
 
                             @Override
