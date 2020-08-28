@@ -13,10 +13,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Uri uri = getIntent().getData();
-        if(uri != null){
-
+        if (uri != null && "true".equals(uri.getQueryParameter("isDeep"))) {
+            Log.e("info", "使用Deeplink调起App页面");
+            moveTaskToBack(true);
+        } else {
+            Log.e("info", "正常方式打开页面");
         }
-        moveTaskToBack(true);
-        Log.e("info", "测试DeepLink调起页面");
+
     }
 }
