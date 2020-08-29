@@ -13,7 +13,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.target.DrawableImageViewTarget;
 import com.bumptech.glide.request.target.ImageViewTarget;
+import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
 
 import org.fireking.ap.R;
@@ -48,16 +50,10 @@ public class ImageTestActivity extends AppCompatActivity {
                         .load("https://wxt.sinaimg.cn/mw1024/006hHB37ly1g6q0tznscjj30j60mbtc8.jpg")
                         .skipMemoryCache(true)
                         .diskCacheStrategy(DiskCacheStrategy.NONE)
-                        .into(new ImageViewTarget<Drawable>(iv_imageView1) {
+                        .into(new SimpleTarget<Drawable>() {
 
                             @Override
-                            protected void setResource(@Nullable Drawable resource) {
-//                                BitmapDrawable bitmapDrawable = (BitmapDrawable) resource;
-//                                if (bitmapDrawable != null && bitmapDrawable.getBitmap() != null) {
-//                                    iv_imageView2.setImageBitmap(bitmapDrawable.getBitmap());
-//                                } else {
-//                                    iv_imageView2.setImageBitmap(null);
-//                                }
+                            public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
                                 iv_imageView1.setImageDrawable(resource);
                             }
                         });
@@ -72,16 +68,12 @@ public class ImageTestActivity extends AppCompatActivity {
                         .skipMemoryCache(true)
                         .override(200, 200)
                         .diskCacheStrategy(DiskCacheStrategy.NONE)
-                        .into(new ImageViewTarget<Drawable>(iv_imageView1) {
+                        .into(new DrawableImageViewTarget(iv_imageView1) {
 
                             @Override
                             public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
                                 super.onResourceReady(resource, transition);
-                            }
-
-                            @Override
-                            protected void setResource(@Nullable Drawable resource) {
-                                iv_imageView1.setImageDrawable(resource);
+                                //do somethings
                             }
 
                             @Override
