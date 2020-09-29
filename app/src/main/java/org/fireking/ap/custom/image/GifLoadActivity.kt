@@ -82,6 +82,9 @@ class GifLoadActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         if (gifDrawable.drawable is GifDrawable) {
+            if ((gifDrawable.drawable as GifDrawable).isRunning) {
+                (gifDrawable.drawable as GifDrawable).stop()
+            }
             (gifDrawable.drawable as GifDrawable).recycle()
         }
         super.onDestroy()
