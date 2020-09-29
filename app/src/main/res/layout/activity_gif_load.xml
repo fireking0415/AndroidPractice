@@ -4,30 +4,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".custom.image.ImageTestActivity">
+    tools:context=".custom.image.GifLoadActivity">
 
     <Button
-        android:id="@+id/btnLoad1"
+        android:id="@+id/btnGifDrawable"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="方式一加载" />
+        android:text="使用GifDrawable方式加载" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifDrawable"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:scaleType="fitXY"
+        tools:background="#334455" />
 
     <Button
-        android:id="@+id/btnLoad2"
+        android:id="@+id/btnGlideLoad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="方式二加载" />
+        android:text="使用Glide方式加载" />
 
     <Button
-        android:id="@+id/btnLoad3"
+        android:id="@+id/btnGlideTargetLoad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="方式三加载" />
+        android:text="使用Glide Target方式加载" />
 
     <ImageView
-        android:id="@+id/iv_imageView1"
+        android:id="@+id/ivGlide"
         android:layout_width="match_parent"
-        android:layout_height="200dip"
+        android:layout_height="35dp"
         tools:background="#334455" />
 
 </LinearLayout>

@@ -4,12 +4,12 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import org.fireking.ap.custom.ImageTestActivity
 import org.fireking.ap.custom.anim.AnimActivity
 import org.fireking.ap.custom.basic.CanvasBasicActivity
 import org.fireking.ap.custom.bezier.BasicBezierActivity
 import org.fireking.ap.custom.constraintlayout.ConstraintLayoutSample
 import org.fireking.ap.custom.flip.BasicFlipActivity
+import org.fireking.ap.custom.image.ImageActivity
 import org.fireking.ap.custom.nested.NestedActivity
 import org.fireking.ap.custom.newfunction.NewFunctionActivity
 import org.fireking.ap.custom.notification.NotificationActivity
@@ -78,6 +78,7 @@ class MainActivity : AppCompatActivity() {
         btnThread.setOnClickListener {
             ThreadActivity.start(this@MainActivity)
         }
+
         findViewById<Button>(R.id.btnViewEvent).setOnClickListener {
             ViewEventSampleActivity.start(this@MainActivity)
         }
@@ -87,7 +88,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnTestImage.setOnClickListener {
-            ImageTestActivity.start(this@MainActivity)
+            ImageActivity.start(this@MainActivity)
         }
     }
 
