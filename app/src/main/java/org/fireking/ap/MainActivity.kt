@@ -10,6 +10,7 @@ import org.fireking.ap.custom.bezier.BasicBezierActivity
 import org.fireking.ap.custom.constraintlayout.ConstraintLayoutSample
 import org.fireking.ap.custom.flip.BasicFlipActivity
 import org.fireking.ap.custom.image.ImageActivity
+import org.fireking.ap.custom.livedata.LiveDataViewModelActivity
 import org.fireking.ap.custom.nested.NestedActivity
 import org.fireking.ap.custom.newfunction.NewFunctionActivity
 import org.fireking.ap.custom.notification.NotificationActivity
@@ -89,6 +90,10 @@ class MainActivity : AppCompatActivity() {
 
         btnTestImage.setOnClickListener {
             ImageActivity.start(this@MainActivity)
+        }
+
+        btnLiveDataViewModel.setOnClickListener {
+            LiveDataViewModelActivity.start(this@MainActivity)
         }
     }
 

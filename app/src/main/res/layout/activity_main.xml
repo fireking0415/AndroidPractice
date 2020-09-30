@@ -108,5 +108,11 @@
             android:layout_height="wrap_content"
             android:text="测试图片使用" />
 
+        <Button
+            android:id="@+id/btnLiveDataViewModel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LiveData + ViewModel" />
+
     </com.zhy.view.flowlayout.FlowLayout>
 </androidx.core.widget.NestedScrollView>

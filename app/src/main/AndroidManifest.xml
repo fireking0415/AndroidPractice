@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".custom.image.GifLoadActivity"></activity>
+        <activity android:name=".custom.livedata.LiveDataViewModelActivity"></activity>
+        <activity android:name=".custom.image.GifLoadActivity" />
         <activity android:name=".custom.image.ImageActivity" />
         <activity android:name=".custom.image.ImageTestActivity" />
         <activity android:name=".custom.thread.ThreadActivity" />
