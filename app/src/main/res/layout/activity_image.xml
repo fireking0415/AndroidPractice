@@ -17,4 +17,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="测试Gif加载内存占用" />
+
+    <Button
+        android:id="@+id/btnLoadGifByCanvas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="测试你使用Canvas方式加载Gif" />
+
+    <Button
+        android:id="@+id/btnLoadGifByAnimatedImageDrawable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="测试使用AnimatedImageDrawable方式加载Gif" />
 </LinearLayout>

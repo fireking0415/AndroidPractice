@@ -27,5 +27,13 @@ class ImageActivity : AppCompatActivity() {
         btnTestGifMemory.setOnClickListener {
             GifLoadActivity.start(this@ImageActivity)
         }
+
+        btnLoadGifByCanvas.setOnClickListener {
+            GifLoadByCanvasActivity.start(this@ImageActivity)
+        }
+
+        btnLoadGifByAnimatedImageDrawable.setOnClickListener {
+            GifLoadByAnimatedImageDrawableActivity.start(this@ImageActivity)
+        }
     }
 }

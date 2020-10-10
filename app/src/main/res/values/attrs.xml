@@ -50,4 +50,9 @@
         <attr name="clip_background" />
     </declare-styleable>
 
+    <!--Gif图片加载控件-->
+    <declare-styleable name="GifImageView">
+        <attr name="gif_resource_id" format="reference" />
+    </declare-styleable>
+
 </resources>
