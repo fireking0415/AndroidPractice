@@ -3,36 +3,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context=".custom.image.ImageActivity">
+    tools:context=".custom.image.MatrixTransformActivity">
 
     <Button
-        android:id="@+id/btnTestGlideTarget"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="测试Glide的图片加载Target方式" />
+        android:text="平移" />
 
     <Button
-        android:id="@+id/btnTestGifMemory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="测试Gif加载内存占用" />
+        android:text="缩放" />
 
     <Button
-        android:id="@+id/btnLoadGifByCanvas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="测试你使用Canvas方式加载Gif" />
+        android:text="扭曲" />
 
     <Button
-        android:id="@+id/btnLoadGifByAnimatedImageDrawable"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="测试使用AnimatedImageDrawable方式加载Gif" />
+        android:text="旋转" />
 
-    <Button
-        android:id="@+id/btnMatrix"
-        android:layout_width="match_parent"
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_matrix"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="测试Matrix图片变换" />
+        android:layout_centerInParent="true"
+        android:layout_marginTop="50dp"
+        android:src="@mipmap/ic_meizi" />
+
 </LinearLayout>

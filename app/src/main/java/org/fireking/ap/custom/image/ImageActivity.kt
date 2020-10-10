@@ -35,5 +35,9 @@ class ImageActivity : AppCompatActivity() {
         btnLoadGifByAnimatedImageDrawable.setOnClickListener {
             GifLoadByAnimatedImageDrawableActivity.start(this@ImageActivity)
         }
+
+        btnMatrix.setOnClickListener {
+            MatrixTransformActivity.start(this@ImageActivity)
+        }
     }
 }
