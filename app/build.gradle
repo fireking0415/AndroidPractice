@@ -14,8 +14,12 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
+        multiDexEnabled true
         viewBinding {
+            enabled = true
+        }
+
+        dataBinding {
             enabled = true
         }
     }
@@ -59,6 +63,8 @@ dependencies {
     implementation 'com.hyman:flowlayout-lib:1.1.2'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
+    implementation 'com.lxj:xpopup:2.1.4'
+    implementation 'androidx.multidex:multidex:2.0.1'
 }
 
 androidExtensions {

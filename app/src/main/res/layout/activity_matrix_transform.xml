@@ -1,38 +1,205 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center_horizontal"
-    android:orientation="vertical"
-    tools:context=".custom.image.MatrixTransformActivity">
+<layout>
 
-    <Button
+    <data>
+
+        <variable
+            name="entity"
+            type="org.fireking.ap.custom.image.MatrixEntity" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="平移" />
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:context=".custom.image.MatrixTransformActivity">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="缩放" />
+        <org.fireking.ap.custom.image.widget.MatrixAppcompatImageView
+            android:id="@+id/iv_matrix"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="8dp" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="扭曲" />
+        <com.zhy.view.flowlayout.FlowLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="旋转" />
+            <Button
+                android:id="@+id/btnPostTranslate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="post平移" />
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/iv_matrix"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="50dp"
-        android:src="@mipmap/ic_meizi" />
+            <Button
+                android:id="@+id/btnPreTranslate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="pre平移" />
 
-</LinearLayout>
+            <Button
+                android:id="@+id/btnScale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="缩小" />
+
+            <Button
+                android:id="@+id/btnSkew"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="扭曲" />
+
+            <Button
+                android:id="@+id/btnRotate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="旋转" />
+        </com.zhy.view.flowlayout.FlowLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="1.5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint=""
+                android:text="@{entity.value1, default=1}" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="1.5dp"
+                android:layout_marginRight="1.5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint=""
+                android:text="@{entity.value2, default=0}" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="1.5dp"
+                android:layout_marginRight="3dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint=""
+                android:text="@{entity.value3, default=0}" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="1.5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint=""
+                android:text="@{entity.value4, default=0}" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="1.5dp"
+                android:layout_marginRight="1.5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint=""
+                android:text="@{entity.value5, default=1}" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="1.5dp"
+                android:layout_marginRight="3dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint=""
+                android:text="@{entity.value6, default=0}" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint=""
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="1.5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint=""
+                android:text="@{entity.value7, default=0}" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="1.5dp"
+                android:layout_marginRight="1.5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint=""
+                android:text="@{entity.value8, default=0}" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="1.5dp"
+                android:layout_marginRight="3dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint=""
+                android:text="@{entity.value9, default=1}" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnReset"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="1.5dp"
+                android:layout_weight="1"
+                android:text="重置" />
+
+            <Button
+                android:id="@+id/btnChange"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="1.5dp"
+                android:layout_marginRight="3dp"
+                android:layout_weight="1"
+                android:text="改变" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>
