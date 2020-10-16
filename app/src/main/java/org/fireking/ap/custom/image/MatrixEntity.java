@@ -3,6 +3,8 @@ package org.fireking.ap.custom.image;
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 
+import org.fireking.ap.BR;
+
 /**
  * Desc:
  * <p>
@@ -34,6 +36,7 @@ public class MatrixEntity extends BaseObservable {
 
     public void setValue1(int value1) {
         this.value1 = value1;
+        notifyPropertyChanged(BR.value1);
     }
 
     @Bindable
@@ -43,6 +46,7 @@ public class MatrixEntity extends BaseObservable {
 
     public void setValue2(int value2) {
         this.value2 = value2;
+        notifyPropertyChanged(BR.value2);
     }
 
     @Bindable
@@ -52,6 +56,7 @@ public class MatrixEntity extends BaseObservable {
 
     public void setValue3(int value3) {
         this.value3 = value3;
+        notifyPropertyChanged(BR.value3);
     }
 
     @Bindable
@@ -61,6 +66,7 @@ public class MatrixEntity extends BaseObservable {
 
     public void setValue4(int value4) {
         this.value4 = value4;
+        notifyPropertyChanged(BR.value4);
     }
 
     @Bindable
@@ -70,6 +76,7 @@ public class MatrixEntity extends BaseObservable {
 
     public void setValue5(int value5) {
         this.value5 = value5;
+        notifyPropertyChanged(BR.value5);
     }
 
     @Bindable
@@ -79,6 +86,7 @@ public class MatrixEntity extends BaseObservable {
 
     public void setValue6(int value6) {
         this.value6 = value6;
+        notifyPropertyChanged(BR.value6);
     }
 
     @Bindable
@@ -88,6 +96,7 @@ public class MatrixEntity extends BaseObservable {
 
     public void setValue7(int value7) {
         this.value7 = value7;
+        notifyPropertyChanged(BR.value7);
     }
 
     @Bindable
@@ -97,6 +106,7 @@ public class MatrixEntity extends BaseObservable {
 
     public void setValue8(int value8) {
         this.value8 = value8;
+        notifyPropertyChanged(BR.value8);
     }
 
     @Bindable
@@ -106,5 +116,6 @@ public class MatrixEntity extends BaseObservable {
 
     public void setValue9(int value9) {
         this.value9 = value9;
+        notifyPropertyChanged(BR.value9);
     }
 }

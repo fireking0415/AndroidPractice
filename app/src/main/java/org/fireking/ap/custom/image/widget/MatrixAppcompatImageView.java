@@ -52,4 +52,33 @@ public class MatrixAppcompatImageView extends View {
         super.onDraw(canvas);
         canvas.drawBitmap(mBitmap, mMatrix, mPaint);
     }
+
+    public void postScale(float x, float y) {
+        mMatrix.reset();
+        mMatrix.postScale(x, y);
+        postInvalidate();
+    }
+
+    public void preScale(float x, float y) {
+        mMatrix.reset();
+        mMatrix.preScale(x, y);
+        postInvalidate();
+    }
+
+    public void postSkew(float x, float y) {
+        mMatrix.reset();
+        mMatrix.postSkew(x, y);
+        postInvalidate();
+    }
+
+    public void postRotate(float degree, float px, float py) {
+        mMatrix.reset();
+        mMatrix.postRotate(degree, px, py);
+        postInvalidate();
+    }
+
+    public void reset() {
+        mMatrix.reset();
+        postInvalidate();
+    }
 }
