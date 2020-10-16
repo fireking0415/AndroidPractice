@@ -4,12 +4,13 @@ import android.content.Context
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.lxj.xpopup.XPopup
 import com.lxj.xpopup.core.BasePopupView
-import kotlinx.android.synthetic.main.activity_matrix_transform.*
 import org.fireking.ap.R
 import org.fireking.ap.custom.image.widget.MatrixDescDialog
+import org.fireking.ap.databinding.ActivityMatrixTransformBinding
 import org.jetbrains.anko.intentFor
 
 class MatrixTransformActivity : AppCompatActivity() {
@@ -25,6 +26,10 @@ class MatrixTransformActivity : AppCompatActivity() {
     //用来区分是否发生了扭曲(错切)形变
     private var isSkew: Boolean = false
 
+    private var entity: MatrixEntity = MatrixEntity()
+
+    private lateinit var activityMatrixTransformBinding: ActivityMatrixTransformBinding
+
     companion object {
         @JvmStatic
         fun start(context: Context) {
@@ -34,7 +39,10 @@ class MatrixTransformActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_matrix_transform)
+        activityMatrixTransformBinding = ActivityMatrixTransformBinding.inflate(layoutInflater)
+        setContentView(activityMatrixTransformBinding.root)
+        activityMatrixTransformBinding.entity = entity
+        activityMatrixTransformBinding.executePendingBindings()
         initView()
         initListener()
     }
@@ -68,62 +76,67 @@ class MatrixTransformActivity : AppCompatActivity() {
     private fun initListener() {
 
         //平移-Post向右、向下移动
-        btnPostTranslate.setOnClickListener {
-            iv_matrix.postTranslate(100F, 100F)
+        activityMatrixTransformBinding.btnPostTranslate.setOnClickListener {
+            activityMatrixTransformBinding.ivMatrix.postTranslate(100F, 100F)
         }
 
         //平移-Pre向左、向上移动
-        btnPreTranslate.setOnClickListener {
-            iv_matrix.postTranslate(-100F, -100F)
+        activityMatrixTransformBinding.btnPreTranslate.setOnClickListener {
+            activityMatrixTransformBinding.ivMatrix.postTranslate(-100F, -100F)
         }
 
         //缩放
-        btnScale.setOnClickListener {
+        activityMatrixTransformBinding.btnScale.setOnClickListener {
             isScale = if (!isScale) {
-                iv_matrix.postScale(0.5F, 0.5F)
+                activityMatrixTransformBinding.ivMatrix.postScale(0.5F, 0.5F)
                 true
             } else {
-                iv_matrix.postScale(1F, 1F)
+                activityMatrixTransformBinding.ivMatrix.postScale(1F, 1F)
                 false
             }
         }
 
         //扭曲
-        btnSkew.setOnClickListener {
+        activityMatrixTransformBinding.btnSkew.setOnClickListener {
             isSkew = if (!isSkew) {
-                iv_matrix.postSkew(0.2F, 0.5F)
+                activityMatrixTransformBinding.ivMatrix.postSkew(0.2F, 0.5F)
                 true
             } else {
-                iv_matrix.postSkew(0F, 0F)
+                activityMatrixTransformBinding.ivMatrix.postSkew(0F, 0F)
                 false
             }
         }
 
         //旋转
-        btnRotate.setOnClickListener {
+        activityMatrixTransformBinding.btnRotate.setOnClickListener {
             isRotate = if (!isRotate) {
-                iv_matrix.postRotate(
-                    90F, (iv_matrix.width / 2).toFloat(),
-                    (iv_matrix.height / 2).toFloat()
+                activityMatrixTransformBinding.ivMatrix.postRotate(
+                    90F, (activityMatrixTransformBinding.ivMatrix.width / 2).toFloat(),
+                    (activityMatrixTransformBinding.ivMatrix.height / 2).toFloat()
                 )
                 true
             } else {
-                iv_matrix.postRotate(
-                    0F, (iv_matrix.width / 2).toFloat(),
-                    (iv_matrix.height / 2).toFloat()
+                activityMatrixTransformBinding.ivMatrix.postRotate(
+                    0F, (activityMatrixTransformBinding.ivMatrix.width / 2).toFloat(),
+                    (activityMatrixTransformBinding.ivMatrix.height / 2).toFloat()
                 )
                 false
             }
         }
 
         //重置
-        btnReset.setOnClickListener {
-            iv_matrix.reset()
+        activityMatrixTransformBinding.btnReset.setOnClickListener {
+            activityMatrixTransformBinding.ivMatrix.reset()
         }
 
         //改变
-        btnChange.setOnClickListener {
-
+        activityMatrixTransformBinding.btnChange.setOnClickListener {
+            Toast.makeText(this, entity.value2.toString(), Toast.LENGTH_SHORT).show()
         }
+    }
+
+    override fun onDestroy() {
+        activityMatrixTransformBinding.unbind()
+        super.onDestroy()
     }
 }
