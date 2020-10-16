@@ -9,6 +9,8 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
 
+import androidx.annotation.NonNull;
+
 import org.fireking.ap.R;
 
 /**
@@ -79,6 +81,18 @@ public class MatrixAppcompatImageView extends View {
 
     public void reset() {
         mMatrix.reset();
+        postInvalidate();
+    }
+
+    public void updateMatrix(@NonNull String scaleX, @NonNull String skewX, @NonNull String transX,
+                             @NonNull String skewY, @NonNull String scaleY, @NonNull String transY,
+                             @NonNull String persp0, @NonNull String persp1, @NonNull String persp2) {
+        mMatrix.reset();
+        mMatrix.setValues(new float[]{
+                Float.parseFloat(scaleX), Float.parseFloat(skewX), Float.parseFloat(transX),
+                Float.parseFloat(skewY), Float.parseFloat(scaleY), Float.parseFloat(transY),
+                Float.parseFloat(persp0), Float.parseFloat(persp1), Float.parseFloat(persp2)
+        });
         postInvalidate();
     }
 }

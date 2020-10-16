@@ -4,7 +4,6 @@ import android.content.Context
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.lxj.xpopup.XPopup
 import com.lxj.xpopup.core.BasePopupView
@@ -131,7 +130,17 @@ class MatrixTransformActivity : AppCompatActivity() {
 
         //改变
         activityMatrixTransformBinding.btnChange.setOnClickListener {
-            Toast.makeText(this, entity.value2.toString(), Toast.LENGTH_SHORT).show()
+            activityMatrixTransformBinding.ivMatrix.updateMatrix(
+                entity.value1 ?: "1",
+                entity.value2 ?: "0",
+                entity.value3 ?: "0",
+                entity.value4 ?: "0",
+                entity.value5 ?: "1",
+                entity.value6 ?: "0",
+                entity.value7 ?: "0",
+                entity.value8 ?: "0",
+                entity.value9 ?: "1"
+            )
         }
     }
 

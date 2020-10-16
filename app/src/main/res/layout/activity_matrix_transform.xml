@@ -78,7 +78,7 @@
                 android:gravity="center"
                 android:hint=""
                 android:inputType="number"
-                android:text="@{String.valueOf(entity.value1), default=1}" />
+                android:text="@={entity.value1, default=1}" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -89,7 +89,7 @@
                 android:gravity="center"
                 android:hint=""
                 android:inputType="number"
-                android:text="@{String.valueOf(entity.value2), default=0}" />
+                android:text="@={entity.value2, default=0}" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -100,7 +100,7 @@
                 android:gravity="center"
                 android:hint=""
                 android:inputType="number"
-                android:text="@{String.valueOf(entity.value3), default=0}" />
+                android:text="@={entity.value3, default=0}" />
         </LinearLayout>
 
         <LinearLayout
@@ -119,7 +119,7 @@
                 android:gravity="center"
                 android:hint=""
                 android:inputType="number"
-                android:text="@{String.valueOf(entity.value4), default=0}" />
+                android:text="@={entity.value4, default=0}" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -130,7 +130,7 @@
                 android:gravity="center"
                 android:hint=""
                 android:inputType="number"
-                android:text="@{String.valueOf(entity.value5), default=1}" />
+                android:text="@={entity.value5, default=1}" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -141,7 +141,7 @@
                 android:gravity="center"
                 android:hint=""
                 android:inputType="number"
-                android:text="@{String.valueOf(entity.value6), default=0}" />
+                android:text="@={entity.value6, default=0}" />
         </LinearLayout>
 
         <LinearLayout
@@ -161,7 +161,7 @@
                 android:gravity="center"
                 android:hint=""
                 android:inputType="number"
-                android:text="@{String.valueOf(entity.value7), default=0}" />
+                android:text="@={entity.value7, default=0}" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -172,7 +172,7 @@
                 android:gravity="center"
                 android:hint=""
                 android:inputType="number"
-                android:text="@{String.valueOf(entity.value8), default=0}" />
+                android:text="@={entity.value8, default=0}" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -183,7 +183,7 @@
                 android:gravity="center"
                 android:hint=""
                 android:inputType="number"
-                android:text="@{String.valueOf(entity.value9), default=1}" />
+                android:text="@={entity.value9, default=1}" />
         </LinearLayout>
 
         <LinearLayout
