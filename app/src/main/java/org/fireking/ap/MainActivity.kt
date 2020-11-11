@@ -9,6 +9,7 @@ import org.fireking.ap.custom.basic.CanvasBasicActivity
 import org.fireking.ap.custom.bezier.BasicBezierActivity
 import org.fireking.ap.custom.constraintlayout.ConstraintLayoutSample
 import org.fireking.ap.custom.flip.BasicFlipActivity
+import org.fireking.ap.custom.font.TestFontActivity
 import org.fireking.ap.custom.image.ImageActivity
 import org.fireking.ap.custom.livedata.LiveDataViewModelActivity
 import org.fireking.ap.custom.nested.NestedActivity
@@ -94,6 +95,10 @@ class MainActivity : AppCompatActivity() {
 
         btnLiveDataViewModel.setOnClickListener {
             LiveDataViewModelActivity.start(this@MainActivity)
+        }
+
+        btnTestFont.setOnClickListener {
+            TestFontActivity.start(this@MainActivity)
         }
     }
 

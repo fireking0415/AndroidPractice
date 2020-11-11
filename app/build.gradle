@@ -65,6 +65,7 @@ dependencies {
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
     implementation 'com.lxj:xpopup:2.1.4'
     implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'me.grantland:autofittextview:0.2.1'
 }
 
 androidExtensions {
