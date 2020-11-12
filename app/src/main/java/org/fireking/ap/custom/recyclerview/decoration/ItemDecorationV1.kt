@@ -5,11 +5,9 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Rect
-import android.util.Log
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
-import android.widget.LinearLayout
 import androidx.recyclerview.widget.RecyclerView
 
 class ItemDecorationV1(
@@ -47,7 +45,10 @@ class ItemDecorationV1(
         if (parent.getChildAdapterPosition(view) == pinPosition) {
             val layout = LayoutInflater.from(context)
                 .inflate(layoutResId, parent, false)
-            layout.measure(1, 0)
+            layout.measure(
+                View.MeasureSpec.makeMeasureSpec(parent.width, View.MeasureSpec.EXACTLY),
+                View.MeasureSpec.makeMeasureSpec(parent.height, View.MeasureSpec.AT_MOST)
+            )
             outRect.top = layout.measuredHeight
         } else if (parent.getChildAdapterPosition(view) != 0) {
             //跳过第0个位置，其他数据位置，在顶部插入一个分割线
@@ -76,7 +77,10 @@ class ItemDecorationV1(
     ) {
         val spaceLayout = LayoutInflater.from(context)
             .inflate(layoutResId, parent, false)
-        spaceLayout.measure(1, 0)
+        spaceLayout.measure(
+            View.MeasureSpec.makeMeasureSpec(parent.width, View.MeasureSpec.EXACTLY),
+            View.MeasureSpec.makeMeasureSpec(parent.height, View.MeasureSpec.AT_MOST)
+        )
         canvas.save()
         if (!isDrawOver) {
             canvas.translate(0F, (childView.top - spaceLayout.measuredHeight).toFloat())
@@ -84,7 +88,7 @@ class ItemDecorationV1(
         spaceLayout.layout(
             0,
             childView.top - spaceLayout.measuredHeight,
-            parent.width,
+            parent.measuredWidth,
             childView.top
         )
         spaceLayout.draw(canvas)
@@ -98,7 +102,7 @@ class ItemDecorationV1(
     ) {
         mRect.left = 0
         mRect.top = childView.top - spaceHeight
-        mRect.right = parent.width - parent.paddingRight
+        mRect.right = parent.measuredWidth - parent.paddingRight
         mRect.bottom = childView.top
         canvas.drawRect(mRect, mSpacePaint)
     }
