@@ -7,6 +7,7 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_recycler_view_sample.*
 import org.fireking.ap.R
+import org.fireking.ap.custom.recyclerview.decoration.ItemDecorationV1Activity
 import org.fireking.ap.custom.recyclerview.diffutil.DiffUtil2Activity
 import org.fireking.ap.custom.recyclerview.diffutil.DiffUtilActivity
 
@@ -24,6 +25,10 @@ class RecyclerViewSampleActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler_view_sample)
+
+        findViewById<Button>(R.id.btnTestDecoration).setOnClickListener {
+            ItemDecorationV1Activity.start(this)
+        }
 
         findViewById<Button>(R.id.btnCalendarV1).setOnClickListener {
             WanNianLiHomeActivity.start(this)

@@ -7,6 +7,12 @@
     tools:context=".custom.recyclerview.RecyclerViewSampleActivity">
 
     <Button
+        android:id="@+id/btnTestDecoration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="测试ItemDecoration版本1" />
+
+    <Button
         android:id="@+id/btnCalendarV1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

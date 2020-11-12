@@ -40,5 +40,9 @@ class CanvasBasicActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btnPieChat).setOnClickListener {
             PieChatActivity.startActivity(this@CanvasBasicActivity)
         }
+
+        findViewById<Button>(R.id.btnLoadLayout).setOnClickListener {
+            DrawLayoutActivity.start(this)
+        }
     }
 }
