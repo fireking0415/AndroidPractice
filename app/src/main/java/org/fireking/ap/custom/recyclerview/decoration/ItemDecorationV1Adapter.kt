@@ -3,6 +3,7 @@ package org.fireking.ap.custom.recyclerview.decoration
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.news_list_item2.*
@@ -15,6 +16,13 @@ class ItemDecorationV1Adapter :
         LayoutContainer {
         fun bind() {
             tv_text.text = "当前是$adapterPosition"
+            itemView.setOnClickListener {
+                Toast.makeText(
+                    itemView.context,
+                    "点击了单个ItemView${adapterPosition}",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
         }
 
         override val containerView: View?
