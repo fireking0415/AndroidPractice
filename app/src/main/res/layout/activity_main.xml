@@ -120,5 +120,11 @@
             android:layout_height="wrap_content"
             android:text="测试Font" />
 
+        <Button
+            android:id="@+id/btnMPLineChart"
+            android:layout_width="wrap_content"
+            android:text="MPLineChart"
+            android:layout_height="wrap_content" />
+
     </com.zhy.view.flowlayout.FlowLayout>
 </androidx.core.widget.NestedScrollView>

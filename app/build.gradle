@@ -66,6 +66,7 @@ dependencies {
     implementation 'com.lxj:xpopup:2.1.4'
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'me.grantland:autofittextview:0.2.1'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 }
 
 androidExtensions {

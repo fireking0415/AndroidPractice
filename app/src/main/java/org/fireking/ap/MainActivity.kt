@@ -12,6 +12,7 @@ import org.fireking.ap.custom.flip.BasicFlipActivity
 import org.fireking.ap.custom.font.TestFontActivity
 import org.fireking.ap.custom.image.ImageActivity
 import org.fireking.ap.custom.livedata.LiveDataViewModelActivity
+import org.fireking.ap.custom.mpchart.MPChartActivity
 import org.fireking.ap.custom.nested.NestedActivity
 import org.fireking.ap.custom.newfunction.NewFunctionActivity
 import org.fireking.ap.custom.notification.NotificationActivity
@@ -99,6 +100,10 @@ class MainActivity : AppCompatActivity() {
 
         btnTestFont.setOnClickListener {
             TestFontActivity.start(this@MainActivity)
+        }
+
+        btnMPLineChart.setOnClickListener {
+            MPChartActivity.start(this)
         }
     }
 
