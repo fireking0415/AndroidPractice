@@ -5,7 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_m_p_chart.*
 import org.fireking.ap.R
-import org.fireking.ap.custom.mpchart.basic.MPChartBasicV1Activity
+import org.fireking.ap.custom.mpchart.basic.LineChartActivity
+import org.fireking.ap.custom.mpchart.basic.PieChartActivity
 import org.jetbrains.anko.intentFor
 
 class MPChartActivity : AppCompatActivity() {
@@ -23,7 +24,11 @@ class MPChartActivity : AppCompatActivity() {
 
 
         btnMPLineChartV1.setOnClickListener {
-            MPChartBasicV1Activity.start(this)
+            LineChartActivity.start(this)
+        }
+
+        btnMpLineChart.setOnClickListener {
+            PieChartActivity.start(this)
         }
     }
 }

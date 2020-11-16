@@ -2,39 +2,37 @@ package org.fireking.ap.custom.mpchart.basic
 
 import android.content.Context
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import com.github.mikephil.charting.components.XAxis
-import com.github.mikephil.charting.data.*
-import com.github.mikephil.charting.interfaces.datasets.IPieDataSet
+import com.github.mikephil.charting.data.Entry
+import com.github.mikephil.charting.data.LineData
+import com.github.mikephil.charting.data.LineDataSet
+import com.github.mikephil.charting.formatter.ValueFormatter
 import kotlinx.android.synthetic.main.activity_m_p_chart_basic_v1.*
 import org.fireking.ap.R
 import org.jetbrains.anko.intentFor
-import org.joda.time.format.FormatUtils
 import kotlin.random.Random
 
-class MPChartBasicV1Activity : AppCompatActivity() {
+class LineChartActivity : AppCompatActivity() {
 
     companion object {
         @JvmStatic
         fun start(context: Context) {
-            context.startActivity(context.intentFor<MPChartBasicV1Activity>())
+            context.startActivity(context.intentFor<LineChartActivity>())
         }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_m_p_chart_basic_v1)
-
-        //饼图
-        drawPieChartView()
-
-        //线图
-        drawLineChartView()
-
-        //更复杂的线图
+        drawLineChartView1()
         drawLineChartView2()
+        drawLineChartView3()
+    }
+
+    private fun drawLineChartView3() {
+
     }
 
     private fun drawLineChartView2() {
@@ -96,35 +94,60 @@ class MPChartBasicV1Activity : AppCompatActivity() {
         lineChartView2.invalidate()
     }
 
-    private fun drawLineChartView() {
+    private fun drawLineChartView1() {
         val lineEntities = ArrayList<Entry>()
+        val lineTwoEntities = ArrayList<Entry>()
         for (index in 0 until 12) {
             lineEntities.add(Entry(index.toFloat(), Random.nextInt(300).toFloat()))
+            lineTwoEntities.add(Entry(index.toFloat(), Random.nextInt(300).toFloat()))
         }
-        val lineDataSet = LineDataSet(lineEntities, "label")
-        lineChartView.data = LineData(lineDataSet).apply {
-            setDrawValues(true)
+        val lineDataSet = LineDataSet(lineEntities, "One")
+        lineDataSet.setCircleColor(Color.parseColor("#67BCFF"))  //设置链接点的颜色
+        lineDataSet.color = Color.parseColor("#67BCFF")  //设置线的颜色
+        lineDataSet.setDrawCircleHole(false)  //设置绘制点是空心还是实心，默认true，实心为false
+        lineDataSet.mode = LineDataSet.Mode.HORIZONTAL_BEZIER
+
+        val lineTwoDataSet = LineDataSet(lineTwoEntities, "Two")
+        lineTwoDataSet.isHighlightEnabled = true  //设置那一条线在最上面
+        lineTwoDataSet.setCircleColor(Color.parseColor("#F14400"))
+        lineTwoDataSet.color = Color.parseColor("#F14400")
+        lineTwoDataSet.setDrawCircles(false)  //是否绘制链接点，默认为true
+        lineTwoDataSet.setDrawValues(false) //是否绘制链接点的文字，默认为true
+        lineTwoDataSet.mode = LineDataSet.Mode.CUBIC_BEZIER
+
+        //控制坐标轴属性
+        val xAxis = lineChartView.xAxis
+        xAxis.position = XAxis.XAxisPosition.BOTTOM //设置x轴的位置
+        xAxis.setLabelCount(lineEntities.size, true)
+        xAxis.granularity = 1F //设置x轴坐标间的最小间距
+        xAxis.axisMaximum = (lineEntities.size - 1).toFloat()
+        xAxis.axisMinimum = 0F
+        xAxis.valueFormatter = object : ValueFormatter() {
+            override fun getFormattedValue(value: Float): String {
+                return "${lineEntities[value.toInt()].x}天"
+            }
         }
+        xAxis.isAvoidFirstLastClippingEnabled
+
+        val yAxisRight = lineChartView.axisRight
+        yAxisRight.isEnabled = false
+        val yAxisLeft = lineChartView.axisLeft
+        yAxisLeft.axisMinimum = 0F
+        yAxisLeft.setDrawZeroLine(true)
+        yAxisLeft.mAxisMaximum = 300F
+
+        val lineData = LineData()
+        lineData.addDataSet(lineDataSet)
+        lineData.addDataSet(lineTwoDataSet)
+        lineData.setDrawValues(true)
+
+        lineChartView.description.isEnabled = false
+        lineChartView.setDrawGridBackground(true)
+        lineChartView.setDrawBorders(true)
+
+        lineChartView.marker = SimpleMarkerView(this)
+
+        lineChartView.data = lineData
         lineChartView.invalidate()
-    }
-
-    private fun drawPieChartView() {
-        val pieEntities = ArrayList<PieEntry>()
-        pieEntities.add(PieEntry(30F, "aaa"))
-        pieEntities.add(PieEntry(70F, "bbb"))
-        pieEntities.add(PieEntry(50F, "ccc"))
-
-        val pieDataSet = PieDataSet(pieEntities, "label")
-        pieDataSet.colors = arrayListOf(
-            Color.parseColor("#334455"),
-            Color.parseColor("#F14400"),
-            Color.parseColor("#00FF33")
-        )
-
-        val pieData = PieData(pieDataSet)
-        pieData.setDrawValues(true)
-
-        pieChatView.data = pieData
-        pieChatView.invalidate()
     }
 }

@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".custom.mpchart.basic.MPChartBasicV1Activity"></activity>
+        <activity android:name=".custom.mpchart.basic.PieChartActivity"></activity>
+        <activity android:name=".custom.mpchart.basic.LineChartActivity" />
         <activity android:name=".custom.mpchart.MPChartActivity" />
         <activity android:name=".custom.basic.DrawLayoutActivity" />
         <activity android:name=".custom.recyclerview.decoration.ItemDecorationV1Activity" />
