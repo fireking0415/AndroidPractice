@@ -83,8 +83,8 @@ class LineChartActivity : AppCompatActivity() {
         lineDataSet.highLightColor = Color.RED  //设置高亮线的颜色
         lineDataSet.color = Color.BLACK  //折线颜色
         lineDataSet.setCircleColor(Color.BLUE)  //设置交点的圆圈颜色
-        lineDataSet.setDrawCircles(true)  //是否绘制交点
-        lineDataSet.setDrawValues(true)  //是否显示交叉点的数值
+        lineDataSet.setDrawCircles(false)  //是否绘制交点
+        lineDataSet.setDrawValues(false)  //是否显示交叉点的数值
         lineDataSet.valueTextColor = Color.CYAN  //设置交叉点上的值的颜色
         lineDataSet.valueTextSize = 14F //设置交叉点上值的字体大小
         lineDataSet.mode = LineDataSet.Mode.CUBIC_BEZIER //设置平滑曲线
@@ -106,6 +106,8 @@ class LineChartActivity : AppCompatActivity() {
         lineDataSet.color = Color.parseColor("#67BCFF")  //设置线的颜色
         lineDataSet.setDrawCircleHole(false)  //设置绘制点是空心还是实心，默认true，实心为false
         lineDataSet.mode = LineDataSet.Mode.HORIZONTAL_BEZIER
+        lineDataSet.setDrawCircles(false)
+        lineDataSet.setDrawValues(false)
 
         val lineTwoDataSet = LineDataSet(lineTwoEntities, "Two")
         lineTwoDataSet.isHighlightEnabled = true  //设置那一条线在最上面
@@ -139,13 +141,21 @@ class LineChartActivity : AppCompatActivity() {
         val lineData = LineData()
         lineData.addDataSet(lineDataSet)
         lineData.addDataSet(lineTwoDataSet)
-        lineData.setDrawValues(true)
+        lineData.setDrawValues(false)
 
         lineChartView.description.isEnabled = false
         lineChartView.setDrawGridBackground(true)
         lineChartView.setDrawBorders(true)
 
         lineChartView.marker = SimpleMarkerView(this)
+        lineChartView.renderer = SimpleLineChartRenderer(
+            this,
+            lineChartView,
+            lineChartView.animator,
+            lineChartView.viewPortHandler
+        )
+        lineChartView.isScaleXEnabled = true
+        lineChartView.isScaleYEnabled = false
 
         lineChartView.data = lineData
         lineChartView.invalidate()
