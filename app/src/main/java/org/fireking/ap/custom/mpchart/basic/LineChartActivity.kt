@@ -88,6 +88,8 @@ class LineChartActivity : AppCompatActivity() {
         lineDataSet.valueTextColor = Color.CYAN  //设置交叉点上的值的颜色
         lineDataSet.valueTextSize = 14F //设置交叉点上值的字体大小
         lineDataSet.mode = LineDataSet.Mode.CUBIC_BEZIER //设置平滑曲线
+        lineDataSet.fillColor = Color.parseColor("#F14400")
+        lineDataSet.setDrawFilled(true)
 
         val lineData = LineData(lineDataSet)
         lineChartView2.data = lineData
@@ -108,6 +110,7 @@ class LineChartActivity : AppCompatActivity() {
         lineDataSet.mode = LineDataSet.Mode.HORIZONTAL_BEZIER
         lineDataSet.setDrawCircles(false)
         lineDataSet.setDrawValues(false)
+        lineDataSet.setDrawFilled(true)
 
         val lineTwoDataSet = LineDataSet(lineTwoEntities, "Two")
         lineTwoDataSet.isHighlightEnabled = true  //设置那一条线在最上面
@@ -154,6 +157,7 @@ class LineChartActivity : AppCompatActivity() {
             lineChartView.animator,
             lineChartView.viewPortHandler
         )
+        lineChartView.animateX(1500)
         lineChartView.isScaleXEnabled = true
         lineChartView.isScaleYEnabled = false
 
