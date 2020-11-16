@@ -21,6 +21,6 @@ class SimpleMarkerView(context: Context?) :
     }
 
     override fun getOffset(): MPPointF {
-        return super.getOffset()
+        return MPPointF((-width / 2).toFloat(), (-height).toFloat())
     }
 }
