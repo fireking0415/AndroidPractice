@@ -9,13 +9,25 @@
 
     <Button
         android:id="@+id/btnV1"
-        android:text="MotionLayout实例1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="MotionLayout基础实例1" />
 
     <Button
         android:id="@+id/btnV2"
-        android:text="MotionLayout实例2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="MotionLayout基础实例2" />
+
+    <Button
+        android:id="@+id/btnV3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MotionLayout基础实例3" />
+
+    <Button
+        android:id="@+id/btnV4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MotionLayout基础实例4" />
 </LinearLayout>

@@ -1,8 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".custom.constraintlayout.ConstaintLayoutV1">
 
+    <TextView
+        android:id="@+id/tv_chain"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:background="#80334455"
+        android:gravity="center"
+        android:text="测试链式"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/tv_banner1"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:background="#334455"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_text1"
+        app:layout_constraintRight_toRightOf="@+id/tv_text1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_chain" />
+
+    <TextView
+        android:id="@+id/tv_text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:gravity="center"
+        android:text="量化选股"
+        android:textSize="13sp"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/tv_text2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_banner1" />
+
+    <ImageView
+        android:id="@+id/tv_banner2"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:background="#334455"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_text2"
+        app:layout_constraintRight_toRightOf="@+id/tv_text2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_chain" />
+
+    <TextView
+        android:id="@+id/tv_text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:gravity="center"
+        android:text="量化选股"
+        android:textSize="13sp"
+        app:layout_constraintLeft_toRightOf="@+id/tv_text1"
+        app:layout_constraintRight_toLeftOf="@+id/tv_text3"
+        app:layout_constraintTop_toBottomOf="@+id/tv_banner2" />
+
+    <ImageView
+        android:id="@+id/tv_banner3"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:background="#334455"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_text3"
+        app:layout_constraintRight_toRightOf="@+id/tv_text3"
+        app:layout_constraintTop_toBottomOf="@+id/tv_chain" />
+
+    <TextView
+        android:id="@+id/tv_text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:gravity="center"
+        android:text="量化选股"
+        android:textSize="13sp"
+        app:layout_constraintLeft_toRightOf="@+id/tv_text2"
+        app:layout_constraintRight_toLeftOf="@+id/tv_text4"
+        app:layout_constraintTop_toBottomOf="@+id/tv_banner3" />
+
+    <ImageView
+        android:id="@+id/tv_banner4"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:background="#334455"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_text4"
+        app:layout_constraintRight_toRightOf="@+id/tv_text4"
+        app:layout_constraintTop_toBottomOf="@+id/tv_chain" />
+
+    <TextView
+        android:id="@+id/tv_text4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:gravity="center"
+        android:text="量化选股"
+        android:textSize="13sp"
+        app:layout_constraintLeft_toRightOf="@+id/tv_text3"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_banner4" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:background="#80334455"
+        android:gravity="center"
+        android:text="测试Guideline"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@+id/tv_text4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="0dip"
+        android:layout_height="0dip"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="0dip"
+        android:layout_height="0dip"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="0dip"
+        android:layout_height="0dip"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="0dip"
+        android:layout_height="0dip"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="549dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="0dip"
+        android:background="#334455"
+        android:text="测试layout_constraintDimensionRatio"
+        android:textColor="@android:color/white"
+        app:layout_constraintDimensionRatio="w,1:0.2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guideline1" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+

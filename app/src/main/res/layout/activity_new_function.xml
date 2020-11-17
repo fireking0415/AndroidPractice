@@ -17,4 +17,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="测试Deeplink调用无感启动app" />
+
+    <Button
+        android:id="@+id/btnUseTagWithContentView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="无聊测试：直接在setContentView设置Tag" />
 </LinearLayout>

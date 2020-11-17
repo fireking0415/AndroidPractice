@@ -43,5 +43,12 @@ public class NewFunctionActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        newFunctionBinding.btnUseTagWithContentView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                
+            }
+        });
     }
 }

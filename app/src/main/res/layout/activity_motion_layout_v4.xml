@@ -5,11 +5,11 @@
     android:id="@+id/motionLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layoutDescription="@xml/scene_02"
+    app:layoutDescription="@xml/scene_04"
     app:showPaths="true"
     app:applyMotionScene="true"
     app:motionProgress="1"
-    tools:context=".custom.anim.motionlayout.MotionLayoutV2Activity">
+    tools:context=".custom.anim.motionlayout.MotionLayoutV4Activity">
 
     <View
         android:id="@+id/button"

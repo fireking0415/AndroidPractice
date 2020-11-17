@@ -27,5 +27,13 @@ class MotionSampleActivity : AppCompatActivity() {
         btnV2.setOnClickListener {
             MotionLayoutV2Activity.start(this)
         }
+
+        btnV3.setOnClickListener {
+            MotionLayoutV3Activity.start(this)
+        }
+
+        btnV4.setOnClickListener {
+            MotionLayoutV4Activity.start(this)
+        }
     }
 }

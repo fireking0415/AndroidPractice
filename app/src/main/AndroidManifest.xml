@@ -15,7 +15,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".custom.anim.motionlayout.MotionLayoutV2Activity"></activity>
+        <activity android:name=".custom.anim.motionlayout.MotionLayoutV4Activity"></activity>
+        <activity android:name=".custom.anim.motionlayout.MotionLayoutV3Activity" />
+        <activity android:name=".custom.newfunction.UseTagWithContentViewActivity" />
+        <activity android:name=".custom.anim.motionlayout.MotionLayoutV2Activity" />
         <activity android:name=".custom.anim.motionlayout.MotionSampleActivity" />
         <activity android:name=".custom.anim.motionlayout.MotionLayoutV1Activity" />
         <activity android:name=".custom.mpchart.basic.PieChartActivity" />
