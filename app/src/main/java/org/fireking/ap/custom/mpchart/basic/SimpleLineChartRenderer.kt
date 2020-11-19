@@ -38,7 +38,8 @@ class SimpleLineChartRenderer(
         mLinePaint.color = Color.parseColor("#80F14400")
     }
 
-    override fun drawValues(canvas: Canvas?) {
+    override fun drawData(canvas: Canvas?) {
+        super.drawData(canvas)
         val dataSetByIndex = mChart.lineData.getDataSetByIndex(0) as LineDataSet
         val maxYEntry = dataSetByIndex.values[3]
         val transformer = mChart.getTransformer(dataSetByIndex.axisDependency)
@@ -79,5 +80,8 @@ class SimpleLineChartRenderer(
             mLinePaint
         )
         canvas?.restore()
+    }
+
+    override fun drawValues(canvas: Canvas?) {
     }
 }
