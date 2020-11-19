@@ -3,7 +3,6 @@ package org.fireking.ap.custom.mpchart.radarchart
 import android.graphics.Canvas
 import android.graphics.DashPathEffect
 import android.graphics.PathEffect
-import android.util.Log
 import com.github.mikephil.charting.animation.ChartAnimator
 import com.github.mikephil.charting.charts.RadarChart
 import com.github.mikephil.charting.renderer.RadarChartRenderer
@@ -46,7 +45,13 @@ class SimpleRadarChartRenderer(
         val p2out = MPPointF.getInstance(0f, 0f)
 
         //绘制中间边框
-        var dist = 0F
+        var dist = if (labelCount % 2 == 0) {
+            (mChart.yAxis.mEntries[labelCount / 2] - mChart.yChartMin) * factor -
+                    ((mChart.yAxis.mEntries[labelCount / 2] - mChart.yChartMin) * factor
+                            - (mChart.yAxis.mEntries[labelCount / 2 - 1] - mChart.yChartMin) * factor) / 2
+        } else {
+            (mChart.yAxis.mEntries[labelCount / 2] - mChart.yChartMin) * factor
+        }
         drawXWeb(dist, center, sliceAngle, rotationAngle, p1out, p2out, c)
 
         mWebPaint.strokeWidth = mChart.webLineWidthInner
