@@ -1,9 +1,10 @@
 package org.fireking.ap.custom.mpchart.radarchart
 
 import android.graphics.Canvas
-import android.graphics.Path
 import com.github.mikephil.charting.charts.RadarChart
 import com.github.mikephil.charting.components.XAxis
+import com.github.mikephil.charting.data.RadarDataSet
+import com.github.mikephil.charting.data.RadarEntry
 import com.github.mikephil.charting.renderer.XAxisRendererRadarChart
 import com.github.mikephil.charting.utils.MPPointF
 import com.github.mikephil.charting.utils.Utils
@@ -14,9 +15,6 @@ class SimpleXAxisRendererRadarChart(
     xAxis: XAxis?,
     private val radarChart: RadarChart
 ) : XAxisRendererRadarChart(viewPortHandler, xAxis, radarChart) {
-
-    override fun drawGridLine(c: Canvas?, x: Float, y: Float, gridLinePath: Path?) {
-    }
 
     override fun renderAxisLabels(c: Canvas?) {
         if (!mXAxis.isEnabled || !mXAxis.isDrawLabelsEnabled) {
@@ -32,6 +30,7 @@ class SimpleXAxisRendererRadarChart(
         val factor = radarChart.factor
         val center = radarChart.centerOffsets
         val pOut = MPPointF.getInstance(0f, 0f)
+        val radarDataSet = radarChart.data.dataSets[0] as RadarDataSet
         for (i in 0 until radarChart.data.maxEntryCountSet.entryCount) {
             val label = mXAxis.valueFormatter.getAxisLabel(i.toFloat(), mXAxis)
             val angle = (sliceangle * i + radarChart.rotationAngle) % 360f
@@ -41,7 +40,8 @@ class SimpleXAxisRendererRadarChart(
                 angle,
                 pOut
             )
-            drawLabel(
+            drawRadarLabel(
+                radarDataSet.values?.get(i),
                 c, label, pOut.x, pOut.y - mXAxis.mLabelRotatedHeight / 2f,
                 drawLabelAnchor, labelRotationAngleDegrees
             )
@@ -51,4 +51,25 @@ class SimpleXAxisRendererRadarChart(
         MPPointF.recycleInstance(drawLabelAnchor)
     }
 
+    private fun drawRadarLabel(
+        c1: RadarEntry?,
+        c: Canvas?,
+        formattedLabel: String?,
+        x: Float,
+        y: Float,
+        anchor: MPPointF?,
+        angleDegrees: Float
+    ) {
+        super.drawLabel(c, formattedLabel, x, y, anchor, angleDegrees)
+
+        Utils.drawXAxisValue(
+            c,
+            c1?.value?.toString() ?: "",
+            x + 20,
+            y + 30,
+            mAxisLabelPaint,
+            anchor,
+            angleDegrees
+        )
+    }
 }

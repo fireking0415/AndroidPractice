@@ -23,6 +23,9 @@ class RadarChartSampleActivity : AppCompatActivity() {
         private val LABELS = arrayListOf(
             "技术趋势", "价值评估", "交易机会", "舆情分析", "资金流向"
         )
+        private val ITEMS = arrayListOf(
+            50, 42, 30, 60, 87
+        )
 
         @JvmStatic
         fun start(context: Context) {
@@ -49,9 +52,10 @@ class RadarChartSampleActivity : AppCompatActivity() {
                 return LABELS[(value % LABELS.size).toInt()]
             }
         }
+        radarChart2.yAxis.axisMinimum = 0F
         val radarDataEntities = ArrayList<RadarEntry>()
         for (index in 0 until 5) {
-            radarDataEntities.add(RadarEntry(Random.nextFloat() + 20))
+            radarDataEntities.add(RadarEntry(ITEMS[index].toFloat()))
         }
         val radarDataSet = RadarDataSet(radarDataEntities, "")
         radarDataSet.setDrawFilled(true)
@@ -71,7 +75,7 @@ class RadarChartSampleActivity : AppCompatActivity() {
 
         val radarDataEntityList = ArrayList<RadarEntry>()
         for (index in 0 until 5) {
-            radarDataEntityList.add(RadarEntry(Random.nextFloat() + 20))
+            radarDataEntityList.add(RadarEntry((Math.random() * 30 + 20).toFloat()))
         }
 
         val radarDataSet = RadarDataSet(radarDataEntityList, "")
@@ -81,11 +85,12 @@ class RadarChartSampleActivity : AppCompatActivity() {
         val radarData = RadarData(radarDataSet)
         radarData.setDrawValues(false)
 
+        radarChart.yAxis.axisMinimum = 0F
         radarChart.yAxis.setLabelCount(5, false)
         radarChart.yAxis.setDrawLabels(false)
         radarChart.xAxis.xOffset = Utils.convertDpToPixel(5F)
         radarChart.xAxis.yOffset = Utils.convertDpToPixel(5F)
-        val temp = arrayListOf("技术趋势\n22", "价值评估", "交易机会", "舆情分析", "资金流向")
+        val temp = arrayListOf("技术趋势", "价值评估", "交易机会", "舆情分析", "资金流向")
         radarChart.xAxis.valueFormatter = object : ValueFormatter() {
             override fun getFormattedValue(value: Float): String {
                 return temp[(value % temp.size).toInt()]
