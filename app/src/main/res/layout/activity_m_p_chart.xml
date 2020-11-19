@@ -19,6 +19,12 @@
         android:text="雷达图" />
 
     <Button
+        android:id="@+id/btnBarChart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="柱状图" />
+
+    <Button
         android:id="@+id/btnMpLineChart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

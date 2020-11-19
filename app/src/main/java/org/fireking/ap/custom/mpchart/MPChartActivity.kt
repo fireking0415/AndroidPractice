@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_m_p_chart.*
 import org.fireking.ap.R
+import org.fireking.ap.custom.mpchart.barchart.BarChartSampleActivity
 import org.fireking.ap.custom.mpchart.linechart.LineChartActivity
 import org.fireking.ap.custom.mpchart.piechart.PieChartActivity
 import org.fireking.ap.custom.mpchart.radarchart.RadarChartSampleActivity
@@ -30,6 +31,10 @@ class MPChartActivity : AppCompatActivity() {
 
         btnRadarChart.setOnClickListener {
             RadarChartSampleActivity.start(this)
+        }
+
+        btnBarChart.setOnClickListener {
+            BarChartSampleActivity.start(this)
         }
 
         btnMpLineChart.setOnClickListener {

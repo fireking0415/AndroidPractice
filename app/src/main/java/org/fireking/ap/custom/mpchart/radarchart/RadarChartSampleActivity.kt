@@ -39,6 +39,36 @@ class RadarChartSampleActivity : AppCompatActivity() {
 
         initRadarLayoutV1()
         initRadarLayoutV2()
+        initRaderLayoutV3()
+    }
+
+    private fun initRaderLayoutV3() {
+        radarChart3.setBackgroundColor(Color.parseColor("#80fd3a69"))
+        radarChart3.setNoDataText(null)
+        radarChart3.description.isEnabled = false
+        radarChart3.legend.isEnabled = false
+        radarChart3.yAxis.isEnabled = false
+        radarChart3.xAxis.valueFormatter = object : ValueFormatter() {
+            override fun getFormattedValue(value: Float): String {
+                return LABELS[(value % LABELS.size).toInt()]
+            }
+        }
+        radarChart3.animateX(1000)
+        radarChart3.animateY(1000)
+        radarChart3.yAxis.axisMinimum = 0F
+        val radarDataEntities = ArrayList<RadarEntry>()
+        for (index in 0 until 5) {
+            radarDataEntities.add(RadarEntry(0F))
+        }
+        val radarDataSet = RadarDataSet(radarDataEntities, "")
+        radarDataSet.setDrawFilled(true)
+        radarDataSet.fillColor = Color.parseColor("#F14400")
+        radarDataSet.setDrawValues(false)
+        radarDataSet.color = Color.parseColor("#F14400")
+        val radarData = RadarData(radarDataSet)
+        radarChart3.data = radarData
+        radarChart3.isHighlightPerTapEnabled = false
+        radarChart3.invalidate()
     }
 
     private fun initRadarLayoutV2() {
@@ -52,6 +82,8 @@ class RadarChartSampleActivity : AppCompatActivity() {
                 return LABELS[(value % LABELS.size).toInt()]
             }
         }
+        radarChart2.animateX(1000)
+        radarChart2.animateY(1000)
         radarChart2.yAxis.axisMinimum = 0F
         val radarDataEntities = ArrayList<RadarEntry>()
         for (index in 0 until 5) {

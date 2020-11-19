@@ -25,7 +25,7 @@ class SimpleXAxisRendererRadarChart(
         mAxisLabelPaint.typeface = mXAxis.typeface
         mAxisLabelPaint.textSize = mXAxis.textSize
         mAxisLabelPaint.color = mXAxis.textColor
-        val sliceangle = radarChart.sliceAngle
+        val sliceAngle = radarChart.sliceAngle
 
         val factor = radarChart.factor
         val center = radarChart.centerOffsets
@@ -33,7 +33,7 @@ class SimpleXAxisRendererRadarChart(
         val radarDataSet = radarChart.data.dataSets[0] as RadarDataSet
         for (i in 0 until radarChart.data.maxEntryCountSet.entryCount) {
             val label = mXAxis.valueFormatter.getAxisLabel(i.toFloat(), mXAxis)
-            val angle = (sliceangle * i + radarChart.rotationAngle) % 360f
+            val angle = (sliceAngle * i + radarChart.rotationAngle) % 360f
             Utils.getPosition(
                 center,
                 radarChart.yRange * factor + mXAxis.mLabelRotatedWidth / 2f,
@@ -62,9 +62,13 @@ class SimpleXAxisRendererRadarChart(
     ) {
         super.drawLabel(c, formattedLabel, x, y, anchor, angleDegrees)
 
+        var label = "- -"
+        if (c1?.value ?: 0 != 0F) {
+            label = c1?.value?.toString() ?: "- -"
+        }
         Utils.drawXAxisValue(
             c,
-            c1?.value?.toString() ?: "",
+            label,
             x + 20,
             y + 30,
             mAxisLabelPaint,
