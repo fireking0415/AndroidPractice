@@ -1,4 +1,4 @@
-package org.fireking.ap.custom.mpchart.basic
+package org.fireking.ap.custom.mpchart.linechart
 
 import android.content.Context
 import com.github.mikephil.charting.components.MarkerView
