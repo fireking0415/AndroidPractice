@@ -11,6 +11,7 @@ import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.formatter.ValueFormatter
 import kotlinx.android.synthetic.main.activity_m_p_chart_basic_v1.*
 import org.fireking.ap.R
+import org.jetbrains.anko.backgroundColor
 import org.jetbrains.anko.intentFor
 import kotlin.random.Random
 
@@ -32,7 +33,8 @@ class LineChartActivity : AppCompatActivity() {
     }
 
     private fun drawLineChartView3() {
-
+        lineChartView3.backgroundColor = Color.parseColor("#80F14400")
+        lineChartView3.xAxis.position = XAxis.XAxisPosition.BOTTOM
     }
 
     private fun drawLineChartView2() {
