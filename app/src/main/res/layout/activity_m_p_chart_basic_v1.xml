@@ -21,10 +21,21 @@
             android:layout_width="match_parent"
             android:layout_height="300dip" />
 
-        <com.github.mikephil.charting.charts.LineChart
-            android:id="@+id/lineChartView2"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="300dip" />
+            android:layout_height="wrap_content">
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/lineChartView2"
+                android:layout_width="match_parent"
+                android:layout_height="300dip" />
+
+            <Button
+                android:id="@+id/btnScrollY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="缩放YAxis" />
+        </FrameLayout>
 
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

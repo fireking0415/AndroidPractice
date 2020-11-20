@@ -30,6 +30,12 @@ class LineChartActivity : AppCompatActivity() {
         drawLineChartView1()
         drawLineChartView2()
         drawLineChartView3()
+
+        btnScrollY.setOnClickListener {
+            lineChartView2.viewPortHandler.contentTop()
+            lineChartView2.viewPortHandler.setMaximumScaleY(0.9F)
+            lineChartView2.invalidate()
+        }
     }
 
     private fun drawLineChartView3() {
