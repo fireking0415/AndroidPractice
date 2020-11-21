@@ -31,9 +31,10 @@
         android:text="饼图" />
 
     <Button
+        android:id="@+id/btnProjectSample"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="MPLineChartji简单使用3" />
+        android:text="Project Sample" />
 
     <Button
         android:layout_width="match_parent"

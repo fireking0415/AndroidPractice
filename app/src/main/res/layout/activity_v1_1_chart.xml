@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".custom.mpchart.v1_1.ProjectChartActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:background="#80334455"
+            android:gravity="center"
+            android:text="价值水平 | 成长能力 | 偿债能力 "
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/chart_value_level"
+            android:layout_width="match_parent"
+            android:layout_height="250dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:background="#80334455"
+            android:gravity="center"
+            android:text="现金流 | 营运能力 | 盈利能力 "
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+
+        <com.github.mikephil.charting.charts.CombinedChart
+            android:id="@+id/chart_cash_flow"
+            android:layout_width="match_parent"
+            android:layout_height="250dp" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

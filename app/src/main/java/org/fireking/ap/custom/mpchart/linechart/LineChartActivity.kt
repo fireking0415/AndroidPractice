@@ -65,7 +65,7 @@ class LineChartActivity : AppCompatActivity() {
         //绘制x轴
         val xAxis = lineChartView2.xAxis
         xAxis.position = XAxis.XAxisPosition.BOTTOM //设置x轴位置
-//        xAxis.axisMaximum = 1F //设置x轴最小值
+        xAxis.axisMinimum = 0F //设置x轴最小值
         xAxis.textSize = 14F
         xAxis.textColor = Color.RED
 //        xAxis.isEnabled = true //是否显示x轴是否禁用
