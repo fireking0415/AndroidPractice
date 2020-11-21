@@ -16,6 +16,118 @@
             android:layout_height="32dp"
             android:background="#80334455"
             android:gravity="center"
+            android:text="综合评分 "
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+
+        <org.fireking.ap.custom.mpchart.radarchart.SimpleRadarChart
+            android:id="@+id/chart_comprehensive_score"
+            android:layout_width="match_parent"
+            android:layout_height="250dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:background="#80334455"
+            android:gravity="center"
+            android:text="筹码分布 "
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/chart_chip_distribution"
+            android:layout_width="match_parent"
+            android:layout_height="250dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:background="#80334455"
+            android:gravity="center"
+            android:text="未来走势 "
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/chart_future_trend"
+            android:layout_width="match_parent"
+            android:layout_height="250dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:background="#80334455"
+            android:gravity="center"
+            android:text="收益趋势 "
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/chart_earnings_trend"
+            android:layout_width="match_parent"
+            android:layout_height="250dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:background="#80334455"
+            android:gravity="center"
+            android:text="资金流向 "
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/chart_money_flow"
+            android:layout_width="match_parent"
+            android:layout_height="250dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:background="#80334455"
+            android:gravity="center"
+            android:text="主力净流出/入 "
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/chart_main_funds_in_out"
+            android:layout_width="match_parent"
+            android:layout_height="250dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:background="#80334455"
+            android:gravity="center"
+            android:text="行业主力资金 "
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/chart_main_funds"
+            android:layout_width="match_parent"
+            android:layout_height="250dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:background="#80334455"
+            android:gravity="center"
+            android:text="盈利预测 "
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/chart_profit_forecast"
+            android:layout_width="match_parent"
+            android:layout_height="250dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:background="#80334455"
+            android:gravity="center"
             android:text="价值水平 | 成长能力 | 偿债能力 "
             android:textColor="@android:color/white"
             android:textSize="14sp" />
@@ -38,5 +150,6 @@
             android:id="@+id/chart_cash_flow"
             android:layout_width="match_parent"
             android:layout_height="250dp" />
+
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>
