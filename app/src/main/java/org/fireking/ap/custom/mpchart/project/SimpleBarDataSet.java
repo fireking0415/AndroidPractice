@@ -1,4 +1,4 @@
-package org.fireking.ap.custom.mpchart.v1_1;
+package org.fireking.ap.custom.mpchart.project;
 
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;

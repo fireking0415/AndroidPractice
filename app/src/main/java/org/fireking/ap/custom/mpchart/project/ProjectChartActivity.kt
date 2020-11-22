@@ -1,4 +1,4 @@
-package org.fireking.ap.custom.mpchart.v1_1
+package org.fireking.ap.custom.mpchart.project
 
 import android.content.Context
 import android.graphics.Color
@@ -51,11 +51,134 @@ class ProjectChartActivity : AppCompatActivity() {
         initEarningsTrend()
 
         //资金流向
+        initMoneyFlow()
 
         //主力净流出/入
 
         //行业主力资金
         initMainFunds()
+    }
+
+    private fun initMoneyFlow() {
+        chart_money_flow.setBackgroundColor(Color.parseColor("#389393"))
+        chart_money_flow.setNoDataText(null)
+        chart_money_flow.animateX(500)
+        chart_money_flow.description.isEnabled = false
+        chart_money_flow.setScaleEnabled(false)
+
+        chart_money_flow.xAxis.position = XAxis.XAxisPosition.BOTTOM
+        chart_money_flow.xAxis.axisMinimum = -0.5F
+        chart_money_flow.xAxis.mAxisMaximum = 4.5F
+        chart_money_flow.xAxis.setDrawAxisLine(false)
+        chart_money_flow.xAxis.setDrawGridLines(false)
+        chart_money_flow.xAxis.setLabelCount(5, false)
+        chart_money_flow.xAxis.valueFormatter = object : ValueFormatter() {
+            override fun getFormattedValue(value: Float): String {
+                return if (value == 4F) {
+                    "${value.toInt() + 2016}(年)"
+                } else {
+                    "${value.toInt() + 2016}"
+                }
+            }
+        }
+
+        chart_money_flow.axisLeft.setDrawAxisLine(false)
+        chart_money_flow.axisLeft.gridColor = Color.parseColor("#fbf6f0")
+        chart_money_flow.axisLeft.axisLineColor = Color.parseColor("#fbf6f0")
+        chart_money_flow.axisLeft.textColor = Color.parseColor("#fbf6f0")
+        chart_money_flow.axisRight.isEnabled = false
+        chart_money_flow.axisLeft.valueFormatter = object : ValueFormatter() {
+            override fun getFormattedValue(value: Float): String {
+                return "${value.toInt()}.00"
+            }
+        }
+
+        chart_money_flow.xAxis.yOffset = 10F
+        chart_money_flow.xAxis.textColor = Color.parseColor("#fbf6f0")
+        chart_money_flow.legend.horizontalAlignment = Legend.LegendHorizontalAlignment.CENTER
+        chart_money_flow.legend.xEntrySpace = 10F
+        chart_money_flow.legend.textColor = Color.parseColor("#fbf6f0")
+        chart_money_flow.legend.form = Legend.LegendForm.CIRCLE
+        chart_money_flow.legend.yOffset = 5F
+        chart_money_flow.extraBottomOffset = 5F  //设置x轴底部和legend之间的间距
+        val legendList = ArrayList<LegendEntry>()
+        legendList.add(
+            LegendEntry(
+                "个股资金流出",
+                Legend.LegendForm.CIRCLE,
+                8F,
+                0F,
+                DashPathEffect(floatArrayOf(0F, 0F), 0F),
+                Color.parseColor("#ff414d")
+            )
+        )
+        legendList.add(
+            LegendEntry(
+                "行业资金流出",
+                Legend.LegendForm.CIRCLE,
+                8F,
+                0F,
+                DashPathEffect(floatArrayOf(0F, 0F), 0F),
+                Color.parseColor("#32e0c4")
+            )
+        )
+        legendList.add(
+            LegendEntry(
+                "个股资金流入",
+                Legend.LegendForm.CIRCLE,
+                8F,
+                0F,
+                DashPathEffect(floatArrayOf(0F, 0F), 0F),
+                Color.parseColor("#f56a79")
+            )
+        )
+        legendList.add(
+            LegendEntry(
+                "行业资金流入",
+                Legend.LegendForm.CIRCLE,
+                8F,
+                0F,
+                DashPathEffect(floatArrayOf(0F, 0F), 0F),
+                Color.parseColor("#32e0c4")
+            )
+        )
+        chart_money_flow.legend.setCustom(legendList)
+
+        val oneDataList = ArrayList<BarEntry>()
+        oneDataList.add(BarEntry(0F, -300F))
+        oneDataList.add(BarEntry(1F, 350F))
+        oneDataList.add(BarEntry(2F, -420F))
+        oneDataList.add(BarEntry(3F, 620F))
+        oneDataList.add(BarEntry(4F, 850F))
+        val oneDataSet = SimpleBarDataSet(oneDataList, "预测值")
+        oneDataSet.setDrawValues(false)
+        oneDataSet.setColors(
+            Color.parseColor("#ff414d"),
+            Color.parseColor("#0d7377")
+        )
+
+        val twoDataList = ArrayList<BarEntry>()
+        twoDataList.add(BarEntry(0F, -260F))
+        twoDataList.add(BarEntry(1F, -300F))
+        twoDataList.add(BarEntry(2F, -380F))
+        twoDataList.add(BarEntry(3F, -500F))
+        twoDataList.add(BarEntry(4F, 650F))
+        val twoDataSet = SimpleBarDataSet(twoDataList, "实际值")
+        twoDataSet.setDrawValues(false)
+        twoDataSet.setColors(
+            Color.parseColor("#f56a79"),
+            Color.parseColor("#32e0c4")
+        )
+        val towBarData = ArrayList<IBarDataSet>()
+        towBarData.add(oneDataSet)
+        towBarData.add(twoDataSet)
+
+        val barData = BarData(towBarData)
+        barData.barWidth = 0.35F
+        barData.groupBars(-0.5F, 0.3F, 0F)
+
+        chart_money_flow.data = barData
+        chart_money_flow.invalidate()
     }
 
     private fun initEarningsTrend() {

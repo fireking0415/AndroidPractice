@@ -15,7 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".custom.mpchart.v1_1.ProjectChartActivity"></activity>
+        <activity android:name=".custom.mpchart.project.ProjectChartActivity"></activity>
         <activity android:name=".custom.mpchart.barchart.BarChartSampleActivity" />
         <activity android:name=".custom.mpchart.radarchart.RadarChartSampleActivity" />
         <activity android:name=".custom.anim.motionlayout.MotionLayoutV4Activity" />
