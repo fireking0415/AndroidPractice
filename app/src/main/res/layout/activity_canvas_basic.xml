@@ -12,6 +12,18 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/btnXmind"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="绘制思维导图" />
+
+        <Button
+            android:id="@+id/btnCubicLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="绘制平滑曲线链接亮点" />
+
+        <Button
             android:id="@+id/btnHistogram"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

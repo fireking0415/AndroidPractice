@@ -21,6 +21,14 @@ class CanvasBasicActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_canvas_basic)
 
+        findViewById<Button>(R.id.btnXmind).setOnClickListener {
+            XMindActivity.start(this)
+        }
+
+        findViewById<Button>(R.id.btnCubicLine).setOnClickListener {
+            DrawCubicLineActivity.start(this)
+        }
+
         findViewById<Button>(R.id.btnHistogram).setOnClickListener {
             HistogramActivity.startActivity(this@CanvasBasicActivity)
         }

@@ -8,6 +8,7 @@ import org.fireking.ap.custom.anim.AnimActivity
 import org.fireking.ap.custom.basic.CanvasBasicActivity
 import org.fireking.ap.custom.bezier.BasicBezierActivity
 import org.fireking.ap.custom.constraintlayout.ConstraintLayoutSample
+import org.fireking.ap.custom.coordinatorLayout.CoordinatorLayoutActivity
 import org.fireking.ap.custom.flip.BasicFlipActivity
 import org.fireking.ap.custom.font.TestFontActivity
 import org.fireking.ap.custom.image.ImageActivity
@@ -29,6 +30,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        coordinatorLayout.setOnClickListener {
+            CoordinatorLayoutActivity.start(this)
+        }
 
         findViewById<Button>(R.id.btnCanvas).setOnClickListener {
             CanvasBasicActivity.startActivity(this@MainActivity)

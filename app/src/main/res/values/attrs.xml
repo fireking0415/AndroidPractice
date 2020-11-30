@@ -55,4 +55,18 @@
         <attr name="gif_resource_id" format="reference" />
     </declare-styleable>
 
+    <declare-styleable name="SimpleBarChart">
+        <!--标签字体大小-->
+        <attr name="labelFontSize" format="float" />
+        <!---标签的颜色-->
+        <attr name="labelColor" format="color" />
+        <!--网格的颜色-->
+        <attr name="gridLineColor" format="color" />
+        <!--网格线的宽度-->
+        <attr name="gridLineWidth" format="float" />
+        <!--第一根bar的颜色-->
+        <attr name="barOneColor" format="color" />
+        <!--第二根bar的颜色-->
+        <attr name="barTwoColor" format="color" />
+    </declare-styleable>
 </resources>

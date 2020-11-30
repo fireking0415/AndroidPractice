@@ -26,6 +26,10 @@ class RecyclerViewSampleActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler_view_sample)
 
+        findViewById<Button>(R.id.btnTabLayout).setOnClickListener {
+            MagicIndicatorDemoActivity.start(this)
+        }
+
         findViewById<Button>(R.id.btnTestDecoration).setOnClickListener {
             ItemDecorationV1Activity.start(this)
         }

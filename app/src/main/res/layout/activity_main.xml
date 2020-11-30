@@ -13,6 +13,12 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/coordinatorLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CoordinatorLayout" />
+
+        <Button
             android:id="@+id/btnCanvas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -123,8 +129,8 @@
         <Button
             android:id="@+id/btnMPLineChart"
             android:layout_width="wrap_content"
-            android:text="MPLineChart"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="MPLineChart" />
 
     </com.zhy.view.flowlayout.FlowLayout>
 </androidx.core.widget.NestedScrollView>

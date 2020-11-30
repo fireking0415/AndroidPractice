@@ -64,6 +64,7 @@ class RadarChartSampleActivity : AppCompatActivity() {
         radarDataSet.setDrawFilled(true)
         radarDataSet.fillColor = Color.parseColor("#F14400")
         radarDataSet.setDrawValues(false)
+        radarDataSet.fillAlpha = 255
         radarDataSet.color = Color.parseColor("#F14400")
         val radarData = RadarData(radarDataSet)
         radarChart3.data = radarData
