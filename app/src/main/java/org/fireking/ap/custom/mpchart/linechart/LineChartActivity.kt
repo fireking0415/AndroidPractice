@@ -75,9 +75,9 @@ class LineChartActivity : AppCompatActivity() {
 //        xAxis.labelRotationAngle = 30F //设置x轴标签的旋转角度
 //
 //        //绘制y轴
-//        val yAxisLeft = lineChartView2.axisLeft
+        val yAxisLeft = lineChartView2.axisLeft
 //        yAxisLeft.textSize = 14F
-//        yAxisLeft.axisMaximum = 0F
+        yAxisLeft.axisMinimum = 0F
         val yAxisRight = lineChartView2.axisRight
         yAxisRight.isEnabled = false
 

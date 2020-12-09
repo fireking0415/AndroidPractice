@@ -15,5 +15,10 @@
             android:id="@+id/barChartV1"
             android:layout_width="match_parent"
             android:layout_height="300dip" />
+
+        <Button
+            android:id="@+id/btnScroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>
