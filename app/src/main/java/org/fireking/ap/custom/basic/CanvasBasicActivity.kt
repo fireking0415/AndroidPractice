@@ -1,13 +1,15 @@
 package org.fireking.ap.custom.basic
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import org.fireking.ap.R
+import android.view.LayoutInflater
+import androidx.appcompat.app.AppCompatActivity
+import org.fireking.ap.databinding.ActivityCanvasBasicBinding
 import org.jetbrains.anko.intentFor
 
 class CanvasBasicActivity : AppCompatActivity() {
+
+    private lateinit var viewBind: ActivityCanvasBasicBinding
 
     companion object {
 
@@ -19,37 +21,42 @@ class CanvasBasicActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_canvas_basic)
+        viewBind = ActivityCanvasBasicBinding.inflate(LayoutInflater.from(this))
+        setContentView(viewBind.root)
 
-        findViewById<Button>(R.id.btnXmind).setOnClickListener {
+        viewBind.btnTaiChi.setOnClickListener {
+            TaiChiDiagramActivity.start(this)
+        }
+
+        viewBind.btnXmind.setOnClickListener {
             XMindActivity.start(this)
         }
 
-        findViewById<Button>(R.id.btnCubicLine).setOnClickListener {
+        viewBind.btnCubicLine.setOnClickListener {
             DrawCubicLineActivity.start(this)
         }
 
-        findViewById<Button>(R.id.btnHistogram).setOnClickListener {
+        viewBind.btnHistogram.setOnClickListener {
             HistogramActivity.startActivity(this@CanvasBasicActivity)
         }
 
-        findViewById<Button>(R.id.btnCircleColor).setOnClickListener {
+        viewBind.btnCircleColor.setOnClickListener {
             CircleColorActivity.startActivity(this@CanvasBasicActivity)
         }
 
-        findViewById<Button>(R.id.btnLineChat).setOnClickListener {
+        viewBind.btnLineChat.setOnClickListener {
             LineChatActivity.startActivity(this@CanvasBasicActivity)
         }
 
-        findViewById<Button>(R.id.btnSpider).setOnClickListener {
+        viewBind.btnSpider.setOnClickListener {
             SpiderActivity.startActivity(this@CanvasBasicActivity)
         }
 
-        findViewById<Button>(R.id.btnPieChat).setOnClickListener {
+        viewBind.btnPieChat.setOnClickListener {
             PieChatActivity.startActivity(this@CanvasBasicActivity)
         }
 
-        findViewById<Button>(R.id.btnLoadLayout).setOnClickListener {
+        viewBind.btnLoadLayout.setOnClickListener {
             DrawLayoutActivity.start(this)
         }
     }
