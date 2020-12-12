@@ -121,10 +121,10 @@
             android:text="LiveData + ViewModel" />
 
         <Button
-            android:id="@+id/btnTestFont"
+            android:id="@+id/btnTestTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="测试Font" />
+            android:text="测试TextView" />
 
         <Button
             android:id="@+id/btnMPLineChart"

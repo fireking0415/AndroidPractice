@@ -4,14 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".custom.font.TestFontActivity">
+    tools:context=".custom.textview.TestFontActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="DigitalTextView" />
 
-    <org.fireking.ap.custom.font.DigitalTextView
+    <org.fireking.ap.custom.textview.DigitalTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -24,7 +24,7 @@
         android:layout_marginTop="20dp"
         android:text="Digital2TextView" />
 
-    <org.fireking.ap.custom.font.Digital2TextView
+    <org.fireking.ap.custom.textview.Digital2TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -37,7 +37,7 @@
         android:layout_marginTop="20dp"
         android:text="DinBoldTextView" />
 
-    <org.fireking.ap.custom.font.DinBoldTextView
+    <org.fireking.ap.custom.textview.DinBoldTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -50,7 +50,7 @@
         android:layout_marginTop="20dp"
         android:text="DinTextView" />
 
-    <org.fireking.ap.custom.font.DinTextView
+    <org.fireking.ap.custom.textview.DinTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"

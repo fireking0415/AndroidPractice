@@ -1,4 +1,4 @@
-package org.fireking.ap.custom.font;
+package org.fireking.ap.custom.textview;
 
 /**
  * @author liuj
@@ -12,22 +12,22 @@ import android.util.AttributeSet;
 
 import me.grantland.widget.AutofitTextView;
 
-public class Digital2TextView extends AutofitTextView {
+public class DigitalTextView extends AutofitTextView {
 
-    private static String fontPath = "digital2.ttf";
+    private static String fontPath = "digital.ttf";
     private static Typeface tf;
 
-    public Digital2TextView(Context context) {
+    public DigitalTextView(Context context) {
         super(context);
         initDigitalTypeFace();
     }
 
-    public Digital2TextView(Context context, AttributeSet attrs) {
+    public DigitalTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
         initDigitalTypeFace();
     }
 
-    public Digital2TextView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public DigitalTextView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         initDigitalTypeFace();
     }

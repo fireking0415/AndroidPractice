@@ -1,4 +1,4 @@
-package org.fireking.ap.custom.font;
+package org.fireking.ap.custom.textview;
 
 /**
  * @author liuj

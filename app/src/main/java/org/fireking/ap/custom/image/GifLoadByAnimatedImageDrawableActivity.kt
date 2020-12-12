@@ -1,5 +1,6 @@
 package org.fireking.ap.custom.image
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.ImageDecoder
 import android.graphics.drawable.AnimatedImageDrawable
@@ -21,6 +22,7 @@ class GifLoadByAnimatedImageDrawableActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("WrongThread")
     @RequiresApi(Build.VERSION_CODES.P)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

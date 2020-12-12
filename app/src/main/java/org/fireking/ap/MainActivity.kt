@@ -1,7 +1,7 @@
 package org.fireking.ap
 
 import android.os.Bundle
-import android.widget.Button
+import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import org.fireking.ap.custom.anim.AnimActivity
@@ -10,7 +10,7 @@ import org.fireking.ap.custom.bezier.BasicBezierActivity
 import org.fireking.ap.custom.constraintlayout.ConstraintLayoutSample
 import org.fireking.ap.custom.coordinatorLayout.CoordinatorLayoutActivity
 import org.fireking.ap.custom.flip.BasicFlipActivity
-import org.fireking.ap.custom.font.TestFontActivity
+import org.fireking.ap.custom.textview.TestTextViewActivity
 import org.fireking.ap.custom.image.ImageActivity
 import org.fireking.ap.custom.livedata.LiveDataViewModelActivity
 import org.fireking.ap.custom.mpchart.MPChartActivity
@@ -24,62 +24,66 @@ import org.fireking.ap.custom.thread.ThreadActivity
 import org.fireking.ap.custom.viewevent.ViewEventSampleActivity
 import org.fireking.ap.custom.viewgroup.CustomViewGroupActivity
 import org.fireking.ap.custom.windowmanager.WindowManagerSampleActivity
+import org.fireking.ap.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var viewBinding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        viewBinding = ActivityMainBinding.inflate(LayoutInflater.from(this))
+        setContentView(viewBinding.root)
 
-        coordinatorLayout.setOnClickListener {
+        viewBinding.coordinatorLayout.setOnClickListener {
             CoordinatorLayoutActivity.start(this)
         }
 
-        findViewById<Button>(R.id.btnCanvas).setOnClickListener {
+        viewBinding.btnCanvas.setOnClickListener {
             CanvasBasicActivity.startActivity(this@MainActivity)
         }
 
-        findViewById<Button>(R.id.btnPath).setOnClickListener {
+        viewBinding.btnPath.setOnClickListener {
             BasicPathActivity.startActivity(this@MainActivity)
         }
 
-        findViewById<Button>(R.id.btnFlip).setOnClickListener {
+        viewBinding.btnFlip.setOnClickListener {
             BasicFlipActivity.startActivity(this@MainActivity)
         }
 
-        findViewById<Button>(R.id.btnNotification).setOnClickListener {
+        viewBinding.btnNotification.setOnClickListener {
             NotificationActivity.start(this@MainActivity)
         }
 
-        findViewById<Button>(R.id.btnBezier).setOnClickListener {
+        viewBinding.btnBezier.setOnClickListener {
             BasicBezierActivity.startActivity(this@MainActivity)
         }
 
-        findViewById<Button>(R.id.btnViewGroup).setOnClickListener {
+        viewBinding.btnViewGroup.setOnClickListener {
             CustomViewGroupActivity.startActivity(this@MainActivity)
         }
 
-        findViewById<Button>(R.id.btnNested).setOnClickListener {
+        viewBinding.btnNested.setOnClickListener {
             NestedActivity.start(this@MainActivity)
         }
 
-        findViewById<Button>(R.id.btnRecyclerView).setOnClickListener {
+        viewBinding.btnRecyclerView.setOnClickListener {
             RecyclerViewSampleActivity.start(this@MainActivity)
         }
 
-        findViewById<Button>(R.id.btnWindowManager).setOnClickListener {
+        viewBinding.btnWindowManager.setOnClickListener {
             WindowManagerSampleActivity.start(this@MainActivity)
         }
 
-        findViewById<Button>(R.id.btnConstraintLayout).setOnClickListener {
+        viewBinding.btnConstraintLayout.setOnClickListener {
             ConstraintLayoutSample.start(this@MainActivity)
         }
 
-        findViewById<Button>(R.id.btnAnim).setOnClickListener {
+        viewBinding.btnAnim.setOnClickListener {
             AnimActivity.start(this@MainActivity)
         }
 
-        findViewById<Button>(R.id.btnNewFunction).setOnClickListener {
+        viewBinding.btnNewFunction.setOnClickListener {
             NewFunctionActivity.start(this@MainActivity)
         }
 
@@ -87,7 +91,7 @@ class MainActivity : AppCompatActivity() {
             ThreadActivity.start(this@MainActivity)
         }
 
-        findViewById<Button>(R.id.btnViewEvent).setOnClickListener {
+        viewBinding.btnViewEvent.setOnClickListener {
             ViewEventSampleActivity.start(this@MainActivity)
         }
 
@@ -103,8 +107,8 @@ class MainActivity : AppCompatActivity() {
             LiveDataViewModelActivity.start(this@MainActivity)
         }
 
-        btnTestFont.setOnClickListener {
-            TestFontActivity.start(this@MainActivity)
+        btnTestTextView.setOnClickListener {
+            TestTextViewActivity.start(this@MainActivity)
         }
 
         btnMPLineChart.setOnClickListener {

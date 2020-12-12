@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
 
-    <data>
-
-        <variable
-            name="entity"
-            type="org.fireking.ap.custom.image.MatrixEntity" />
-    </data>
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -77,8 +69,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:hint=""
-                android:inputType="number"
-                android:text="@={entity.value1, default=1}" />
+                android:inputType="number" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -88,8 +79,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:hint=""
-                android:inputType="number"
-                android:text="@={entity.value2, default=0}" />
+                android:inputType="number" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -99,8 +89,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:hint=""
-                android:inputType="number"
-                android:text="@={entity.value3, default=0}" />
+                android:inputType="number" />
         </LinearLayout>
 
         <LinearLayout
@@ -118,8 +107,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:hint=""
-                android:inputType="number"
-                android:text="@={entity.value4, default=0}" />
+                android:inputType="number" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -129,8 +117,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:hint=""
-                android:inputType="number"
-                android:text="@={entity.value5, default=1}" />
+                android:inputType="number" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -140,8 +127,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:hint=""
-                android:inputType="number"
-                android:text="@={entity.value6, default=0}" />
+                android:inputType="number" />
         </LinearLayout>
 
         <LinearLayout
@@ -160,8 +146,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:hint=""
-                android:inputType="number"
-                android:text="@={entity.value7, default=0}" />
+                android:inputType="number" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -171,8 +156,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:hint=""
-                android:inputType="number"
-                android:text="@={entity.value8, default=0}" />
+                android:inputType="number" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -182,8 +166,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:hint=""
-                android:inputType="number"
-                android:text="@={entity.value9, default=1}" />
+                android:inputType="number" />
         </LinearLayout>
 
         <LinearLayout
@@ -211,4 +194,3 @@
                 android:text="改变" />
         </LinearLayout>
     </LinearLayout>
-</layout>

@@ -40,8 +40,6 @@ class MatrixTransformActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         activityMatrixTransformBinding = ActivityMatrixTransformBinding.inflate(layoutInflater)
         setContentView(activityMatrixTransformBinding.root)
-        activityMatrixTransformBinding.entity = entity
-        activityMatrixTransformBinding.executePendingBindings()
         initView()
         initListener()
     }
@@ -145,7 +143,6 @@ class MatrixTransformActivity : AppCompatActivity() {
     }
 
     override fun onDestroy() {
-        activityMatrixTransformBinding.unbind()
         super.onDestroy()
     }
 }
