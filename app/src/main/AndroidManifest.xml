@@ -15,7 +15,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".custom.textview.TextViewClearBorderActivity"></activity>
+        <activity android:name=".custom.basic.path.PathTestV1Activity"></activity>
+        <activity android:name=".custom.basic.path.TestPathActivity" />
+        <activity android:name=".custom.textview.TextViewClearBorderActivity" />
         <activity android:name=".custom.textview.TestTextViewActivity" />
         <activity android:name=".custom.basic.TaiChiDiagramActivity" />
         <activity android:name=".custom.basic.DrawCubicLineActivity" />

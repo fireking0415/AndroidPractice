@@ -12,7 +12,6 @@ import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.*
 import com.github.mikephil.charting.formatter.ValueFormatter
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet
-import com.github.mikephil.charting.utils.Utils
 import kotlinx.android.synthetic.main.activity_v1_1_chart.*
 import org.fireking.ap.R
 import org.jetbrains.anko.intentFor
@@ -387,9 +386,11 @@ class ProjectChartActivity : AppCompatActivity() {
         chart_comprehensive_score.description.isEnabled = false
 
         val radarDataEntityList = ArrayList<RadarEntry>()
-        for (index in 0 until 5) {
-            radarDataEntityList.add(RadarEntry((Math.random() * 30 + 20).toFloat()))
-        }
+        radarDataEntityList.add(RadarEntry(100F))
+        radarDataEntityList.add(RadarEntry(75F))
+        radarDataEntityList.add(RadarEntry(50F))
+        radarDataEntityList.add(RadarEntry(80F))
+        radarDataEntityList.add(RadarEntry(50F))
 
         val radarDataSet = RadarDataSet(radarDataEntityList, "")
         radarDataSet.setDrawFilled(true)
@@ -404,8 +405,6 @@ class ProjectChartActivity : AppCompatActivity() {
         chart_comprehensive_score.xAxis.textColor = Color.parseColor("#fbf6f0")
         chart_comprehensive_score.yAxis.setLabelCount(5, false)
         chart_comprehensive_score.yAxis.setDrawLabels(false)
-        chart_comprehensive_score.xAxis.xOffset = Utils.convertDpToPixel(5F)
-        chart_comprehensive_score.xAxis.yOffset = Utils.convertDpToPixel(5F)
         val temp = arrayListOf("技术趋势", "价值评估", "交易机会", "舆情分析", "资金流向")
         chart_comprehensive_score.xAxis.valueFormatter = object : ValueFormatter() {
             override fun getFormattedValue(value: Float): String {

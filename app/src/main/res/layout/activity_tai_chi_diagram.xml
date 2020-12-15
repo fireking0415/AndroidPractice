@@ -1,19 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical"
-    tools:context=".custom.basic.TaiChiDiagramActivity">
+    android:layout_height="match_parent">
 
-    <org.fireking.ap.custom.basic.view.TaiChiDiagramView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_height="match_parent"
+        android:background="#334455"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:context=".custom.basic.TaiChiDiagramActivity">
 
-    <org.fireking.ap.custom.basic.view.PokeBallView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
-</LinearLayout>
+        <org.fireking.ap.custom.basic.view.TaiChiDiagramView
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_weight="1" />
+
+        <org.fireking.ap.custom.basic.view.PokeBallView
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_weight="1" />
+
+        <org.fireking.ap.custom.basic.view.ChromeIconView
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

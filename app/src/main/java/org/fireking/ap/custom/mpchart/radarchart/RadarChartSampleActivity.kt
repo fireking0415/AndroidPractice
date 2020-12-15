@@ -2,19 +2,16 @@ package org.fireking.ap.custom.mpchart.radarchart
 
 import android.content.Context
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.github.mikephil.charting.components.AxisBase
+import androidx.appcompat.app.AppCompatActivity
 import com.github.mikephil.charting.data.RadarData
 import com.github.mikephil.charting.data.RadarDataSet
 import com.github.mikephil.charting.data.RadarEntry
-import com.github.mikephil.charting.formatter.IAxisValueFormatter
 import com.github.mikephil.charting.formatter.ValueFormatter
 import com.github.mikephil.charting.utils.Utils
 import kotlinx.android.synthetic.main.activity_radar_chart_sample.*
 import org.fireking.ap.R
 import org.jetbrains.anko.intentFor
-import kotlin.random.Random
 
 class RadarChartSampleActivity : AppCompatActivity() {
 
@@ -107,9 +104,11 @@ class RadarChartSampleActivity : AppCompatActivity() {
         radarChart.description.isEnabled = false
 
         val radarDataEntityList = ArrayList<RadarEntry>()
-        for (index in 0 until 5) {
-            radarDataEntityList.add(RadarEntry((Math.random() * 30 + 20).toFloat()))
-        }
+        radarDataEntityList.add(RadarEntry(100F))
+        radarDataEntityList.add(RadarEntry(50F))
+        radarDataEntityList.add(RadarEntry(75F))
+        radarDataEntityList.add(RadarEntry(80F))
+        radarDataEntityList.add(RadarEntry(90F))
 
         val radarDataSet = RadarDataSet(radarDataEntityList, "")
         radarDataSet.setDrawFilled(true)
@@ -119,7 +118,8 @@ class RadarChartSampleActivity : AppCompatActivity() {
         radarData.setDrawValues(false)
 
         radarChart.yAxis.axisMinimum = 0F
-        radarChart.yAxis.setLabelCount(5, false)
+        radarChart.yAxis.axisMaximum = 100F
+        radarChart.yAxis.setLabelCount(5, true)
         radarChart.yAxis.setDrawLabels(false)
         radarChart.xAxis.xOffset = Utils.convertDpToPixel(5F)
         radarChart.xAxis.yOffset = Utils.convertDpToPixel(5F)
