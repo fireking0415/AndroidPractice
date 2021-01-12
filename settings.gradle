@@ -1,2 +1,3 @@
 include ':testdeeplinkapp'
 include ':app'
+include ':testaroute'

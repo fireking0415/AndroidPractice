@@ -6,5 +6,4 @@ import androidx.appcompat.widget.AppCompatTextView
 
 class ClearGapTextView(context: Context, attrs: AttributeSet?) : AppCompatTextView(context, attrs) {
 
-
 }

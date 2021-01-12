@@ -3,6 +3,7 @@ package org.fireking.ap.custom.mpchart.project
 import android.content.Context
 import android.graphics.Color
 import android.graphics.DashPathEffect
+import android.graphics.Paint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.github.mikephil.charting.charts.CombinedChart
@@ -566,6 +567,7 @@ class ProjectChartActivity : AppCompatActivity() {
         chart_value_level.setBackgroundColor(Color.parseColor("#ec5858"))
         chart_value_level.setNoDataText(null)
         chart_value_level.setScaleEnabled(false)
+        chart_value_level.renderer.paintRender.strokeCap = Paint.Cap.ROUND
         chart_value_level.animateX(500)
         chart_value_level.axisLeft.axisMinimum = 0F
         chart_value_level.axisLeft.setDrawAxisLine(true)

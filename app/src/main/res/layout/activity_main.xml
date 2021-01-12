@@ -132,5 +132,11 @@
             android:layout_height="wrap_content"
             android:text="MPLineChart" />
 
+        <Button
+            android:id="@+id/btnTestARouter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ARouter" />
+
     </com.zhy.view.flowlayout.FlowLayout>
 </androidx.core.widget.NestedScrollView>

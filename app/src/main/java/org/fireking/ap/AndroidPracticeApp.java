@@ -5,6 +5,8 @@ import android.content.Context;
 
 import androidx.multidex.MultiDex;
 
+import com.alibaba.android.arouter.launcher.ARouter;
+
 /**
  * Desc:
  * <p>
@@ -24,5 +26,16 @@ public class AndroidPracticeApp extends Application {
         super.attachBaseContext(base);
 
         MultiDex.install(base);
+
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        if (BuildConfig.DEBUG) {
+            ARouter.openLog();
+            ARouter.openDebug();
+        }
+        ARouter.init(this);
     }
 }

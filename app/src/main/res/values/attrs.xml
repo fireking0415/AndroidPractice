@@ -69,4 +69,54 @@
         <!--第二根bar的颜色-->
         <attr name="barTwoColor" format="color" />
     </declare-styleable>
+
+    <declare-styleable name="ShapeTextView">
+        <!--文字颜色(不可用)-->
+        <attr name="stv_unusable_textColor" format="color" />
+        <!--描边宽度-->
+        <attr name="stv_width" format="dimension" />
+        <!--填充色-->
+        <attr name="stv_solid" format="color" />
+        <!--填充色（不可用）-->
+        <attr name="stv_unusable_solid" format="color" />
+        <!--边框颜色-->
+        <attr name="stv_border_color" format="color" />
+        <!--边框颜色(不可用)-->
+        <attr name="stv_unusable_border_color" format="color" />
+        <!--圆角-->
+        <attr name="stv_corners" format="dimension" />
+        <!--圆角-左上角-->
+        <attr name="stv_topLeft_corners" format="dimension" />
+        <!--圆角-右上角-->
+        <attr name="stv_topRight_corners" format="dimension" />
+        <!--圆角-左下角-->
+        <attr name="stv_bottomLeft_corners" format="dimension" />
+        <!--圆角-右下角-->
+        <attr name="stv_bottomRight_corners" format="dimension" />
+        <!--是否支持渐变-->
+        <attr name="stv_gradient_enable" format="boolean" />
+        <!--渐变开始颜色-->
+        <attr name="stv_gradient_start" format="color" />
+        <!--渐变开始颜色(不可用)-->
+        <attr name="stv_unusable_gradient_start" format="color" />
+        <!--渐变结束颜色-->
+        <attr name="stv_gradient_end" format="color" />
+        <!--渐变结束颜色(不可用)-->
+        <attr name="stv_unusable_gradient_end" format="color" />
+        <!--渐变角度-->
+        <attr name="stv_gradient_angle">
+            <enum name="TOP_BOTTOM" value="1" />
+            <enum name="TR_BL" value="2" />
+            <enum name="RIGHT_LEFT" value="3" />
+            <enum name="BR_TL" value="4" />
+            <enum name="BOTTOM_TOP" value="5" />
+            <enum name="BL_TR" value="6" />
+            <enum name="LEFT_RIGHT" value="7" />
+            <enum name="TL_BR" value="8" />
+        </attr>
+        <!--虚线模式间距-->
+        <attr name="stv_dash_gap" format="dimension" />
+        <!--虚线模式宽度-->
+        <attr name="stv_dash_width" format="dimension" />
+    </declare-styleable>
 </resources>
