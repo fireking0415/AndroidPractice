@@ -33,6 +33,10 @@ class TestTextViewActivity : AppCompatActivity() {
             TestFontActivity.start(this)
         }
 
+        viewBinding.btnTestShapeTextView.setOnClickListener {
+            TestShapeTextViewActivity.start(this)
+        }
+
         val result = "<spanExt>攀钢钒钛所属行业为\n" +
                 "<spanExt style=\"color:#333333; font-weight:bold; font-size:18px;\">其他采掘</spanExt>；\n" +
                 "</spanExt>\n" +

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".custom.textview.TestShapeTextViewActivity">
+
+    <org.fireking.ap.custom.textview.custom.ShapeTextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_margin="12dp"
+        android:gravity="center"
+        android:text="我是只有填充+圆角的情况"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:stv_corners="10dp"
+        app:stv_solid="@color/black" />
+
+    <org.fireking.ap.custom.textview.custom.ShapeTextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_margin="12dp"
+        android:gravity="center"
+        android:text="我是只有填充+单边圆角的情况"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:stv_bottomRight_corners="18dp"
+        app:stv_solid="@color/black"
+        app:stv_topLeft_corners="10dp" />
+
+    <org.fireking.ap.custom.textview.custom.ShapeTextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_margin="12dp"
+        android:gravity="center"
+        android:text="我是只有边框+单边圆角的情况"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:stv_border_color="@color/colorAccent"
+        app:stv_bottomRight_corners="18dp"
+        app:stv_solid="@color/black"
+        app:stv_topLeft_corners="10dp"
+        app:stv_width="3dp" />
+
+    <org.fireking.ap.custom.textview.custom.ShapeTextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_margin="12dp"
+        android:gravity="center"
+        android:text="我是只有虚线边框+填充渐变+单边圆角的情况"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:stv_border_color="@color/colorAccent"
+        app:stv_bottomRight_corners="18dp"
+        app:stv_dash_gap="10dp"
+        app:stv_dash_width="10dp"
+        app:stv_gradient_angle="LEFT_RIGHT"
+        app:stv_gradient_enable="true"
+        app:stv_gradient_end="#F14400"
+        app:stv_gradient_start="@color/colorPrimary"
+        app:stv_solid="@color/black"
+        app:stv_topLeft_corners="10dp"
+        app:stv_width="3dp" />
+
+    <org.fireking.ap.custom.textview.custom.ShapeTextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_margin="12dp"
+        android:gravity="center"
+        android:text="我是只有虚线边框+单边圆角的情况"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:stv_border_color="@color/colorAccent"
+        app:stv_bottomRight_corners="18dp"
+        app:stv_dash_gap="10dp"
+        app:stv_dash_width="10dp"
+        app:stv_solid="@color/black"
+        app:stv_topLeft_corners="10dp"
+        app:stv_width="3dp" />
+
+    <org.fireking.ap.custom.textview.custom.ShapeTextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_margin="12dp"
+        android:enabled="false"
+        android:gravity="center"
+        android:text="我是只有虚线边框+单边圆角的情况(不可用)"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:stv_border_color="@color/colorAccent"
+        app:stv_bottomRight_corners="18dp"
+        app:stv_dash_gap="10dp"
+        app:stv_dash_width="10dp"
+        app:stv_solid="@color/black"
+        app:stv_topLeft_corners="10dp"
+        app:stv_unusable_border_color="#80F14400"
+        app:stv_unusable_solid="#80334455"
+        app:stv_unusable_textColor="#80333333"
+        app:stv_width="3dp" />
+</androidx.appcompat.widget.LinearLayoutCompat>
