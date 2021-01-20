@@ -4,15 +4,17 @@ import android.animation.ValueAnimator
 import android.content.Context
 import android.os.Bundle
 import android.util.DisplayMetrics
+import android.view.LayoutInflater
 import android.view.WindowManager
 import android.view.animation.LinearInterpolator
 import android.widget.SeekBar
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_sinusoidal_wave.*
-import org.fireking.ap.R
+import org.fireking.ap.databinding.ActivitySinusoidalWaveBinding
 import org.jetbrains.anko.intentFor
 
 class SinusoidalWaveActivity : AppCompatActivity() {
+
+    private var viewBinding: ActivitySinusoidalWaveBinding? = null
 
     companion object {
 
@@ -24,11 +26,12 @@ class SinusoidalWaveActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sinusoidal_wave)
+        viewBinding = ActivitySinusoidalWaveBinding.inflate(LayoutInflater.from(this))
+        setContentView(viewBinding?.root)
 
-        seekbarW.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+        viewBinding?.seekbarW?.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
-                sinusoidalWaveView.setAngularFrequency(progress)
+                viewBinding?.sinusoidalWaveView?.setAngularFrequency(progress)
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar) {
@@ -41,9 +44,9 @@ class SinusoidalWaveActivity : AppCompatActivity() {
         })
 
 
-        seekBarR.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+        viewBinding?.seekBarR?.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
-                sinusoidalWaveView.setPhaseAngle(progress)
+                viewBinding?.sinusoidalWaveView?.setPhaseAngle(progress)
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar) {
@@ -55,9 +58,9 @@ class SinusoidalWaveActivity : AppCompatActivity() {
             }
         })
 
-        seekBarA.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+        viewBinding?.seekBarA?.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
-                sinusoidalWaveView.setAmplitude(progress)
+                viewBinding?.sinusoidalWaveView?.setAmplitude(progress)
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar) {
@@ -76,7 +79,11 @@ class SinusoidalWaveActivity : AppCompatActivity() {
         animator.duration = 10000
         animator.interpolator = LinearInterpolator()
         animator.repeatCount = ValueAnimator.INFINITE
-        animator.addUpdateListener { animation -> sinusoidalWaveView.setPhaseAngle(animation.animatedValue as Int) }
+        animator.addUpdateListener { animation ->
+            viewBinding?.sinusoidalWaveView?.setPhaseAngle(
+                animation.animatedValue as Int
+            )
+        }
         animator.start()
     }
 }

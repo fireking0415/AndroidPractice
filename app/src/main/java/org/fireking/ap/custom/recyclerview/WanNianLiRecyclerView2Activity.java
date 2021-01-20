@@ -19,7 +19,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.alibaba.android.vlayout.DelegateAdapter;
 import com.alibaba.android.vlayout.VirtualLayoutManager;
-import com.gyf.barlibrary.ImmersionBar;
 import com.haibin.calendarview.CalendarView;
 
 import org.fireking.ap.R;
@@ -49,8 +48,6 @@ public class WanNianLiRecyclerView2Activity extends AppCompatActivity {
     private Button btnBackToCalendar;
     private TextView tvMonth;
 
-    private ImmersionBar immersionBar;
-
     public static void start(Context context) {
         context.startActivity(new Intent(context, WanNianLiRecyclerView2Activity.class));
     }
@@ -59,9 +56,6 @@ public class WanNianLiRecyclerView2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wan_nian_li_recycler_view2);
-
-        immersionBar = ImmersionBar.with(this);
-        immersionBar.statusBarDarkFont(false, 1F).statusBarColor(R.color.colorPrimary).init();
 
         initView();
 
@@ -241,10 +235,5 @@ public class WanNianLiRecyclerView2Activity extends AppCompatActivity {
     private void showCalendarBar(boolean isShowCalendar) {
         calendar_title_bar.setVisibility(isShowCalendar ? View.VISIBLE : View.GONE);
         news_title_bar.setVisibility(isShowCalendar ? View.GONE : View.VISIBLE);
-        if (isShowCalendar) {
-            immersionBar.statusBarDarkFont(false, 1F).statusBarColor(R.color.colorPrimary).init();
-        } else {
-            immersionBar.statusBarDarkFont(true, 1F).statusBarColor(R.color.white).init();
-        }
     }
 }

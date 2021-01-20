@@ -1,13 +1,16 @@
 package org.fireking.ap.custom.coordinatorLayout
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_coordinator_layout.*
-import org.fireking.ap.R
+import android.view.LayoutInflater
+import androidx.appcompat.app.AppCompatActivity
+import org.fireking.ap.databinding.ActivityCoordinatorLayoutBinding
 import org.jetbrains.anko.intentFor
 
 class CoordinatorLayoutActivity : AppCompatActivity() {
+
+    private var viewBinding: ActivityCoordinatorLayoutBinding? = null
+
     companion object {
         @JvmStatic
         fun start(context: Context) {
@@ -17,9 +20,9 @@ class CoordinatorLayoutActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_coordinator_layout)
-
-        btnDemo1.setOnClickListener {
+        viewBinding = ActivityCoordinatorLayoutBinding.inflate(LayoutInflater.from(this))
+        setContentView(viewBinding?.root)
+        viewBinding?.btnDemo1?.setOnClickListener {
             CoorDemo1Activity.start(this)
         }
     }

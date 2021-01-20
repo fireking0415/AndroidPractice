@@ -1,13 +1,15 @@
 package org.fireking.ap.custom.bezier
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_bezier_sample.*
-import org.fireking.ap.R
+import android.view.LayoutInflater
+import androidx.appcompat.app.AppCompatActivity
+import org.fireking.ap.databinding.ActivityBezierSampleBinding
 import org.jetbrains.anko.intentFor
 
 class BezierSampleActivity : AppCompatActivity() {
+
+    private var viewBinding: ActivityBezierSampleBinding? = null
 
     companion object {
 
@@ -19,10 +21,11 @@ class BezierSampleActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_bezier_sample)
+        viewBinding = ActivityBezierSampleBinding.inflate(LayoutInflater.from(this))
+        setContentView(viewBinding?.root)
 
-        btnStart.setOnClickListener {
-            bezierView.startAnimation()
+        viewBinding?.btnStart?.setOnClickListener {
+            viewBinding?.bezierView?.startAnimation()
         }
     }
 }

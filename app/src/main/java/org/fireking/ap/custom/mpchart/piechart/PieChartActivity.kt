@@ -4,14 +4,17 @@ import android.content.Context
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
-import kotlinx.android.synthetic.main.activity_pie_chart.*
 import org.fireking.ap.R
+import org.fireking.ap.databinding.ActivityPieChartBinding
 import org.jetbrains.anko.intentFor
 
 class PieChartActivity : AppCompatActivity() {
+
+    private var viewBinding: ActivityPieChartBinding? = null
 
     companion object {
         @JvmStatic
@@ -22,7 +25,8 @@ class PieChartActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_pie_chart)
+        viewBinding = ActivityPieChartBinding.inflate(LayoutInflater.from(this))
+        setContentView(viewBinding?.root)
 
         drawPieChartView1()
     }
@@ -43,7 +47,7 @@ class PieChartActivity : AppCompatActivity() {
         val pieData = PieData(pieDataSet)
         pieData.setDrawValues(true)
 
-        pieChatView.data = pieData
-        pieChatView.invalidate()
+        viewBinding?.pieChatView?.data = pieData
+        viewBinding?.pieChatView?.invalidate()
     }
 }

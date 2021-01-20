@@ -9,17 +9,17 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.target.DrawableImageViewTarget
 import com.bumptech.glide.request.transition.Transition
-import kotlinx.android.synthetic.main.activity_gif_load.*
 import okhttp3.*
-import org.fireking.ap.R
+import org.fireking.ap.databinding.ActivityGifLoadBinding
 import org.jetbrains.anko.intentFor
 import pl.droidsonroids.gif.GifDrawable
 import java.io.IOException
 
 class GifLoadActivity : AppCompatActivity() {
 
-    companion object {
+    private var viewBinding: ActivityGifLoadBinding? = null
 
+    companion object {
         @JvmStatic
         fun start(context: Context) {
             context.startActivity(context.intentFor<GifLoadActivity>())
@@ -28,32 +28,36 @@ class GifLoadActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_gif_load)
+        setContentView(viewBinding?.root)
 
-        btnGifDrawable.setOnClickListener {
+        viewBinding?.btnGifDrawable?.setOnClickListener {
             downloadGif("http://geek-calendar-test.oss-cn-shanghai.aliyuncs.com/2020-08-10/1597050105581Vff159.gif")
         }
 
-        btnGlideLoad.setOnClickListener {
-            Glide.with(this@GifLoadActivity).asGif()
-                .load("http://geek-calendar-test.oss-cn-shanghai.aliyuncs.com/2020-08-10/1597050105581Vff159.gif")
-                .into(ivGlide)
+        viewBinding?.btnGlideLoad?.setOnClickListener {
+            viewBinding?.ivGlide?.apply {
+                Glide.with(this@GifLoadActivity).asGif()
+                    .load("http://geek-calendar-test.oss-cn-shanghai.aliyuncs.com/2020-08-10/1597050105581Vff159.gif")
+                    .into(this)
+            }
         }
 
-        btnGlideTargetLoad.setOnClickListener {
-            Glide.with(this@GifLoadActivity).asDrawable()
-                .load("http://geek-calendar-test.oss-cn-shanghai.aliyuncs.com/2020-08-10/1597050105581Vff159.gif")
-                .skipMemoryCache(true)
-                .override(200, 200)
-                .diskCacheStrategy(DiskCacheStrategy.NONE)
-                .into(object : DrawableImageViewTarget(ivGlide) {
-                    override fun onResourceReady(
-                        resource: Drawable,
-                        transition: Transition<in Drawable?>?
-                    ) {
-                        super.onResourceReady(resource, transition)
-                    }
-                })
+        viewBinding?.btnGlideTargetLoad?.setOnClickListener {
+            viewBinding?.ivGlide?.apply {
+                Glide.with(this@GifLoadActivity).asDrawable()
+                    .load("http://geek-calendar-test.oss-cn-shanghai.aliyuncs.com/2020-08-10/1597050105581Vff159.gif")
+                    .skipMemoryCache(true)
+                    .override(200, 200)
+                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+                    .into(object : DrawableImageViewTarget(this) {
+                        override fun onResourceReady(
+                            resource: Drawable,
+                            transition: Transition<in Drawable?>?
+                        ) {
+                            super.onResourceReady(resource, transition)
+                        }
+                    })
+            }
         }
     }
 
@@ -73,7 +77,7 @@ class GifLoadActivity : AppCompatActivity() {
                     Toast.makeText(this@GifLoadActivity, "Gif下载成功", Toast.LENGTH_SHORT).show()
                     bytes?.let {
                         val drawable = GifDrawable(it)
-                        gifDrawable.setImageDrawable(drawable)
+                        viewBinding?.gifDrawable?.setImageDrawable(drawable)
                     }
                 }
             }
@@ -81,11 +85,11 @@ class GifLoadActivity : AppCompatActivity() {
     }
 
     override fun onDestroy() {
-        if (gifDrawable.drawable is GifDrawable) {
-            if ((gifDrawable.drawable as GifDrawable).isRunning) {
-                (gifDrawable.drawable as GifDrawable).stop()
+        if (viewBinding?.gifDrawable?.drawable is GifDrawable) {
+            if ((viewBinding?.gifDrawable?.drawable as GifDrawable).isRunning) {
+                (viewBinding?.gifDrawable?.drawable as GifDrawable).stop()
             }
-            (gifDrawable.drawable as GifDrawable).recycle()
+            (viewBinding?.gifDrawable?.drawable as GifDrawable).recycle()
         }
         super.onDestroy()
     }

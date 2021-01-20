@@ -6,11 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.viewpager_fragment.*
-import org.fireking.ap.R
 import org.fireking.ap.custom.viewevent.adapter.ViewPagerFragmentAdapter
+import org.fireking.ap.databinding.ViewpagerFragmentBinding
 
 class ViewPagerFragment : Fragment() {
+
+    private var viewBinding: ViewpagerFragmentBinding? = null
 
     companion object {
         @JvmStatic
@@ -24,13 +25,14 @@ class ViewPagerFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.viewpager_fragment, container, false)
+        viewBinding = ViewpagerFragmentBinding.inflate(inflater, container, false)
+        return viewBinding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        rv_content_list.layoutManager = LinearLayoutManager(requireContext())
-        rv_content_list.adapter = ViewPagerFragmentAdapter(this)
+        viewBinding?.rvContentList?.layoutManager = LinearLayoutManager(requireContext())
+        viewBinding?.rvContentList?.adapter = ViewPagerFragmentAdapter(this)
     }
 }

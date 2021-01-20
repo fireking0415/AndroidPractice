@@ -6,14 +6,17 @@ import android.graphics.ImageDecoder
 import android.graphics.drawable.AnimatedImageDrawable
 import android.os.Build
 import android.os.Bundle
+import android.view.LayoutInflater
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_gif_load_by_animated_image_drawable.*
 import org.fireking.ap.R
+import org.fireking.ap.databinding.ActivityGifLoadByAnimatedImageDrawableBinding
 import org.jetbrains.anko.intentFor
 
 
 class GifLoadByAnimatedImageDrawableActivity : AppCompatActivity() {
+
+    private var viewBinding: ActivityGifLoadByAnimatedImageDrawableBinding? = null
 
     companion object {
         @JvmStatic
@@ -26,7 +29,8 @@ class GifLoadByAnimatedImageDrawableActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.P)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_gif_load_by_animated_image_drawable)
+        viewBinding = ActivityGifLoadByAnimatedImageDrawableBinding.inflate(LayoutInflater.from(this))
+        setContentView(viewBinding?.root)
 
         val drawable =
             ImageDecoder.decodeDrawable(ImageDecoder.createSource(resources, R.mipmap.ic_banner))
@@ -37,7 +41,7 @@ class GifLoadByAnimatedImageDrawableActivity : AppCompatActivity() {
             resources.displayMetrics.widthPixels,
             (drawable.intrinsicHeight * scale).toInt()
         )
-        iv_load_gif.setImageDrawable(drawable)
+        viewBinding?.ivLoadGif?.setImageDrawable(drawable)
         if (drawable is AnimatedImageDrawable) {
             drawable.repeatCount = AnimatedImageDrawable.REPEAT_INFINITE
             drawable.start()

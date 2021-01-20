@@ -2,13 +2,15 @@ package org.fireking.ap.custom.basic
 
 import android.content.Context
 import android.os.Bundle
+import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_x_mind.*
-import org.fireking.ap.R
 import org.fireking.ap.custom.basic.viewgroup.MapNode
+import org.fireking.ap.databinding.ActivityXMindBinding
 import org.jetbrains.anko.intentFor
 
 class XMindActivity : AppCompatActivity() {
+
+    private var viewBinding: ActivityXMindBinding? = null
 
     companion object {
         @JvmStatic
@@ -19,9 +21,10 @@ class XMindActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_x_mind)
-        xMindView.post {
-            xMindView.setData(
+        viewBinding = ActivityXMindBinding.inflate(LayoutInflater.from(this))
+        setContentView(viewBinding?.root)
+        viewBinding?.xMindView?.post {
+            viewBinding?.xMindView?.setData(
                 arrayListOf(
                     MapNode(isTheme = true, hasSubNode = true, nodeName = "供应商", level = 1),
                     MapNode(hasSubNode = true, nodeName = "上海交通大学", level = 2),

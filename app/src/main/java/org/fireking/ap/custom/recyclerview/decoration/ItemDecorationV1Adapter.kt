@@ -3,19 +3,17 @@ package org.fireking.ap.custom.recyclerview.decoration
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.news_list_item2.*
 import org.fireking.ap.R
 
 class ItemDecorationV1Adapter :
     RecyclerView.Adapter<ItemDecorationV1Adapter.ItemDecorationV1ViewHolder>() {
 
-    class ItemDecorationV1ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
-        LayoutContainer {
+    class ItemDecorationV1ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         fun bind() {
-            tv_text.text = "当前是$adapterPosition"
+            itemView.findViewById<TextView>(R.id.tv_text).text = "当前是$adapterPosition"
             itemView.setOnClickListener {
                 Toast.makeText(
                     itemView.context,
@@ -24,10 +22,6 @@ class ItemDecorationV1Adapter :
                 ).show()
             }
         }
-
-        override val containerView: View?
-            get() = itemView
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemDecorationV1ViewHolder {

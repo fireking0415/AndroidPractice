@@ -2,12 +2,14 @@ package org.fireking.ap.custom.basic
 
 import android.content.Context
 import android.os.Bundle
+import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_histogram.*
-import org.fireking.ap.R
+import org.fireking.ap.databinding.ActivityHistogramBinding
 import org.jetbrains.anko.intentFor
 
 class HistogramActivity : AppCompatActivity() {
+
+    private var viewBinding: ActivityHistogramBinding? = null
 
     companion object {
 
@@ -19,7 +21,8 @@ class HistogramActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_histogram)
+        viewBinding = ActivityHistogramBinding.inflate(LayoutInflater.from(this))
+        setContentView(viewBinding?.root)
 
         val oneBarList = ArrayList<Float>()
         oneBarList.add(1800F)
@@ -41,6 +44,6 @@ class HistogramActivity : AppCompatActivity() {
         labelList.add("2019")
         labelList.add("2020")
         labelList.add("2021")
-        barChart.setData(oneBarList, twoBarList, labelList)
+        viewBinding?.barChart?.setData(oneBarList, twoBarList, labelList)
     }
 }

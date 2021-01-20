@@ -1,13 +1,16 @@
 package org.fireking.ap.custom.anim.motionlayout
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_motion_sample2.*
-import org.fireking.ap.R
+import android.view.LayoutInflater
+import androidx.appcompat.app.AppCompatActivity
+import org.fireking.ap.databinding.ActivityMotionSample2Binding
 import org.jetbrains.anko.intentFor
 
 class MotionSampleActivity : AppCompatActivity() {
+
+    private var viewBinding: ActivityMotionSample2Binding? = null
+
     companion object {
 
         @JvmStatic
@@ -18,21 +21,22 @@ class MotionSampleActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_motion_sample2)
+        viewBinding = ActivityMotionSample2Binding.inflate(LayoutInflater.from(this))
+        setContentView(viewBinding?.root)
 
-        btnV1.setOnClickListener {
+        viewBinding?.btnV1?.setOnClickListener {
             MotionLayoutV1Activity.start(this)
         }
 
-        btnV2.setOnClickListener {
+        viewBinding?.btnV2?.setOnClickListener {
             MotionLayoutV2Activity.start(this)
         }
 
-        btnV3.setOnClickListener {
+        viewBinding?.btnV3?.setOnClickListener {
             MotionLayoutV3Activity.start(this)
         }
 
-        btnV4.setOnClickListener {
+        viewBinding?.btnV4?.setOnClickListener {
             MotionLayoutV4Activity.start(this)
         }
     }

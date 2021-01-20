@@ -2,13 +2,16 @@ package org.fireking.ap.custom.viewgroup
 
 import android.content.Context
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_custom_view_group.*
 import org.fireking.ap.R
+import org.fireking.ap.databinding.ActivityCustomViewGroupBinding
 import org.jetbrains.anko.intentFor
 
 class CustomViewGroupActivity : AppCompatActivity() {
+
+    private var viewBinding: ActivityCustomViewGroupBinding? = null
 
     companion object {
 
@@ -20,7 +23,8 @@ class CustomViewGroupActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_custom_view_group)
+        viewBinding = ActivityCustomViewGroupBinding.inflate(LayoutInflater.from(this))
+        setContentView(viewBinding?.root)
 
         findViewById<Button>(R.id.btnVerifyCodeInput).setOnClickListener {
             VerifyCodeInputLayoutActivity.startActivity(this@CustomViewGroupActivity)
@@ -35,11 +39,11 @@ class CustomViewGroupActivity : AppCompatActivity() {
             ShaderCardActivity.start(this@CustomViewGroupActivity)
         }
 
-        btnTextAndView.setOnClickListener {
+        viewBinding?.btnTextAndView?.setOnClickListener {
             TextAndViewAlignActivity.start(this@CustomViewGroupActivity)
         }
 
-        btnDouyinHeader.setOnClickListener {
+        viewBinding?.btnDouyinHeader?.setOnClickListener {
             DouyinHeartPortraitActivity.start(this@CustomViewGroupActivity)
         }
     }

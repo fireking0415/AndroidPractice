@@ -2,12 +2,15 @@ package org.fireking.ap.custom.viewevent
 
 import android.content.Context
 import android.os.Bundle
+import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_view_event_sample.*
 import org.fireking.ap.R
+import org.fireking.ap.databinding.ActivityViewEventSampleBinding
 import org.jetbrains.anko.intentFor
 
 class ViewEventSampleActivity : AppCompatActivity() {
+
+    private var viewBinding: ActivityViewEventSampleBinding? = null
 
     companion object {
         @JvmStatic
@@ -18,9 +21,10 @@ class ViewEventSampleActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_view_event_sample)
+        viewBinding = ActivityViewEventSampleBinding.inflate(LayoutInflater.from(this))
+        setContentView(viewBinding?.root)
 
-        btnViewPagerPlusViewPager.setOnClickListener {
+        viewBinding?.btnViewPagerPlusViewPager?.setOnClickListener {
             ViewPagerPlusViewPagerActivity.start(this@ViewEventSampleActivity)
         }
     }

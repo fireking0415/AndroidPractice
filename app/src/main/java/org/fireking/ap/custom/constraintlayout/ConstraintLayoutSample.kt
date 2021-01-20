@@ -2,12 +2,14 @@ package org.fireking.ap.custom.constraintlayout
 
 import android.content.Context
 import android.os.Bundle
+import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_constraint_layout_sample.*
-import org.fireking.ap.R
+import org.fireking.ap.databinding.ActivityConstraintLayoutSampleBinding
 import org.jetbrains.anko.intentFor
 
 class ConstraintLayoutSample : AppCompatActivity() {
+
+    private var viewBinding: ActivityConstraintLayoutSampleBinding? = null
 
     companion object {
 
@@ -19,9 +21,10 @@ class ConstraintLayoutSample : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_constraint_layout_sample)
+        viewBinding = ActivityConstraintLayoutSampleBinding.inflate(LayoutInflater.from(this))
+        setContentView(viewBinding?.root)
 
-        btnV1.setOnClickListener {
+        viewBinding?.btnV1?.setOnClickListener {
             ConstaintLayoutV1.start(this@ConstraintLayoutSample)
         }
     }

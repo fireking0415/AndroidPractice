@@ -1,13 +1,15 @@
 package org.fireking.ap.custom.notification
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_notification.*
-import org.fireking.ap.R
+import android.view.LayoutInflater
+import androidx.appcompat.app.AppCompatActivity
+import org.fireking.ap.databinding.ActivityNotificationBinding
 import org.jetbrains.anko.intentFor
 
 class NotificationActivity : AppCompatActivity() {
+
+    private var viewBinding: ActivityNotificationBinding? = null
 
     companion object {
         @JvmStatic
@@ -18,10 +20,7 @@ class NotificationActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_notification)
-
-        btnNotificationV1.setOnClickListener {
-
-        }
+        viewBinding = ActivityNotificationBinding.inflate(LayoutInflater.from(this))
+        setContentView(viewBinding?.root)
     }
 }

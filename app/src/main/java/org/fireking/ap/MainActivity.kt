@@ -3,7 +3,6 @@ package org.fireking.ap
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.*
 import org.fireking.ap.custom.anim.AnimActivity
 import org.fireking.ap.custom.arouter.ARouterSampleActivity
 import org.fireking.ap.custom.basic.CanvasBasicActivity
@@ -88,7 +87,7 @@ class MainActivity : AppCompatActivity() {
             NewFunctionActivity.start(this@MainActivity)
         }
 
-        btnThread.setOnClickListener {
+        viewBinding.btnThread.setOnClickListener {
             ThreadActivity.start(this@MainActivity)
         }
 
@@ -96,23 +95,23 @@ class MainActivity : AppCompatActivity() {
             ViewEventSampleActivity.start(this@MainActivity)
         }
 
-        btnRestudy.setOnClickListener {
+        viewBinding.btnRestudy.setOnClickListener {
             RestudyActivity.start(this@MainActivity)
         }
 
-        btnTestImage.setOnClickListener {
+        viewBinding.btnTestImage.setOnClickListener {
             ImageActivity.start(this@MainActivity)
         }
 
-        btnLiveDataViewModel.setOnClickListener {
+        viewBinding.btnLiveDataViewModel.setOnClickListener {
             LiveDataViewModelActivity.start(this@MainActivity)
         }
 
-        btnTestTextView.setOnClickListener {
+        viewBinding.btnTestTextView.setOnClickListener {
             TestTextViewActivity.start(this@MainActivity)
         }
 
-        btnMPLineChart.setOnClickListener {
+        viewBinding.btnMPLineChart.setOnClickListener {
             MPChartActivity.start(this)
         }
 

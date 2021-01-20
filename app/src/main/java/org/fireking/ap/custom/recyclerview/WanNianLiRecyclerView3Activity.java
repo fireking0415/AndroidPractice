@@ -18,7 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.gyf.barlibrary.ImmersionBar;
+import com.gyf.immersionbar.ImmersionBar;
 
 import org.fireking.ap.R;
 import org.fireking.ap.custom.recyclerview.v2.NewsFragment;
@@ -62,10 +62,6 @@ public class WanNianLiRecyclerView3Activity extends AppCompatActivity {
         initRecyclerViewPool();
 
         initRecyclerViewAdapter();
-
-//        bindItemTouchListener();
-
-//        initListener();
     }
 
     private void initListener() {

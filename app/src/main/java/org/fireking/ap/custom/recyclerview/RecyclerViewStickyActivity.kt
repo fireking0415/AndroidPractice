@@ -2,16 +2,19 @@ package org.fireking.ap.custom.recyclerview
 
 import android.content.Context
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.activity_recycler_view_sticky.*
 import org.fireking.ap.R
 import org.fireking.ap.custom.recyclerview.v2.News2Adapter
+import org.fireking.ap.databinding.ActivityRecyclerViewStickyBinding
 import org.jetbrains.anko.intentFor
 
 class RecyclerViewStickyActivity : AppCompatActivity() {
+
+    private var viewBinding: ActivityRecyclerViewStickyBinding? = null
 
     companion object {
         @JvmStatic
@@ -25,21 +28,22 @@ class RecyclerViewStickyActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_recycler_view_sticky)
+        viewBinding = ActivityRecyclerViewStickyBinding.inflate(LayoutInflater.from(this))
+        setContentView(viewBinding?.root)
 
         findViewById<Button>(R.id.btnAdd).setOnClickListener {
             newAdapter.addItem()
         }
 
         newAdapter = News2Adapter()
-        recyclerView.layoutManager = object : LinearLayoutManager(this) {
+        viewBinding?.recyclerView?.layoutManager = object : LinearLayoutManager(this) {
             override fun canScrollVertically(): Boolean {
                 return super.canScrollVertically() && !isSticky
             }
         }
-        recyclerView.adapter = newAdapter
+        viewBinding?.recyclerView?.adapter = newAdapter
 
-        recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+        viewBinding?.recyclerView?.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 isSticky = !recyclerView.canScrollVertically(1)
             }

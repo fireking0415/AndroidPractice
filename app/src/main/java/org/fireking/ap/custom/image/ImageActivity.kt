@@ -2,12 +2,14 @@ package org.fireking.ap.custom.image
 
 import android.content.Context
 import android.os.Bundle
+import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_image.*
-import org.fireking.ap.R
+import org.fireking.ap.databinding.ActivityImageBinding
 import org.jetbrains.anko.intentFor
 
 class ImageActivity : AppCompatActivity() {
+
+    private var viewBinding: ActivityImageBinding? = null
 
     companion object {
         @JvmStatic
@@ -18,25 +20,26 @@ class ImageActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_image)
+        viewBinding = ActivityImageBinding.inflate(LayoutInflater.from(this))
+        setContentView(viewBinding?.root)
 
-        btnTestGlideTarget.setOnClickListener {
+        viewBinding?.btnTestGlideTarget?.setOnClickListener {
             ImageTestActivity.start(this@ImageActivity)
         }
 
-        btnTestGifMemory.setOnClickListener {
+        viewBinding?.btnTestGifMemory?.setOnClickListener {
             GifLoadActivity.start(this@ImageActivity)
         }
 
-        btnLoadGifByCanvas.setOnClickListener {
+        viewBinding?.btnLoadGifByCanvas?.setOnClickListener {
             GifLoadByCanvasActivity.start(this@ImageActivity)
         }
 
-        btnLoadGifByAnimatedImageDrawable.setOnClickListener {
+        viewBinding?.btnLoadGifByAnimatedImageDrawable?.setOnClickListener {
             GifLoadByAnimatedImageDrawableActivity.start(this@ImageActivity)
         }
 
-        btnMatrix.setOnClickListener {
+        viewBinding?.btnMatrix?.setOnClickListener {
             MatrixTransformActivity.start(this@ImageActivity)
         }
     }

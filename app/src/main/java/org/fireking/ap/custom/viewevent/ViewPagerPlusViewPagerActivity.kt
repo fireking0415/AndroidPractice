@@ -2,13 +2,15 @@ package org.fireking.ap.custom.viewevent
 
 import android.content.Context
 import android.os.Bundle
+import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_view_pager_plus_view_pager.*
-import org.fireking.ap.R
 import org.fireking.ap.custom.viewevent.adapter.ViewPagerOutAdapter
+import org.fireking.ap.databinding.ActivityViewPagerPlusViewPagerBinding
 import org.jetbrains.anko.intentFor
 
 class ViewPagerPlusViewPagerActivity : AppCompatActivity() {
+
+    private var viewBinding: ActivityViewPagerPlusViewPagerBinding? = null
 
     companion object {
         @JvmStatic
@@ -19,8 +21,9 @@ class ViewPagerPlusViewPagerActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_view_pager_plus_view_pager)
+        viewBinding = ActivityViewPagerPlusViewPagerBinding.inflate(LayoutInflater.from(this))
+        setContentView(viewBinding?.root)
 
-        outViewPager.adapter = ViewPagerOutAdapter(supportFragmentManager)
+        viewBinding?.outViewPager?.adapter = ViewPagerOutAdapter(supportFragmentManager)
     }
 }

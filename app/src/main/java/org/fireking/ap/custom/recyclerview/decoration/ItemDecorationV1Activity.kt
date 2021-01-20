@@ -1,17 +1,18 @@
 package org.fireking.ap.custom.recyclerview.decoration
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.widget.ImageView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.activity_item_decoration_v1.*
-import org.fireking.ap.R
+import org.fireking.ap.databinding.ActivityItemDecorationV1Binding
+import org.fireking.ap.databinding.DecorationSpaceLayoutBinding
 import org.jetbrains.anko.intentFor
 
 class ItemDecorationV1Activity : AppCompatActivity() {
+
+    private var viewBinding: ActivityItemDecorationV1Binding? = null
 
     companion object {
         @JvmStatic
@@ -22,26 +23,30 @@ class ItemDecorationV1Activity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_item_decoration_v1)
+        viewBinding = ActivityItemDecorationV1Binding.inflate(LayoutInflater.from(this))
+        setContentView(viewBinding?.root)
 
-        rv_content_list.layoutManager = LinearLayoutManager(this)
-        val stickyView = LayoutInflater.from(this)
-            .inflate(R.layout.decoration_space_layout, rv_content_list, false)
-        stickyView.findViewById<ImageView>(R.id.iv_launcher).setOnClickListener {
+        viewBinding?.rvContentList?.layoutManager = LinearLayoutManager(this)
+        val stickyView = DecorationSpaceLayoutBinding.inflate(
+            LayoutInflater.from(this),
+            viewBinding?.rvContentList,
+            false
+        )
+        stickyView.ivLauncher.setOnClickListener {
             Toast.makeText(this, "点击了图标", Toast.LENGTH_SHORT).show()
         }
         val itemDecoration = PowerStickyItemDecoration(
             context = this,
-            stickyView = stickyView,
+            stickyView = stickyView.root,
             stickyPosition = 2
         )
-        rv_content_list.addItemDecoration(itemDecoration)
-        rv_content_list.addOnItemTouchListener(
+        viewBinding?.rvContentList?.addItemDecoration(itemDecoration)
+        viewBinding?.rvContentList?.addOnItemTouchListener(
             PowerStickyItemTouchListener(
-                rv_content_list,
+                viewBinding?.rvContentList!!,
                 itemDecoration
             )
         )
-        rv_content_list.adapter = ItemDecorationV1Adapter()
+        viewBinding?.rvContentList?.adapter = ItemDecorationV1Adapter()
     }
 }

@@ -3,17 +3,20 @@ package org.fireking.ap.custom.mpchart.radarchart
 import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
+import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import com.github.mikephil.charting.data.RadarData
 import com.github.mikephil.charting.data.RadarDataSet
 import com.github.mikephil.charting.data.RadarEntry
 import com.github.mikephil.charting.formatter.ValueFormatter
 import com.github.mikephil.charting.utils.Utils
-import kotlinx.android.synthetic.main.activity_radar_chart_sample.*
 import org.fireking.ap.R
+import org.fireking.ap.databinding.ActivityRadarChartSampleBinding
 import org.jetbrains.anko.intentFor
 
 class RadarChartSampleActivity : AppCompatActivity() {
+
+    private var viewBinding: ActivityRadarChartSampleBinding? = null
 
     companion object {
 
@@ -32,7 +35,8 @@ class RadarChartSampleActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_radar_chart_sample)
+        viewBinding = ActivityRadarChartSampleBinding.inflate(LayoutInflater.from(this))
+        setContentView(viewBinding?.root)
 
         initRadarLayoutV1()
         initRadarLayoutV2()
@@ -40,19 +44,19 @@ class RadarChartSampleActivity : AppCompatActivity() {
     }
 
     private fun initRaderLayoutV3() {
-        radarChart3.setBackgroundColor(Color.parseColor("#80fd3a69"))
-        radarChart3.setNoDataText(null)
-        radarChart3.description.isEnabled = false
-        radarChart3.legend.isEnabled = false
-        radarChart3.yAxis.isEnabled = false
-        radarChart3.xAxis.valueFormatter = object : ValueFormatter() {
+        viewBinding?.radarChart3?.setBackgroundColor(Color.parseColor("#80fd3a69"))
+        viewBinding?.radarChart3?.setNoDataText(null)
+        viewBinding?.radarChart3?.description?.isEnabled = false
+        viewBinding?.radarChart3?.legend?.isEnabled = false
+        viewBinding?.radarChart3?.yAxis?.isEnabled = false
+        viewBinding?.radarChart3?.xAxis?.valueFormatter = object : ValueFormatter() {
             override fun getFormattedValue(value: Float): String {
                 return LABELS[(value % LABELS.size).toInt()]
             }
         }
-        radarChart3.animateX(1000)
-        radarChart3.animateY(1000)
-        radarChart3.yAxis.axisMinimum = 0F
+        viewBinding?.radarChart3?.animateX(1000)
+        viewBinding?.radarChart3?.animateY(1000)
+        viewBinding?.radarChart3?.yAxis?.axisMinimum = 0F
         val radarDataEntities = ArrayList<RadarEntry>()
         for (index in 0 until 5) {
             radarDataEntities.add(RadarEntry(0F))
@@ -64,25 +68,25 @@ class RadarChartSampleActivity : AppCompatActivity() {
         radarDataSet.fillAlpha = 255
         radarDataSet.color = Color.parseColor("#F14400")
         val radarData = RadarData(radarDataSet)
-        radarChart3.data = radarData
-        radarChart3.isHighlightPerTapEnabled = false
-        radarChart3.invalidate()
+        viewBinding?.radarChart3?.data = radarData
+        viewBinding?.radarChart3?.isHighlightPerTapEnabled = false
+        viewBinding?.radarChart3?.invalidate()
     }
 
     private fun initRadarLayoutV2() {
-        radarChart2.setBackgroundColor(Color.parseColor("#80DDFF33"))
-        radarChart2.setNoDataText(null)
-        radarChart2.description.isEnabled = false
-        radarChart2.legend.isEnabled = false
-        radarChart2.yAxis.isEnabled = false
-        radarChart2.xAxis.valueFormatter = object : ValueFormatter() {
+        viewBinding?.radarChart2?.setBackgroundColor(Color.parseColor("#80DDFF33"))
+        viewBinding?.radarChart2?.setNoDataText(null)
+        viewBinding?.radarChart2?.description?.isEnabled = false
+        viewBinding?.radarChart2?.legend?.isEnabled = false
+        viewBinding?.radarChart2?.yAxis?.isEnabled = false
+        viewBinding?.radarChart2?.xAxis?.valueFormatter = object : ValueFormatter() {
             override fun getFormattedValue(value: Float): String {
                 return LABELS[(value % LABELS.size).toInt()]
             }
         }
-        radarChart2.animateX(1000)
-        radarChart2.animateY(1000)
-        radarChart2.yAxis.axisMinimum = 0F
+        viewBinding?.radarChart2?.animateX(1000)
+        viewBinding?.radarChart2?.animateY(1000)
+        viewBinding?.radarChart2?.yAxis?.axisMinimum = 0F
         val radarDataEntities = ArrayList<RadarEntry>()
         for (index in 0 until 5) {
             radarDataEntities.add(RadarEntry(ITEMS[index].toFloat()))
@@ -93,15 +97,15 @@ class RadarChartSampleActivity : AppCompatActivity() {
         radarDataSet.setDrawValues(false)
         radarDataSet.color = Color.parseColor("#F14400")
         val radarData = RadarData(radarDataSet)
-        radarChart2.data = radarData
-        radarChart2.isHighlightPerTapEnabled = false
-        radarChart2.invalidate()
+        viewBinding?.radarChart2?.data = radarData
+        viewBinding?.radarChart2?.isHighlightPerTapEnabled = false
+        viewBinding?.radarChart2?.invalidate()
     }
 
     private fun initRadarLayoutV1() {
-        radarChart.setBackgroundColor(Color.parseColor("#80334455"))
-        radarChart.setNoDataText(null)
-        radarChart.description.isEnabled = false
+        viewBinding?.radarChart?.setBackgroundColor(Color.parseColor("#80334455"))
+        viewBinding?.radarChart?.setNoDataText(null)
+        viewBinding?.radarChart?.description?.isEnabled = false
 
         val radarDataEntityList = ArrayList<RadarEntry>()
         radarDataEntityList.add(RadarEntry(100F))
@@ -117,21 +121,21 @@ class RadarChartSampleActivity : AppCompatActivity() {
         val radarData = RadarData(radarDataSet)
         radarData.setDrawValues(false)
 
-        radarChart.yAxis.axisMinimum = 0F
-        radarChart.yAxis.axisMaximum = 100F
-        radarChart.yAxis.setLabelCount(5, true)
-        radarChart.yAxis.setDrawLabels(false)
-        radarChart.xAxis.xOffset = Utils.convertDpToPixel(5F)
-        radarChart.xAxis.yOffset = Utils.convertDpToPixel(5F)
+        viewBinding?.radarChart?.yAxis?.axisMinimum = 0F
+        viewBinding?.radarChart?.yAxis?.axisMaximum = 100F
+        viewBinding?.radarChart?.yAxis?.setLabelCount(5, true)
+        viewBinding?.radarChart?.yAxis?.setDrawLabels(false)
+        viewBinding?.radarChart?.xAxis?.xOffset = Utils.convertDpToPixel(5F)
+        viewBinding?.radarChart?.xAxis?.yOffset = Utils.convertDpToPixel(5F)
         val temp = arrayListOf("技术趋势", "价值评估", "交易机会", "舆情分析", "资金流向")
-        radarChart.xAxis.valueFormatter = object : ValueFormatter() {
+        viewBinding?.radarChart?.xAxis?.valueFormatter = object : ValueFormatter() {
             override fun getFormattedValue(value: Float): String {
                 return temp[(value % temp.size).toInt()]
             }
         }
-        radarChart.legend.isEnabled = false
+        viewBinding?.radarChart?.legend?.isEnabled = false
 
-        radarChart.data = radarData
-        radarChart.invalidate()
+        viewBinding?.radarChart?.data = radarData
+        viewBinding?.radarChart?.invalidate()
     }
 }

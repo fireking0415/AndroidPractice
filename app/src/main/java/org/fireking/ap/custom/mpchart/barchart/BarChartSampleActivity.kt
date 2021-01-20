@@ -3,15 +3,17 @@ package org.fireking.ap.custom.mpchart.barchart
 import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
+import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
-import kotlinx.android.synthetic.main.activity_bar_chart_sample.*
-import org.fireking.ap.R
+import org.fireking.ap.databinding.ActivityBarChartSampleBinding
 import org.jetbrains.anko.intentFor
 
 class BarChartSampleActivity : AppCompatActivity() {
+
+    private var viewBinding: ActivityBarChartSampleBinding? = null
 
     companion object {
         @JvmStatic
@@ -22,22 +24,23 @@ class BarChartSampleActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_bar_chart_sample)
+        viewBinding = ActivityBarChartSampleBinding.inflate(LayoutInflater.from(this))
+        setContentView(viewBinding?.root)
 
         initBarChartV1()
 
-        btnScroll.setOnClickListener {
-            barChartV1.viewPortHandler.setMaximumScaleX(0.5F)
-            barChartV1.invalidate()
+        viewBinding?.btnScroll?.setOnClickListener {
+            viewBinding?.barChartV1?.viewPortHandler?.setMaximumScaleX(0.5F)
+            viewBinding?.barChartV1?.invalidate()
         }
     }
 
     private fun initBarChartV1() {
-        barChartV1.setBackgroundColor(Color.parseColor("#80F14400"))
-        barChartV1.setNoDataText(null)
-        barChartV1.legend.isEnabled = false
-        barChartV1.axisLeft.isEnabled = false
-        barChartV1.axisRight.isEnabled = false
+        viewBinding?.barChartV1?.setBackgroundColor(Color.parseColor("#80F14400"))
+        viewBinding?.barChartV1?.setNoDataText(null)
+        viewBinding?.barChartV1?.legend?.isEnabled = false
+        viewBinding?.barChartV1?.axisLeft?.isEnabled = false
+        viewBinding?.barChartV1?.axisRight?.isEnabled = false
 
         val barDataList = ArrayList<BarEntry>()
         for (index in 0 until 100) {
@@ -48,7 +51,7 @@ class BarChartSampleActivity : AppCompatActivity() {
         val barDataSet = BarDataSet(barDataList, "demo1")
         val barData = BarData()
         barData.addDataSet(barDataSet)
-        barChartV1.data = barData
-        barChartV1.invalidate()
+        viewBinding?.barChartV1?.data = barData
+        viewBinding?.barChartV1?.invalidate()
     }
 }

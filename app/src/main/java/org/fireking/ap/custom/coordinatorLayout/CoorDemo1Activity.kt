@@ -1,13 +1,16 @@
 package org.fireking.ap.custom.coordinatorLayout
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_coor_demo1.*
-import org.fireking.ap.R
+import android.view.LayoutInflater
+import androidx.appcompat.app.AppCompatActivity
+import org.fireking.ap.databinding.ActivityCoorDemo1Binding
 import org.jetbrains.anko.intentFor
 
 class CoorDemo1Activity : AppCompatActivity() {
+
+    private var viewBinding: ActivityCoorDemo1Binding? = null
+
     companion object {
         @JvmStatic
         fun start(context: Context) {
@@ -17,8 +20,9 @@ class CoorDemo1Activity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_coor_demo1)
+        viewBinding = ActivityCoorDemo1Binding.inflate(LayoutInflater.from(this))
+        setContentView(viewBinding?.root)
 
-        view_pager.adapter = CoorDemo1Adapter(supportFragmentManager)
+        viewBinding?.viewPager?.adapter = CoorDemo1Adapter(supportFragmentManager)
     }
 }

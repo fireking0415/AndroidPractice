@@ -4,10 +4,9 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.nested_sample2_item.*
 import org.fireking.ap.R
 
 /**
@@ -25,10 +24,7 @@ class DiffUtil2Adapter : RecyclerView.Adapter<DiffUtil2Adapter.DiffUtilViewHolde
 
     private var dataSets = ArrayList<DiffBean>()
 
-    class DiffUtilViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), LayoutContainer {
-        override val containerView: View?
-            get() = itemView
-    }
+    class DiffUtilViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {}
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DiffUtilViewHolder {
         return DiffUtilViewHolder(
@@ -74,7 +70,7 @@ class DiffUtil2Adapter : RecyclerView.Adapter<DiffUtil2Adapter.DiffUtilViewHolde
         position: Int,
         payloads: MutableList<Any>
     ) {
-        holder.tv_title.text = dataSets.get(position).title
+        holder.itemView.findViewById<TextView>(R.id.tv_title).text = dataSets[position].title
         Log.e("info", "===================onBindViewHolder")
     }
 

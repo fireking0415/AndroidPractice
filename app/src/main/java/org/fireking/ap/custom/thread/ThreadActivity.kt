@@ -2,12 +2,15 @@ package org.fireking.ap.custom.thread
 
 import android.content.Context
 import android.os.Bundle
+import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_thread2.*
 import org.fireking.ap.R
+import org.fireking.ap.databinding.ActivityThread2Binding
 import org.jetbrains.anko.intentFor
 
 class ThreadActivity : AppCompatActivity() {
+
+    private var viewBinding: ActivityThread2Binding? = null
 
     companion object {
         @JvmStatic
@@ -18,9 +21,10 @@ class ThreadActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_thread2)
+        viewBinding = ActivityThread2Binding.inflate(LayoutInflater.from(this))
+        setContentView(viewBinding?.root)
 
-        btnCreateThread.setOnClickListener {
+        viewBinding?.btnCreateThread?.setOnClickListener {
             Thread(Runnable {
                 println("创建线程-->" + Thread.currentThread())
                 Thread.sleep(12000)

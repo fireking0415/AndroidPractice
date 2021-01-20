@@ -1,15 +1,16 @@
 package org.fireking.ap.custom.nested
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.LinearLayout
+import android.view.LayoutInflater
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.activity_nested_sample3.*
-import org.fireking.ap.R
+import org.fireking.ap.databinding.ActivityNestedSample3Binding
 import org.jetbrains.anko.intentFor
 
 class NestedSample3Activity : AppCompatActivity() {
+
+    private var viewBinding: ActivityNestedSample3Binding? = null
 
     companion object {
         @JvmStatic
@@ -20,9 +21,10 @@ class NestedSample3Activity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_nested_sample3)
+        viewBinding = ActivityNestedSample3Binding.inflate(LayoutInflater.from(this))
+        setContentView(viewBinding?.root)
 
-        contentList.layoutManager = LinearLayoutManager(this)
-        contentList.adapter = MainAdapter()
+        viewBinding?.contentList?.layoutManager = LinearLayoutManager(this)
+        viewBinding?.contentList?.adapter = MainAdapter()
     }
 }

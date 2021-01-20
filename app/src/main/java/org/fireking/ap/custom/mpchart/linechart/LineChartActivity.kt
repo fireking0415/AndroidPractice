@@ -3,19 +3,21 @@ package org.fireking.ap.custom.mpchart.linechart
 import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
+import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.formatter.ValueFormatter
-import kotlinx.android.synthetic.main.activity_m_p_chart_basic_v1.*
-import org.fireking.ap.R
+import org.fireking.ap.databinding.ActivityMPChartBasicV1Binding
 import org.jetbrains.anko.backgroundColor
 import org.jetbrains.anko.intentFor
 import kotlin.random.Random
 
 class LineChartActivity : AppCompatActivity() {
+
+    private var viewBinding: ActivityMPChartBasicV1Binding? = null
 
     companion object {
         @JvmStatic
@@ -26,60 +28,61 @@ class LineChartActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_m_p_chart_basic_v1)
+        viewBinding = ActivityMPChartBasicV1Binding.inflate(LayoutInflater.from(this))
+        setContentView(viewBinding?.root)
         drawLineChartView1()
         drawLineChartView2()
         drawLineChartView3()
 
-        btnScrollY.setOnClickListener {
-            lineChartView2.viewPortHandler.contentTop()
-            lineChartView2.viewPortHandler.setMaximumScaleY(0.9F)
-            lineChartView2.invalidate()
+        viewBinding?.btnScrollY?.setOnClickListener {
+            viewBinding?.lineChartView2?.viewPortHandler?.contentTop()
+            viewBinding?.lineChartView2?.viewPortHandler?.setMaximumScaleY(0.9F)
+            viewBinding?.lineChartView2?.invalidate()
         }
     }
 
     private fun drawLineChartView3() {
-        lineChartView3.backgroundColor = Color.parseColor("#80F14400")
-        lineChartView3.xAxis.position = XAxis.XAxisPosition.BOTTOM
+        viewBinding?.lineChartView3?.backgroundColor = Color.parseColor("#80F14400")
+        viewBinding?.lineChartView3?.xAxis?.position = XAxis.XAxisPosition.BOTTOM
     }
 
     private fun drawLineChartView2() {
         //设置lineChart基本属性
-        lineChartView2.description.text = ""
-        lineChartView2.description.textColor = Color.RED
-        lineChartView2.description.textSize = 16F
-        lineChartView2.setNoDataText("无可用数据")  //没数据的时候展示
-        lineChartView2.setDrawBorders(false)// 是否绘制边框
-        lineChartView2.animateX(500)  //x轴动画
-        lineChartView2.setTouchEnabled(true)  //设置支持触摸
-        lineChartView2.setScaleEnabled(true)  //是否支持缩放，默认true
-        lineChartView2.isDragEnabled = true //是否支持拖拽
-        lineChartView2.isScaleXEnabled = true //是否支持x轴缩放
-        lineChartView2.isScaleYEnabled = true //是否支持y轴缩放
-        lineChartView2.setPinchZoom(true)  //是否支持x、y轴同时缩放，默认为false
-        lineChartView2.isDoubleTapToZoomEnabled = true //是否支持双击屏幕放大，默认true
-        lineChartView2.isHighlightPerDragEnabled = true  //是否拖拽高亮线（数据点和坐标的提示线），默认true
-        lineChartView2.isDragDecelerationEnabled = true //拖拽滚动时，手放开是否会持续滚动，默认true，false是拖动到那算那
-        lineChartView2.dragDecelerationFrictionCoef = 0.99F //和上面的属性相配合，配置持续滚动的速度快慢，区间【0-1】0表示立即停止
+        viewBinding?.lineChartView2?.description?.text = ""
+        viewBinding?.lineChartView2?.description?.textColor = Color.RED
+        viewBinding?.lineChartView2?.description?.textSize = 16F
+        viewBinding?.lineChartView2?.setNoDataText("无可用数据")  //没数据的时候展示
+        viewBinding?.lineChartView2?.setDrawBorders(false)// 是否绘制边框
+        viewBinding?.lineChartView2?.animateX(500)  //x轴动画
+        viewBinding?.lineChartView2?.setTouchEnabled(true)  //设置支持触摸
+        viewBinding?.lineChartView2?.setScaleEnabled(true)  //是否支持缩放，默认true
+        viewBinding?.lineChartView2?.isDragEnabled = true //是否支持拖拽
+        viewBinding?.lineChartView2?.isScaleXEnabled = true //是否支持x轴缩放
+        viewBinding?.lineChartView2?.isScaleYEnabled = true //是否支持y轴缩放
+        viewBinding?.lineChartView2?.setPinchZoom(true)  //是否支持x、y轴同时缩放，默认为false
+        viewBinding?.lineChartView2?.isDoubleTapToZoomEnabled = true //是否支持双击屏幕放大，默认true
+        viewBinding?.lineChartView2?.isHighlightPerDragEnabled = true  //是否拖拽高亮线（数据点和坐标的提示线），默认true
+        viewBinding?.lineChartView2?.isDragDecelerationEnabled = true //拖拽滚动时，手放开是否会持续滚动，默认true，false是拖动到那算那
+        viewBinding?.lineChartView2?.dragDecelerationFrictionCoef = 0.99F //和上面的属性相配合，配置持续滚动的速度快慢，区间【0-1】0表示立即停止
 
         //绘制x轴
-        val xAxis = lineChartView2.xAxis
-        xAxis.position = XAxis.XAxisPosition.BOTTOM //设置x轴位置
-        xAxis.axisMinimum = 0F //设置x轴最小值
-        xAxis.textSize = 14F
-        xAxis.textColor = Color.RED
-        xAxis.isEnabled = true //是否显示x轴是否禁用
-        xAxis.setDrawLabels(true) //设置x轴标签展示
-        xAxis.setDrawGridLines(true) //设置设置x轴上每个对应的点的竖线
-        xAxis.enableAxisLineDashedLine(2F, 2F, 2F) //竖线 -虚线样式
-        xAxis.labelRotationAngle = 30F //设置x轴标签的旋转角度
+        val xAxis = viewBinding?.lineChartView2?.xAxis
+        xAxis?.position = XAxis.XAxisPosition.BOTTOM //设置x轴位置
+        xAxis?.axisMinimum = 0F //设置x轴最小值
+        xAxis?.textSize = 14F
+        xAxis?.textColor = Color.RED
+        xAxis?.isEnabled = true //是否显示x轴是否禁用
+        xAxis?.setDrawLabels(true) //设置x轴标签展示
+        xAxis?.setDrawGridLines(true) //设置设置x轴上每个对应的点的竖线
+        xAxis?.enableAxisLineDashedLine(2F, 2F, 2F) //竖线 -虚线样式
+        xAxis?.labelRotationAngle = 30F //设置x轴标签的旋转角度
 
         //绘制y轴
-        val yAxisLeft = lineChartView2.axisLeft
-        yAxisLeft.textSize = 14F
-        yAxisLeft.axisMinimum = 0F
-        val yAxisRight = lineChartView2.axisRight
-        yAxisRight.isEnabled = false
+        val yAxisLeft = viewBinding?.lineChartView2?.axisLeft
+        yAxisLeft?.textSize = 14F
+        yAxisLeft?.axisMinimum = 0F
+        val yAxisRight = viewBinding?.lineChartView2?.axisRight
+        yAxisRight?.isEnabled = false
 
         val lineDataEntities = ArrayList<Entry>()
         val random = Random(10)
@@ -100,8 +103,8 @@ class LineChartActivity : AppCompatActivity() {
         lineDataSet.setDrawFilled(true)
 
         val lineData = LineData(lineDataSet)
-        lineChartView2.data = lineData
-        lineChartView2.invalidate()
+        viewBinding?.lineChartView2?.data = lineData
+        viewBinding?.lineChartView2?.invalidate()
     }
 
     private fun drawLineChartView1() {
@@ -129,47 +132,47 @@ class LineChartActivity : AppCompatActivity() {
         lineTwoDataSet.mode = LineDataSet.Mode.CUBIC_BEZIER
 
         //控制坐标轴属性
-        val xAxis = lineChartView.xAxis
-        xAxis.position = XAxis.XAxisPosition.BOTTOM //设置x轴的位置
-        xAxis.setLabelCount(lineEntities.size, true)
-        xAxis.granularity = 1F //设置x轴坐标间的最小间距
-        xAxis.axisMaximum = (lineEntities.size - 1).toFloat()
-        xAxis.axisMinimum = 0F
-        xAxis.valueFormatter = object : ValueFormatter() {
+        val xAxis = viewBinding?.lineChartView?.xAxis
+        xAxis?.position = XAxis.XAxisPosition.BOTTOM //设置x轴的位置
+        xAxis?.setLabelCount(lineEntities.size, true)
+        xAxis?.granularity = 1F //设置x轴坐标间的最小间距
+        xAxis?.axisMaximum = (lineEntities.size - 1).toFloat()
+        xAxis?.axisMinimum = 0F
+        xAxis?.valueFormatter = object : ValueFormatter() {
             override fun getFormattedValue(value: Float): String {
                 return "${lineEntities[value.toInt()].x}天"
             }
         }
-        xAxis.isAvoidFirstLastClippingEnabled
+        xAxis?.isAvoidFirstLastClippingEnabled
 
-        val yAxisRight = lineChartView.axisRight
-        yAxisRight.isEnabled = false
-        val yAxisLeft = lineChartView.axisLeft
-        yAxisLeft.axisMinimum = 0F
-        yAxisLeft.setDrawZeroLine(true)
-        yAxisLeft.mAxisMaximum = 300F
+        val yAxisRight = viewBinding?.lineChartView?.axisRight
+        yAxisRight?.isEnabled = false
+        val yAxisLeft = viewBinding?.lineChartView?.axisLeft
+        yAxisLeft?.axisMinimum = 0F
+        yAxisLeft?.setDrawZeroLine(true)
+        yAxisLeft?.mAxisMaximum = 300F
 
         val lineData = LineData()
         lineData.addDataSet(lineDataSet)
         lineData.addDataSet(lineTwoDataSet)
         lineData.setDrawValues(false)
 
-        lineChartView.description.isEnabled = false
-        lineChartView.setDrawGridBackground(true)
-        lineChartView.setDrawBorders(true)
+        viewBinding?.lineChartView?.description?.isEnabled = false
+        viewBinding?.lineChartView?.setDrawGridBackground(true)
+        viewBinding?.lineChartView?.setDrawBorders(true)
 
-        lineChartView.marker = SimpleMarkerView(this)
-        lineChartView.renderer = SimpleLineChartRenderer(
+        viewBinding?.lineChartView?.marker = SimpleMarkerView(this)
+        viewBinding?.lineChartView?.renderer = SimpleLineChartRenderer(
             this,
-            lineChartView,
-            lineChartView.animator,
-            lineChartView.viewPortHandler
+            viewBinding?.lineChartView,
+            viewBinding?.lineChartView?.animator,
+            viewBinding?.lineChartView?.viewPortHandler
         )
-        lineChartView.animateX(1500)
-        lineChartView.isScaleXEnabled = true
-        lineChartView.isScaleYEnabled = false
+        viewBinding?.lineChartView?.animateX(1500)
+        viewBinding?.lineChartView?.isScaleXEnabled = true
+        viewBinding?.lineChartView?.isScaleYEnabled = false
 
-        lineChartView.data = lineData
-        lineChartView.invalidate()
+        viewBinding?.lineChartView?.data = lineData
+        viewBinding?.lineChartView?.invalidate()
     }
 }

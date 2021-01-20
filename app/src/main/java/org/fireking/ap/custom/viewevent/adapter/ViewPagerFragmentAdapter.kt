@@ -5,8 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.viewpager_inner_item.view.*
+import androidx.viewpager.widget.ViewPager
 import org.fireking.ap.R
 
 class ViewPagerFragmentAdapter(private val fragment: Fragment) :
@@ -37,23 +36,17 @@ class ViewPagerFragmentAdapter(private val fragment: Fragment) :
         return resultList[position].itemType
     }
 
-    inner class NormalViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
-        LayoutContainer {
-        override val containerView: View?
-            get() = itemView
+    inner class NormalViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     }
 
-    inner class ViewPagerInnerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
-        LayoutContainer {
+    inner class ViewPagerInnerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bind() {
             itemView.apply {
-                innerViewPager.adapter = ViewPagerInnerAdapter(fragment.childFragmentManager)
+                findViewById<ViewPager>(R.id.innerViewPager).adapter =
+                    ViewPagerInnerAdapter(fragment.childFragmentManager)
             }
         }
-
-        override val containerView: View?
-            get() = itemView
     }
 
     override fun getItemCount(): Int {

@@ -3,10 +3,10 @@ package org.fireking.ap.custom.recyclerview
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.viewpager_recyclerview_oom_item.view.*
 import org.fireking.ap.R
 
 class ViewPagerRecyclerViewOOMItemAdapter(title: String) :
@@ -435,15 +435,13 @@ class ViewPagerRecyclerViewOOMItemAdapter(title: String) :
     }
 
     class ViewPagerRecyclerViewOOMItemViewHolder(itemView: View) :
-        RecyclerView.ViewHolder(itemView), LayoutContainer {
+        RecyclerView.ViewHolder(itemView) {
 
         fun bindData(imageBean: ImageBean) {
-            Glide.with(itemView.context).load(imageBean.image).into(itemView.imageView)
-            itemView.textview.text = imageBean.title
+            Glide.with(itemView.context).load(imageBean.image)
+                .into(itemView.findViewById<ImageView>(R.id.imageView))
+            itemView.findViewById<TextView>(R.id.textview).text = imageBean.title
         }
-
-        override val containerView: View?
-            get() = itemView
     }
 
     override fun onCreateViewHolder(

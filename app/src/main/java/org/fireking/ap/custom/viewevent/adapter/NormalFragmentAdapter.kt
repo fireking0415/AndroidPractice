@@ -4,16 +4,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.extensions.LayoutContainer
 import org.fireking.ap.R
 
 class NormalFragmentAdapter :
     RecyclerView.Adapter<NormalFragmentAdapter.NormalFragmentViewHolder>() {
 
-    inner class NormalFragmentViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
-        LayoutContainer {
-        override val containerView: View?
-            get() = itemView
+    inner class NormalFragmentViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NormalFragmentViewHolder {

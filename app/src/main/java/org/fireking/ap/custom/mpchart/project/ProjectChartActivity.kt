@@ -5,6 +5,7 @@ import android.graphics.Color
 import android.graphics.DashPathEffect
 import android.graphics.Paint
 import android.os.Bundle
+import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import com.github.mikephil.charting.charts.CombinedChart
 import com.github.mikephil.charting.components.Legend
@@ -13,12 +14,13 @@ import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.*
 import com.github.mikephil.charting.formatter.ValueFormatter
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet
-import kotlinx.android.synthetic.main.activity_v1_1_chart.*
-import org.fireking.ap.R
+import org.fireking.ap.databinding.ActivityV11ChartBinding
 import org.jetbrains.anko.intentFor
 
 
 class ProjectChartActivity : AppCompatActivity() {
+
+    private var viewBinding: ActivityV11ChartBinding? = null
 
     companion object {
         @JvmStatic
@@ -29,7 +31,8 @@ class ProjectChartActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_v1_1_chart)
+        viewBinding = ActivityV11ChartBinding.inflate(LayoutInflater.from(this))
+        setContentView(viewBinding?.root)
 
         //价值水平 | 成长能力 | 偿债能力
         initValueLevel()
@@ -60,19 +63,19 @@ class ProjectChartActivity : AppCompatActivity() {
     }
 
     private fun initMoneyFlow() {
-        chart_money_flow.setBackgroundColor(Color.parseColor("#389393"))
-        chart_money_flow.setNoDataText(null)
-        chart_money_flow.animateX(500)
-        chart_money_flow.description.isEnabled = false
-        chart_money_flow.setScaleEnabled(false)
+        viewBinding?.chartMoneyFlow?.setBackgroundColor(Color.parseColor("#389393"))
+        viewBinding?.chartMoneyFlow?.setNoDataText(null)
+        viewBinding?.chartMoneyFlow?.animateX(500)
+        viewBinding?.chartMoneyFlow?.description?.isEnabled = false
+        viewBinding?.chartMoneyFlow?.setScaleEnabled(false)
 
-        chart_money_flow.xAxis.position = XAxis.XAxisPosition.BOTTOM
-        chart_money_flow.xAxis.axisMinimum = -0.5F
-        chart_money_flow.xAxis.mAxisMaximum = 4.5F
-        chart_money_flow.xAxis.setDrawAxisLine(false)
-        chart_money_flow.xAxis.setDrawGridLines(false)
-        chart_money_flow.xAxis.setLabelCount(5, false)
-        chart_money_flow.xAxis.valueFormatter = object : ValueFormatter() {
+        viewBinding?.chartMoneyFlow?.xAxis?.position = XAxis.XAxisPosition.BOTTOM
+        viewBinding?.chartMoneyFlow?.xAxis?.axisMinimum = -0.5F
+        viewBinding?.chartMoneyFlow?.xAxis?.mAxisMaximum = 4.5F
+        viewBinding?.chartMoneyFlow?.xAxis?.setDrawAxisLine(false)
+        viewBinding?.chartMoneyFlow?.xAxis?.setDrawGridLines(false)
+        viewBinding?.chartMoneyFlow?.xAxis?.setLabelCount(5, false)
+        viewBinding?.chartMoneyFlow?.xAxis?.valueFormatter = object : ValueFormatter() {
             override fun getFormattedValue(value: Float): String {
                 return if (value == 4F) {
                     "${value.toInt() + 2016}(年)"
@@ -82,25 +85,26 @@ class ProjectChartActivity : AppCompatActivity() {
             }
         }
 
-        chart_money_flow.axisLeft.setDrawAxisLine(false)
-        chart_money_flow.axisLeft.gridColor = Color.parseColor("#fbf6f0")
-        chart_money_flow.axisLeft.axisLineColor = Color.parseColor("#fbf6f0")
-        chart_money_flow.axisLeft.textColor = Color.parseColor("#fbf6f0")
-        chart_money_flow.axisRight.isEnabled = false
-        chart_money_flow.axisLeft.valueFormatter = object : ValueFormatter() {
+        viewBinding?.chartMoneyFlow?.axisLeft?.setDrawAxisLine(false)
+        viewBinding?.chartMoneyFlow?.axisLeft?.gridColor = Color.parseColor("#fbf6f0")
+        viewBinding?.chartMoneyFlow?.axisLeft?.axisLineColor = Color.parseColor("#fbf6f0")
+        viewBinding?.chartMoneyFlow?.axisLeft?.textColor = Color.parseColor("#fbf6f0")
+        viewBinding?.chartMoneyFlow?.axisRight?.isEnabled = false
+        viewBinding?.chartMoneyFlow?.axisLeft?.valueFormatter = object : ValueFormatter() {
             override fun getFormattedValue(value: Float): String {
                 return "${value.toInt()}.00"
             }
         }
 
-        chart_money_flow.xAxis.yOffset = 10F
-        chart_money_flow.xAxis.textColor = Color.parseColor("#fbf6f0")
-        chart_money_flow.legend.horizontalAlignment = Legend.LegendHorizontalAlignment.CENTER
-        chart_money_flow.legend.xEntrySpace = 10F
-        chart_money_flow.legend.textColor = Color.parseColor("#fbf6f0")
-        chart_money_flow.legend.form = Legend.LegendForm.CIRCLE
-        chart_money_flow.legend.yOffset = 5F
-        chart_money_flow.extraBottomOffset = 5F  //设置x轴底部和legend之间的间距
+        viewBinding?.chartMoneyFlow?.xAxis?.yOffset = 10F
+        viewBinding?.chartMoneyFlow?.xAxis?.textColor = Color.parseColor("#fbf6f0")
+        viewBinding?.chartMoneyFlow?.legend?.horizontalAlignment =
+            Legend.LegendHorizontalAlignment.CENTER
+        viewBinding?.chartMoneyFlow?.legend?.xEntrySpace = 10F
+        viewBinding?.chartMoneyFlow?.legend?.textColor = Color.parseColor("#fbf6f0")
+        viewBinding?.chartMoneyFlow?.legend?.form = Legend.LegendForm.CIRCLE
+        viewBinding?.chartMoneyFlow?.legend?.yOffset = 5F
+        viewBinding?.chartMoneyFlow?.extraBottomOffset = 5F  //设置x轴底部和legend之间的间距
         val legendList = ArrayList<LegendEntry>()
         legendList.add(
             LegendEntry(
@@ -142,7 +146,7 @@ class ProjectChartActivity : AppCompatActivity() {
                 Color.parseColor("#32e0c4")
             )
         )
-        chart_money_flow.legend.setCustom(legendList)
+        viewBinding?.chartMoneyFlow?.legend?.setCustom(legendList)
 
         val oneDataList = ArrayList<BarEntry>()
         oneDataList.add(BarEntry(0F, -300F))
@@ -177,38 +181,39 @@ class ProjectChartActivity : AppCompatActivity() {
         barData.barWidth = 0.35F
         barData.groupBars(-0.5F, 0.3F, 0F)
 
-        chart_money_flow.data = barData
-        chart_money_flow.invalidate()
+        viewBinding?.chartMoneyFlow?.data = barData
+        viewBinding?.chartMoneyFlow?.invalidate()
     }
 
     private fun initEarningsTrend() {
-        chart_earnings_trend.setBackgroundColor(Color.parseColor("#ffa5a5"))
-        chart_earnings_trend.setNoDataText(null)
-        chart_earnings_trend.setScaleEnabled(false)
-        chart_earnings_trend.description.isEnabled = false
+        viewBinding?.chartEarningsTrend?.setBackgroundColor(Color.parseColor("#ffa5a5"))
+        viewBinding?.chartEarningsTrend?.setNoDataText(null)
+        viewBinding?.chartEarningsTrend?.setScaleEnabled(false)
+        viewBinding?.chartEarningsTrend?.description?.isEnabled = false
 
-        chart_earnings_trend.xAxis.yOffset = 10F
-        chart_earnings_trend.xAxis.textColor = Color.parseColor("#fbf6f0")
-        chart_earnings_trend.legend.horizontalAlignment = Legend.LegendHorizontalAlignment.CENTER
-        chart_earnings_trend.legend.xEntrySpace = 100F
-        chart_earnings_trend.legend.textColor = Color.parseColor("#fbf6f0")
-        chart_earnings_trend.legend.form = Legend.LegendForm.LINE
-        chart_earnings_trend.legend.yOffset = 5F
-        chart_earnings_trend.extraBottomOffset = 5F  //设置x轴底部和legend之间的间距
+        viewBinding?.chartEarningsTrend?.xAxis?.yOffset = 10F
+        viewBinding?.chartEarningsTrend?.xAxis?.textColor = Color.parseColor("#fbf6f0")
+        viewBinding?.chartEarningsTrend?.legend?.horizontalAlignment =
+            Legend.LegendHorizontalAlignment.CENTER
+        viewBinding?.chartEarningsTrend?.legend?.xEntrySpace = 100F
+        viewBinding?.chartEarningsTrend?.legend?.textColor = Color.parseColor("#fbf6f0")
+        viewBinding?.chartEarningsTrend?.legend?.form = Legend.LegendForm.LINE
+        viewBinding?.chartEarningsTrend?.legend?.yOffset = 5F
+        viewBinding?.chartEarningsTrend?.extraBottomOffset = 5F  //设置x轴底部和legend之间的间距
 
-        chart_earnings_trend.axisLeft.gridColor = Color.parseColor("#fbf6f0")
-        chart_earnings_trend.axisLeft.textColor = Color.parseColor("#fbf6f0")
-        chart_earnings_trend.axisLeft.axisMinimum = -40F
-        chart_earnings_trend.axisLeft.axisMaximum = 40F
-        chart_earnings_trend.axisLeft.setDrawAxisLine(false)
-        chart_earnings_trend.axisRight.isEnabled = false
-        chart_earnings_trend.xAxis.setDrawGridLines(false)
-        chart_earnings_trend.xAxis.axisMinimum = 0F
-        chart_earnings_trend.xAxis.position = XAxis.XAxisPosition.BOTTOM
-        chart_earnings_trend.xAxis.textColor = Color.parseColor("#fbf6f0")
-        chart_earnings_trend.xAxis.axisLineColor = Color.parseColor("#fbf6f0")
-        chart_earnings_trend.xAxis.setLabelCount(2, true)
-        chart_earnings_trend.xAxis.valueFormatter = object : ValueFormatter() {
+        viewBinding?.chartEarningsTrend?.axisLeft?.gridColor = Color.parseColor("#fbf6f0")
+        viewBinding?.chartEarningsTrend?.axisLeft?.textColor = Color.parseColor("#fbf6f0")
+        viewBinding?.chartEarningsTrend?.axisLeft?.axisMinimum = -40F
+        viewBinding?.chartEarningsTrend?.axisLeft?.axisMaximum = 40F
+        viewBinding?.chartEarningsTrend?.axisLeft?.setDrawAxisLine(false)
+        viewBinding?.chartEarningsTrend?.axisRight?.isEnabled = false
+        viewBinding?.chartEarningsTrend?.xAxis?.setDrawGridLines(false)
+        viewBinding?.chartEarningsTrend?.xAxis?.axisMinimum = 0F
+        viewBinding?.chartEarningsTrend?.xAxis?.position = XAxis.XAxisPosition.BOTTOM
+        viewBinding?.chartEarningsTrend?.xAxis?.textColor = Color.parseColor("#fbf6f0")
+        viewBinding?.chartEarningsTrend?.xAxis?.axisLineColor = Color.parseColor("#fbf6f0")
+        viewBinding?.chartEarningsTrend?.xAxis?.setLabelCount(2, true)
+        viewBinding?.chartEarningsTrend?.xAxis?.valueFormatter = object : ValueFormatter() {
             override fun getFormattedValue(value: Float): String {
                 return if (value == 0F) {
                     "09-12"
@@ -254,24 +259,24 @@ class ProjectChartActivity : AppCompatActivity() {
         threeLineDataSet.setDrawValues(false)
 
         val lineData = LineData(oneLineDataSet, twoLineDataSet, threeLineDataSet)
-        chart_earnings_trend.data = lineData
-        chart_earnings_trend.invalidate()
+        viewBinding?.chartEarningsTrend?.data = lineData
+        viewBinding?.chartEarningsTrend?.invalidate()
     }
 
     private fun initMainFunds() {
-        chart_main_funds.setBackgroundColor(Color.parseColor("#28abb9"))
-        chart_main_funds.setNoDataText(null)
-        chart_main_funds.animateX(500)
-        chart_main_funds.description.isEnabled = false
-        chart_main_funds.setScaleEnabled(false)
+        viewBinding?.chartMainFunds?.setBackgroundColor(Color.parseColor("#28abb9"))
+        viewBinding?.chartMainFunds?.setNoDataText(null)
+        viewBinding?.chartMainFunds?.animateX(500)
+        viewBinding?.chartMainFunds?.description?.isEnabled = false
+        viewBinding?.chartMainFunds?.setScaleEnabled(false)
 
-        chart_main_funds.xAxis.position = XAxis.XAxisPosition.BOTTOM
-        chart_main_funds.xAxis.axisMinimum = -0.5F
-        chart_main_funds.xAxis.mAxisMaximum = 4.5F
-        chart_main_funds.xAxis.setDrawAxisLine(false)
-        chart_main_funds.xAxis.setDrawGridLines(false)
-        chart_main_funds.xAxis.setLabelCount(5, false)
-        chart_main_funds.xAxis.valueFormatter = object : ValueFormatter() {
+        viewBinding?.chartMainFunds?.xAxis?.position = XAxis.XAxisPosition.BOTTOM
+        viewBinding?.chartMainFunds?.xAxis?.axisMinimum = -0.5F
+        viewBinding?.chartMainFunds?.xAxis?.mAxisMaximum = 4.5F
+        viewBinding?.chartMainFunds?.xAxis?.setDrawAxisLine(false)
+        viewBinding?.chartMainFunds?.xAxis?.setDrawGridLines(false)
+        viewBinding?.chartMainFunds?.xAxis?.setLabelCount(5, false)
+        viewBinding?.chartMainFunds?.xAxis?.valueFormatter = object : ValueFormatter() {
             override fun getFormattedValue(value: Float): String {
                 return if (value == 4F) {
                     "${value.toInt() + 2016}(年)"
@@ -281,25 +286,26 @@ class ProjectChartActivity : AppCompatActivity() {
             }
         }
 
-        chart_main_funds.axisLeft.setDrawAxisLine(false)
-        chart_main_funds.axisLeft.gridColor = Color.parseColor("#fbf6f0")
-        chart_main_funds.axisLeft.axisLineColor = Color.parseColor("#fbf6f0")
-        chart_main_funds.axisLeft.textColor = Color.parseColor("#fbf6f0")
-        chart_main_funds.axisRight.isEnabled = false
-        chart_main_funds.axisLeft.valueFormatter = object : ValueFormatter() {
+        viewBinding?.chartMainFunds?.axisLeft?.setDrawAxisLine(false)
+        viewBinding?.chartMainFunds?.axisLeft?.gridColor = Color.parseColor("#fbf6f0")
+        viewBinding?.chartMainFunds?.axisLeft?.axisLineColor = Color.parseColor("#fbf6f0")
+        viewBinding?.chartMainFunds?.axisLeft?.textColor = Color.parseColor("#fbf6f0")
+        viewBinding?.chartMainFunds?.axisRight?.isEnabled = false
+        viewBinding?.chartMainFunds?.axisLeft?.valueFormatter = object : ValueFormatter() {
             override fun getFormattedValue(value: Float): String {
                 return "${value.toInt()}.00"
             }
         }
 
-        chart_main_funds.xAxis.yOffset = 10F
-        chart_main_funds.xAxis.textColor = Color.parseColor("#fbf6f0")
-        chart_main_funds.legend.horizontalAlignment = Legend.LegendHorizontalAlignment.CENTER
-        chart_main_funds.legend.xEntrySpace = 10F
-        chart_main_funds.legend.textColor = Color.parseColor("#fbf6f0")
-        chart_main_funds.legend.form = Legend.LegendForm.CIRCLE
-        chart_main_funds.legend.yOffset = 5F
-        chart_main_funds.extraBottomOffset = 5F  //设置x轴底部和legend之间的间距
+        viewBinding?.chartMainFunds?.xAxis?.yOffset = 10F
+        viewBinding?.chartMainFunds?.xAxis?.textColor = Color.parseColor("#fbf6f0")
+        viewBinding?.chartMainFunds?.legend?.horizontalAlignment =
+            Legend.LegendHorizontalAlignment.CENTER
+        viewBinding?.chartMainFunds?.legend?.xEntrySpace = 10F
+        viewBinding?.chartMainFunds?.legend?.textColor = Color.parseColor("#fbf6f0")
+        viewBinding?.chartMainFunds?.legend?.form = Legend.LegendForm.CIRCLE
+        viewBinding?.chartMainFunds?.legend?.yOffset = 5F
+        viewBinding?.chartMainFunds?.extraBottomOffset = 5F  //设置x轴底部和legend之间的间距
         val legendList = ArrayList<LegendEntry>()
         legendList.add(
             LegendEntry(
@@ -341,7 +347,7 @@ class ProjectChartActivity : AppCompatActivity() {
                 Color.parseColor("#32e0c4")
             )
         )
-        chart_main_funds.legend.setCustom(legendList)
+        viewBinding?.chartMainFunds?.legend?.setCustom(legendList)
 
         val oneDataList = ArrayList<BarEntry>()
         oneDataList.add(BarEntry(0F, -300F))
@@ -377,14 +383,14 @@ class ProjectChartActivity : AppCompatActivity() {
         barData.barWidth = 0.35F
         barData.groupBars(-0.5F, 0.3F, 0F)
 
-        chart_main_funds.data = barData
-        chart_main_funds.invalidate()
+        viewBinding?.chartMainFunds?.data = barData
+        viewBinding?.chartMainFunds?.invalidate()
     }
 
     private fun initComprehensiveScore() {
-        chart_comprehensive_score.setBackgroundColor(Color.parseColor("#ffa36c"))
-        chart_comprehensive_score.setNoDataText(null)
-        chart_comprehensive_score.description.isEnabled = false
+        viewBinding?.chartComprehensiveScore?.setBackgroundColor(Color.parseColor("#ffa36c"))
+        viewBinding?.chartComprehensiveScore?.setNoDataText(null)
+        viewBinding?.chartComprehensiveScore?.description?.isEnabled = false
 
         val radarDataEntityList = ArrayList<RadarEntry>()
         radarDataEntityList.add(RadarEntry(100F))
@@ -400,37 +406,37 @@ class ProjectChartActivity : AppCompatActivity() {
         val radarData = RadarData(radarDataSet)
         radarData.setDrawValues(false)
 
-        chart_comprehensive_score.webColor = Color.parseColor("#fbf6f0")
-        chart_comprehensive_score.webColorInner = Color.parseColor("#fbf6f0")
-        chart_comprehensive_score.yAxis.axisMinimum = 0F
-        chart_comprehensive_score.xAxis.textColor = Color.parseColor("#fbf6f0")
-        chart_comprehensive_score.yAxis.setLabelCount(5, false)
-        chart_comprehensive_score.yAxis.setDrawLabels(false)
+        viewBinding?.chartComprehensiveScore?.webColor = Color.parseColor("#fbf6f0")
+        viewBinding?.chartComprehensiveScore?.webColorInner = Color.parseColor("#fbf6f0")
+        viewBinding?.chartComprehensiveScore?.yAxis?.axisMinimum = 0F
+        viewBinding?.chartComprehensiveScore?.xAxis?.textColor = Color.parseColor("#fbf6f0")
+        viewBinding?.chartComprehensiveScore?.yAxis?.setLabelCount(5, false)
+        viewBinding?.chartComprehensiveScore?.yAxis?.setDrawLabels(false)
         val temp = arrayListOf("技术趋势", "价值评估", "交易机会", "舆情分析", "资金流向")
-        chart_comprehensive_score.xAxis.valueFormatter = object : ValueFormatter() {
+        viewBinding?.chartComprehensiveScore?.xAxis?.valueFormatter = object : ValueFormatter() {
             override fun getFormattedValue(value: Float): String {
                 return temp[(value % temp.size).toInt()]
             }
         }
-        chart_comprehensive_score.legend.isEnabled = false
+        viewBinding?.chartComprehensiveScore?.legend?.isEnabled = false
 
-        chart_comprehensive_score.data = radarData
-        chart_comprehensive_score.invalidate()
+        viewBinding?.chartComprehensiveScore?.data = radarData
+        viewBinding?.chartComprehensiveScore?.invalidate()
     }
 
     private fun initProfitForecast() {
-        chart_profit_forecast.setBackgroundColor(Color.parseColor("#34626c"))
-        chart_profit_forecast.setNoDataText(null)
-        chart_profit_forecast.animateX(500)
-        chart_profit_forecast.description.isEnabled = false
-        chart_profit_forecast.setScaleEnabled(false)
+        viewBinding?.chartProfitForecast?.setBackgroundColor(Color.parseColor("#34626c"))
+        viewBinding?.chartProfitForecast?.setNoDataText(null)
+        viewBinding?.chartProfitForecast?.animateX(500)
+        viewBinding?.chartProfitForecast?.description?.isEnabled = false
+        viewBinding?.chartProfitForecast?.setScaleEnabled(false)
 
-        chart_profit_forecast.xAxis.position = XAxis.XAxisPosition.BOTTOM
-        chart_profit_forecast.xAxis.axisMinimum = -0.5F
-        chart_profit_forecast.xAxis.mAxisMaximum = 4.5F
-        chart_profit_forecast.xAxis.setDrawGridLines(false)
-        chart_profit_forecast.xAxis.setLabelCount(5, false)
-        chart_profit_forecast.xAxis.valueFormatter = object : ValueFormatter() {
+        viewBinding?.chartProfitForecast?.xAxis?.position = XAxis.XAxisPosition.BOTTOM
+        viewBinding?.chartProfitForecast?.xAxis?.axisMinimum = -0.5F
+        viewBinding?.chartProfitForecast?.xAxis?.mAxisMaximum = 4.5F
+        viewBinding?.chartProfitForecast?.xAxis?.setDrawGridLines(false)
+        viewBinding?.chartProfitForecast?.xAxis?.setLabelCount(5, false)
+        viewBinding?.chartProfitForecast?.xAxis?.valueFormatter = object : ValueFormatter() {
             override fun getFormattedValue(value: Float): String {
                 return if (value == 4F) {
                     "${value.toInt() + 2016}(年)"
@@ -440,26 +446,27 @@ class ProjectChartActivity : AppCompatActivity() {
             }
         }
 
-        chart_profit_forecast.axisLeft.setDrawAxisLine(false)
-        chart_profit_forecast.axisLeft.axisMinimum = 0F
-        chart_profit_forecast.axisLeft.gridColor = Color.parseColor("#fbf6f0")
-        chart_profit_forecast.axisLeft.axisLineColor = Color.parseColor("#fbf6f0")
-        chart_profit_forecast.axisLeft.textColor = Color.parseColor("#fbf6f0")
-        chart_profit_forecast.axisRight.isEnabled = false
-        chart_profit_forecast.axisLeft.valueFormatter = object : ValueFormatter() {
+        viewBinding?.chartProfitForecast?.axisLeft?.setDrawAxisLine(false)
+        viewBinding?.chartProfitForecast?.axisLeft?.axisMinimum = 0F
+        viewBinding?.chartProfitForecast?.axisLeft?.gridColor = Color.parseColor("#fbf6f0")
+        viewBinding?.chartProfitForecast?.axisLeft?.axisLineColor = Color.parseColor("#fbf6f0")
+        viewBinding?.chartProfitForecast?.axisLeft?.textColor = Color.parseColor("#fbf6f0")
+        viewBinding?.chartProfitForecast?.axisRight?.isEnabled = false
+        viewBinding?.chartProfitForecast?.axisLeft?.valueFormatter = object : ValueFormatter() {
             override fun getFormattedValue(value: Float): String {
                 return "${value.toInt()}.00"
             }
         }
 
-        chart_profit_forecast.xAxis.yOffset = 10F
-        chart_profit_forecast.xAxis.textColor = Color.parseColor("#fbf6f0")
-        chart_profit_forecast.legend.horizontalAlignment = Legend.LegendHorizontalAlignment.CENTER
-        chart_profit_forecast.legend.xEntrySpace = 100F
-        chart_profit_forecast.legend.textColor = Color.parseColor("#fbf6f0")
-        chart_profit_forecast.legend.form = Legend.LegendForm.CIRCLE
-        chart_profit_forecast.legend.yOffset = 5F
-        chart_profit_forecast.extraBottomOffset = 5F  //设置x轴底部和legend之间的间距
+        viewBinding?.chartProfitForecast?.xAxis?.yOffset = 10F
+        viewBinding?.chartProfitForecast?.xAxis?.textColor = Color.parseColor("#fbf6f0")
+        viewBinding?.chartProfitForecast?.legend?.horizontalAlignment =
+            Legend.LegendHorizontalAlignment.CENTER
+        viewBinding?.chartProfitForecast?.legend?.xEntrySpace = 100F
+        viewBinding?.chartProfitForecast?.legend?.textColor = Color.parseColor("#fbf6f0")
+        viewBinding?.chartProfitForecast?.legend?.form = Legend.LegendForm.CIRCLE
+        viewBinding?.chartProfitForecast?.legend?.yOffset = 5F
+        viewBinding?.chartProfitForecast?.extraBottomOffset = 5F  //设置x轴底部和legend之间的间距
 
         val oneDataList = ArrayList<BarEntry>()
         oneDataList.add(BarEntry(0F, 300F))
@@ -489,48 +496,48 @@ class ProjectChartActivity : AppCompatActivity() {
         barData.barWidth = 0.35F
         barData.groupBars(-0.5F, 0.3F, 0F)
 
-        chart_profit_forecast.data = barData
-        chart_profit_forecast.invalidate()
+        viewBinding?.chartProfitForecast?.data = barData
+        viewBinding?.chartProfitForecast?.invalidate()
     }
 
     private fun initCashFlow() {
-        chart_cash_flow.setBackgroundColor(Color.parseColor("#59886b"))
-        chart_cash_flow.setNoDataText(null)
-        chart_cash_flow.drawOrder = arrayOf(
+        viewBinding?.chartCashFlow?.setBackgroundColor(Color.parseColor("#59886b"))
+        viewBinding?.chartCashFlow?.setNoDataText(null)
+        viewBinding?.chartCashFlow?.drawOrder = arrayOf(
             CombinedChart.DrawOrder.BAR,
             CombinedChart.DrawOrder.LINE
         )
-        chart_cash_flow.xAxis.setDrawGridLines(false)
-        chart_cash_flow.axisLeft.setDrawGridLines(false)
-        chart_cash_flow.animateX(400)
-        chart_cash_flow.description.isEnabled = false
-        chart_cash_flow.setScaleEnabled(false)
-        chart_cash_flow.axisLeft.gridColor = Color.parseColor("#fbf6f0")
-        chart_cash_flow.axisLeft.axisLineColor = Color.parseColor("#fbf6f0")
-        chart_cash_flow.xAxis.axisMinimum = -0.5F
-        chart_cash_flow.xAxis.axisMaximum = 4.5F
-        chart_cash_flow.axisLeft.axisMinimum = 0F
-        chart_cash_flow.axisLeft.axisMaximum = 80F
-        chart_cash_flow.axisRight.isEnabled = false
-        chart_cash_flow.xAxis.setDrawGridLines(false)
-        chart_cash_flow.axisLeft.setDrawLabels(false)
-        chart_cash_flow.xAxis.position = XAxis.XAxisPosition.BOTTOM
-        chart_cash_flow.xAxis.gridColor = Color.parseColor("#fbf6f0")
-        chart_cash_flow.xAxis.axisLineColor = Color.parseColor("#fbf6f0")
-        chart_cash_flow.xAxis.setLabelCount(5, false)
-        chart_cash_flow.xAxis.valueFormatter = object : ValueFormatter() {
+        viewBinding?.chartCashFlow?.xAxis?.setDrawGridLines(false)
+        viewBinding?.chartCashFlow?.axisLeft?.setDrawGridLines(false)
+        viewBinding?.chartCashFlow?.animateX(400)
+        viewBinding?.chartCashFlow?.description?.isEnabled = false
+        viewBinding?.chartCashFlow?.setScaleEnabled(false)
+        viewBinding?.chartCashFlow?.axisLeft?.gridColor = Color.parseColor("#fbf6f0")
+        viewBinding?.chartCashFlow?.axisLeft?.axisLineColor = Color.parseColor("#fbf6f0")
+        viewBinding?.chartCashFlow?.xAxis?.axisMinimum = -0.5F
+        viewBinding?.chartCashFlow?.xAxis?.axisMaximum = 4.5F
+        viewBinding?.chartCashFlow?.axisLeft?.axisMinimum = 0F
+        viewBinding?.chartCashFlow?.axisLeft?.axisMaximum = 80F
+        viewBinding?.chartCashFlow?.axisRight?.isEnabled = false
+        viewBinding?.chartCashFlow?.xAxis?.setDrawGridLines(false)
+        viewBinding?.chartCashFlow?.axisLeft?.setDrawLabels(false)
+        viewBinding?.chartCashFlow?.xAxis?.position = XAxis.XAxisPosition.BOTTOM
+        viewBinding?.chartCashFlow?.xAxis?.gridColor = Color.parseColor("#fbf6f0")
+        viewBinding?.chartCashFlow?.xAxis?.axisLineColor = Color.parseColor("#fbf6f0")
+        viewBinding?.chartCashFlow?.xAxis?.setLabelCount(5, false)
+        viewBinding?.chartCashFlow?.xAxis?.valueFormatter = object : ValueFormatter() {
             override fun getFormattedValue(value: Float): String {
                 return "${2016 + value.toInt()}年"
             }
         }
-        chart_cash_flow.xAxis.yOffset = 10F
-        chart_cash_flow.xAxis.textColor = Color.parseColor("#fbf6f0")
-        chart_cash_flow.legend.horizontalAlignment = Legend.LegendHorizontalAlignment.CENTER
-        chart_cash_flow.legend.xEntrySpace = 100F
-        chart_cash_flow.legend.textColor = Color.parseColor("#fbf6f0")
-        chart_cash_flow.legend.form = Legend.LegendForm.CIRCLE
-        chart_cash_flow.legend.yOffset = 5F
-        chart_cash_flow.extraBottomOffset = 5F  //设置x轴底部和legend之间的间距
+        viewBinding?.chartCashFlow?.xAxis?.yOffset = 10F
+        viewBinding?.chartCashFlow?.xAxis?.textColor = Color.parseColor("#fbf6f0")
+        viewBinding?.chartCashFlow?.legend?.horizontalAlignment = Legend.LegendHorizontalAlignment.CENTER
+        viewBinding?.chartCashFlow?.legend?.xEntrySpace = 100F
+        viewBinding?.chartCashFlow?.legend?.textColor = Color.parseColor("#fbf6f0")
+        viewBinding?.chartCashFlow?.legend?.form = Legend.LegendForm.CIRCLE
+        viewBinding?.chartCashFlow?.legend?.yOffset = 5F
+        viewBinding?.chartCashFlow?.extraBottomOffset = 5F  //设置x轴底部和legend之间的间距
 
         val barDataList = ArrayList<BarEntry>()
         barDataList.add(BarEntry(0F, 55F))
@@ -559,46 +566,46 @@ class ProjectChartActivity : AppCompatActivity() {
         val combinedData = CombinedData()
         combinedData.setData(lineData)
         combinedData.setData(barData)
-        chart_cash_flow.data = combinedData
-        chart_cash_flow.invalidate()
+        viewBinding?.chartCashFlow?.data = combinedData
+        viewBinding?.chartCashFlow?.invalidate()
     }
 
     private fun initValueLevel() {
-        chart_value_level.setBackgroundColor(Color.parseColor("#ec5858"))
-        chart_value_level.setNoDataText(null)
-        chart_value_level.setScaleEnabled(false)
-        chart_value_level.renderer.paintRender.strokeCap = Paint.Cap.ROUND
-        chart_value_level.animateX(500)
-        chart_value_level.axisLeft.axisMinimum = 0F
-        chart_value_level.axisLeft.setDrawAxisLine(true)
-        chart_value_level.axisLeft.setDrawGridLines(false)
-        chart_value_level.axisLeft.axisMaximum = 70F
-        chart_value_level.axisRight.isEnabled = false
-        chart_value_level.axisLeft.gridColor = Color.parseColor("#fbf6f0")
-        chart_value_level.axisLeft.axisLineColor = Color.parseColor("#fbf6f0")
-        chart_value_level.axisLeft.setDrawLabels(false)
-        chart_value_level.description.isEnabled = false
-        chart_value_level.xAxis.gridColor = Color.parseColor("#fbf6f0")
-        chart_value_level.xAxis.axisLineColor = Color.parseColor("#fbf6f0")
-        chart_value_level.xAxis.position = XAxis.XAxisPosition.BOTTOM
-        chart_value_level.xAxis.setDrawLabels(true)
-        chart_value_level.xAxis.setDrawGridLines(false)
-        chart_value_level.xAxis.axisMinimum = -0.5F
-        chart_value_level.xAxis.axisMaximum = 19.5F
-        chart_value_level.xAxis.setLabelCount(5, false)
-        chart_value_level.xAxis.textColor = Color.parseColor("#fbf6f0")
-        chart_value_level.xAxis.yOffset = 10F
-        chart_value_level.xAxis.valueFormatter = object : ValueFormatter() {
+        viewBinding?.chartValueLevel?.setBackgroundColor(Color.parseColor("#ec5858"))
+        viewBinding?.chartValueLevel?.setNoDataText(null)
+        viewBinding?.chartValueLevel?.setScaleEnabled(false)
+        viewBinding?.chartValueLevel?.renderer?.paintRender?.strokeCap = Paint.Cap.ROUND
+        viewBinding?.chartValueLevel?.animateX(500)
+        viewBinding?.chartValueLevel?.axisLeft?.axisMinimum = 0F
+        viewBinding?.chartValueLevel?.axisLeft?.setDrawAxisLine(true)
+        viewBinding?.chartValueLevel?.axisLeft?.setDrawGridLines(false)
+        viewBinding?.chartValueLevel?.axisLeft?.axisMaximum = 70F
+        viewBinding?.chartValueLevel?.axisRight?.isEnabled = false
+        viewBinding?.chartValueLevel?.axisLeft?.gridColor = Color.parseColor("#fbf6f0")
+        viewBinding?.chartValueLevel?.axisLeft?.axisLineColor = Color.parseColor("#fbf6f0")
+        viewBinding?.chartValueLevel?.axisLeft?.setDrawLabels(false)
+        viewBinding?.chartValueLevel?.description?.isEnabled = false
+        viewBinding?.chartValueLevel?.xAxis?.gridColor = Color.parseColor("#fbf6f0")
+        viewBinding?.chartValueLevel?.xAxis?.axisLineColor = Color.parseColor("#fbf6f0")
+        viewBinding?.chartValueLevel?.xAxis?.position = XAxis.XAxisPosition.BOTTOM
+        viewBinding?.chartValueLevel?.xAxis?.setDrawLabels(true)
+        viewBinding?.chartValueLevel?.xAxis?.setDrawGridLines(false)
+        viewBinding?.chartValueLevel?.xAxis?.axisMinimum = -0.5F
+        viewBinding?.chartValueLevel?.xAxis?.axisMaximum = 19.5F
+        viewBinding?.chartValueLevel?.xAxis?.setLabelCount(5, false)
+        viewBinding?.chartValueLevel?.xAxis?.textColor = Color.parseColor("#fbf6f0")
+        viewBinding?.chartValueLevel?.xAxis?.yOffset = 10F
+        viewBinding?.chartValueLevel?.xAxis?.valueFormatter = object : ValueFormatter() {
             override fun getFormattedValue(value: Float): String {
                 return "${(value + 2016).toInt()}年"
             }
         }
-        chart_value_level.legend.horizontalAlignment = Legend.LegendHorizontalAlignment.CENTER
-        chart_value_level.legend.xEntrySpace = 100F
-        chart_value_level.legend.textColor = Color.parseColor("#fbf6f0")
-        chart_value_level.legend.form = Legend.LegendForm.CIRCLE
-        chart_value_level.legend.yOffset = 5F
-        chart_value_level.extraBottomOffset = 5F  //设置x轴底部和legend之间的间距
+        viewBinding?.chartValueLevel?.legend?.horizontalAlignment = Legend.LegendHorizontalAlignment.CENTER
+        viewBinding?.chartValueLevel?.legend?.xEntrySpace = 100F
+        viewBinding?.chartValueLevel?.legend?.textColor = Color.parseColor("#fbf6f0")
+        viewBinding?.chartValueLevel?.legend?.form = Legend.LegendForm.CIRCLE
+        viewBinding?.chartValueLevel?.legend?.yOffset = 5F
+        viewBinding?.chartValueLevel?.extraBottomOffset = 5F  //设置x轴底部和legend之间的间距
 
         //设置数据
         val lineOneDataList = ArrayList<Entry>()
@@ -624,7 +631,7 @@ class ProjectChartActivity : AppCompatActivity() {
         val lineData = LineData()
         lineData.addDataSet(lineOneDataSet)
         lineData.addDataSet(lineTwoDataSet)
-        chart_value_level.data = lineData
-        chart_value_level.invalidate()
+        viewBinding?.chartValueLevel?.data = lineData
+        viewBinding?.chartValueLevel?.invalidate()
     }
 }

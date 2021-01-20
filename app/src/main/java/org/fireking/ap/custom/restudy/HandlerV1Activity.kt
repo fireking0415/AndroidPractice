@@ -6,11 +6,14 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.os.Message
-import kotlinx.android.synthetic.main.activity_handler_v1.*
+import android.view.LayoutInflater
 import org.fireking.ap.R
+import org.fireking.ap.databinding.ActivityHandlerV1Binding
 import org.jetbrains.anko.intentFor
 
 class HandlerV1Activity : AppCompatActivity() {
+
+    private var viewBinding: ActivityHandlerV1Binding? = null
 
     companion object {
         @JvmStatic
@@ -21,9 +24,10 @@ class HandlerV1Activity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_handler_v1)
+        viewBinding = ActivityHandlerV1Binding.inflate(LayoutInflater.from(this))
+        setContentView(viewBinding?.root)
 
-        btnUseUIThread.setOnClickListener {
+        viewBinding?.btnUseUIThread?.setOnClickListener {
             val handler = object : Handler(Looper.getMainLooper()) {
                 override fun handleMessage(msg: Message) {
                     super.handleMessage(msg)
@@ -31,7 +35,7 @@ class HandlerV1Activity : AppCompatActivity() {
             }
             handler.sendMessage(handler.obtainMessage(1))
         }
-        btnUseSubThread.setOnClickListener {
+        viewBinding?.btnUseSubThread?.setOnClickListener {
             Thread(){
                 Looper.prepare()
                 val handler = object: Handler(){

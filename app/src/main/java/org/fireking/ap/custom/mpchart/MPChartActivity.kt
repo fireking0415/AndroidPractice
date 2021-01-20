@@ -1,18 +1,20 @@
 package org.fireking.ap.custom.mpchart
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_m_p_chart.*
-import org.fireking.ap.R
+import android.view.LayoutInflater
+import androidx.appcompat.app.AppCompatActivity
 import org.fireking.ap.custom.mpchart.barchart.BarChartSampleActivity
 import org.fireking.ap.custom.mpchart.linechart.LineChartActivity
 import org.fireking.ap.custom.mpchart.piechart.PieChartActivity
-import org.fireking.ap.custom.mpchart.radarchart.RadarChartSampleActivity
 import org.fireking.ap.custom.mpchart.project.ProjectChartActivity
+import org.fireking.ap.custom.mpchart.radarchart.RadarChartSampleActivity
+import org.fireking.ap.databinding.ActivityMPChartBinding
 import org.jetbrains.anko.intentFor
 
 class MPChartActivity : AppCompatActivity() {
+
+    private var viewBinding: ActivityMPChartBinding? = null
 
     companion object {
         @JvmStatic
@@ -23,26 +25,27 @@ class MPChartActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_m_p_chart)
+        viewBinding = ActivityMPChartBinding.inflate(LayoutInflater.from(this))
+        setContentView(viewBinding?.root)
 
 
-        btnMPLineChartV1.setOnClickListener {
+        viewBinding?.btnMPLineChartV1?.setOnClickListener {
             LineChartActivity.start(this)
         }
 
-        btnRadarChart.setOnClickListener {
+        viewBinding?.btnRadarChart?.setOnClickListener {
             RadarChartSampleActivity.start(this)
         }
 
-        btnBarChart.setOnClickListener {
+        viewBinding?.btnBarChart?.setOnClickListener {
             BarChartSampleActivity.start(this)
         }
 
-        btnMpLineChart.setOnClickListener {
+        viewBinding?.btnMpLineChart?.setOnClickListener {
             PieChartActivity.start(this)
         }
 
-        btnProjectSample.setOnClickListener {
+        viewBinding?.btnProjectSample?.setOnClickListener {
             ProjectChartActivity.start(this)
         }
     }

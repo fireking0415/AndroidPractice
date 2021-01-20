@@ -11,8 +11,6 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/testaroute" />
-            <option value="$PROJECT_DIR$/testdeeplinkapp" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

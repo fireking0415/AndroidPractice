@@ -2,15 +2,17 @@ package org.fireking.ap.custom.recyclerview.diffutil
 
 import android.content.Context
 import android.os.Bundle
+import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.activity_diff_util.*
-import org.fireking.ap.R
+import org.fireking.ap.databinding.ActivityDiffUtil2Binding
 import org.jetbrains.anko.intentFor
 
 class DiffUtil2Activity : AppCompatActivity() {
 
     private lateinit var mDiffUtilAdapter: DiffUtil2Adapter
+
+    private var viewBinding: ActivityDiffUtil2Binding? = null
 
     companion object {
         @JvmStatic
@@ -21,11 +23,12 @@ class DiffUtil2Activity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_diff_util2)
+        viewBinding = ActivityDiffUtil2Binding.inflate(LayoutInflater.from(this))
+        setContentView(viewBinding?.root)
 
-        rv_content_list.layoutManager = LinearLayoutManager(this)
+        viewBinding?.rvContentList?.layoutManager = LinearLayoutManager(this)
         mDiffUtilAdapter = DiffUtil2Adapter()
-        rv_content_list.adapter = mDiffUtilAdapter
+        viewBinding?.rvContentList?.adapter = mDiffUtilAdapter
 
         val result2 = ArrayList<DiffBean>()
 
@@ -46,7 +49,7 @@ class DiffUtil2Activity : AppCompatActivity() {
         result3.add(DiffBean(4, "测试4"))
         result3.add(DiffBean(6, "测试6"))
 
-        btnChange.setOnClickListener {
+        viewBinding?.btnChange?.setOnClickListener {
             mDiffUtilAdapter.submitList(result3)
         }
 
@@ -57,7 +60,7 @@ class DiffUtil2Activity : AppCompatActivity() {
         result4.add(DiffBean(4, "测试4"))
         result4.add(DiffBean(6, "测试6"))
         result4.add(DiffBean(5, "测试55"))
-        btnAdd.setOnClickListener {
+        viewBinding?.btnAdd?.setOnClickListener {
             mDiffUtilAdapter.submitList(result4)
         }
     }

@@ -1,18 +1,17 @@
 package org.fireking.ap.custom.recyclerview
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.fragment_view_pager_recycler_view_o_o_m.*
-import org.fireking.ap.R
+import org.fireking.ap.databinding.FragmentViewPagerRecyclerViewOOMBinding
 
 class ViewPagerRecyclerViewOOMFragment : LazyLoadFragment() {
 
     private var title: String = ""
+    private var viewBinding: FragmentViewPagerRecyclerViewOOMBinding? = null
 
     companion object {
         @JvmStatic
@@ -36,12 +35,13 @@ class ViewPagerRecyclerViewOOMFragment : LazyLoadFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_view_pager_recycler_view_o_o_m, container, false)
+        viewBinding = FragmentViewPagerRecyclerViewOOMBinding.inflate(inflater, container, false)
+        return viewBinding?.root
     }
 
     override fun lazyLoad() {
-        rv_content_list.layoutManager = LinearLayoutManager(requireContext())
-        rv_content_list.adapter = ViewPagerRecyclerViewOOMItemAdapter(title)
+        viewBinding?.rvContentList?.layoutManager = LinearLayoutManager(requireContext())
+        viewBinding?.rvContentList?.adapter = ViewPagerRecyclerViewOOMItemAdapter(title)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -2,12 +2,15 @@ package org.fireking.ap.custom.viewgroup
 
 import android.content.Context
 import android.os.Bundle
+import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_text_and_view_align.*
 import org.fireking.ap.R
+import org.fireking.ap.databinding.ActivityTextAndViewAlignBinding
 import org.jetbrains.anko.intentFor
 
 class TextAndViewAlignActivity : AppCompatActivity() {
+
+    private var viewBinding: ActivityTextAndViewAlignBinding? = null
 
     companion object {
         @JvmStatic
@@ -18,8 +21,12 @@ class TextAndViewAlignActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_text_and_view_align)
+        viewBinding = ActivityTextAndViewAlignBinding.inflate(LayoutInflater.from(this))
+        setContentView(viewBinding?.root)
 
-        textAndViewAlignLayout.setAlignTextAndView("淘宝淘宝淘宝淘宝淘宝淘宝淘宝淘宝淘宝", R.mipmap.ic_ks_ad)
+        viewBinding?.textAndViewAlignLayout?.setAlignTextAndView(
+            "淘宝淘宝淘宝淘宝淘宝淘宝淘宝淘宝淘宝",
+            R.mipmap.ic_ks_ad
+        )
     }
 }

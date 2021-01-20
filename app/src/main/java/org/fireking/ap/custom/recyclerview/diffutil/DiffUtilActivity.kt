@@ -2,17 +2,20 @@ package org.fireking.ap.custom.recyclerview.diffutil
 
 import android.content.Context
 import android.os.Bundle
+import android.text.Layout
 import android.util.Log
+import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.activity_diff_util.*
 import org.fireking.ap.R
+import org.fireking.ap.databinding.ActivityDiffUtilBinding
 import org.jetbrains.anko.intentFor
 
 class DiffUtilActivity : AppCompatActivity() {
 
     private lateinit var mDiffUtilAdapter: DiffUtilAdapter
+    private var viewBinding: ActivityDiffUtilBinding? = null
 
     companion object {
         @JvmStatic
@@ -23,29 +26,22 @@ class DiffUtilActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_diff_util)
+        viewBinding = ActivityDiffUtilBinding.inflate(LayoutInflater.from(this))
+        setContentView(viewBinding?.root)
 
         val diffCallback = object : DiffUtil.ItemCallback<DiffBean>() {
             override fun areItemsTheSame(oldItem: DiffBean, newItem: DiffBean): Boolean {
-                Log.e(
-                    "info",
-                    "===================areItemsTheSame--》${oldItem.id}:${newItem.id}-->${oldItem.id == newItem.id}"
-                )
                 return oldItem.id == newItem.id
             }
 
             override fun areContentsTheSame(oldItem: DiffBean, newItem: DiffBean): Boolean {
-//                Log.e(
-//                    "info",
-//                    "===================areContentsTheSame--》${oldItem.id}:${newItem.id}-->${oldItem.id == newItem.id}"
-//                )
                 return oldItem == newItem
             }
         }
 
-        rv_content_list.layoutManager = LinearLayoutManager(this)
+        viewBinding?.rvContentList?.layoutManager = LinearLayoutManager(this)
         mDiffUtilAdapter = DiffUtilAdapter(diffCallback)
-        rv_content_list.adapter = mDiffUtilAdapter
+        viewBinding?.rvContentList?.adapter = mDiffUtilAdapter
 
         val result2 = ArrayList<DiffBean>()
 
@@ -66,7 +62,7 @@ class DiffUtilActivity : AppCompatActivity() {
         result3.add(DiffBean(4, "测试4"))
         result3.add(DiffBean(6, "测试6"))
 
-        btnChange.setOnClickListener {
+        viewBinding?.btnChange?.setOnClickListener {
             mDiffUtilAdapter.submitList(result3)
         }
 
@@ -77,7 +73,7 @@ class DiffUtilActivity : AppCompatActivity() {
         result4.add(DiffBean(4, "测试4444"))
         result4.add(DiffBean(5, "测试5"))
         result4.add(DiffBean(6, "测试666"))
-        btnAdd.setOnClickListener {
+        viewBinding?.btnAdd?.setOnClickListener {
             mDiffUtilAdapter.submitList(result4)
         }
     }

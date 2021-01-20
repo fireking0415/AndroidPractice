@@ -2,12 +2,14 @@ package org.fireking.ap.custom.restudy
 
 import android.content.Context
 import android.os.Bundle
+import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_restudy.*
-import org.fireking.ap.R
+import org.fireking.ap.databinding.ActivityRestudyBinding
 import org.jetbrains.anko.intentFor
 
 class RestudyActivity : AppCompatActivity() {
+
+    private var viewBinding: ActivityRestudyBinding? = null
 
     companion object {
         @JvmStatic
@@ -18,9 +20,10 @@ class RestudyActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_restudy)
+        viewBinding = ActivityRestudyBinding.inflate(LayoutInflater.from(this))
+        setContentView(viewBinding?.root)
 
-        btnHandler.setOnClickListener {
+        viewBinding?.btnHandler?.setOnClickListener {
             HandlerV1Activity.start(this@RestudyActivity)
         }
     }
