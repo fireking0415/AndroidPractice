@@ -54,9 +54,9 @@ class LineChartActivity : AppCompatActivity() {
         lineChartView2.setTouchEnabled(true)  //设置支持触摸
         lineChartView2.setScaleEnabled(true)  //是否支持缩放，默认true
         lineChartView2.isDragEnabled = true //是否支持拖拽
-//        lineChartView2.isScaleXEnabled = true //是否支持x轴缩放
-//        lineChartView2.isScaleYEnabled = true //是否支持y轴缩放
-//        lineChartView2.setPinchZoom(true)  //是否支持x、y轴同时缩放，默认为false
+        lineChartView2.isScaleXEnabled = true //是否支持x轴缩放
+        lineChartView2.isScaleYEnabled = true //是否支持y轴缩放
+        lineChartView2.setPinchZoom(true)  //是否支持x、y轴同时缩放，默认为false
         lineChartView2.isDoubleTapToZoomEnabled = true //是否支持双击屏幕放大，默认true
         lineChartView2.isHighlightPerDragEnabled = true  //是否拖拽高亮线（数据点和坐标的提示线），默认true
         lineChartView2.isDragDecelerationEnabled = true //拖拽滚动时，手放开是否会持续滚动，默认true，false是拖动到那算那
@@ -68,15 +68,15 @@ class LineChartActivity : AppCompatActivity() {
         xAxis.axisMinimum = 0F //设置x轴最小值
         xAxis.textSize = 14F
         xAxis.textColor = Color.RED
-//        xAxis.isEnabled = true //是否显示x轴是否禁用
-//        xAxis.setDrawLabels(true) //设置x轴标签展示
-//        xAxis.setDrawGridLines(true) //设置设置x轴上每个对应的点的竖线
-//        xAxis.enableAxisLineDashedLine(2F, 2F, 2F) //竖线 -虚线样式
-//        xAxis.labelRotationAngle = 30F //设置x轴标签的旋转角度
-//
-//        //绘制y轴
+        xAxis.isEnabled = true //是否显示x轴是否禁用
+        xAxis.setDrawLabels(true) //设置x轴标签展示
+        xAxis.setDrawGridLines(true) //设置设置x轴上每个对应的点的竖线
+        xAxis.enableAxisLineDashedLine(2F, 2F, 2F) //竖线 -虚线样式
+        xAxis.labelRotationAngle = 30F //设置x轴标签的旋转角度
+
+        //绘制y轴
         val yAxisLeft = lineChartView2.axisLeft
-//        yAxisLeft.textSize = 14F
+        yAxisLeft.textSize = 14F
         yAxisLeft.axisMinimum = 0F
         val yAxisRight = lineChartView2.axisRight
         yAxisRight.isEnabled = false
