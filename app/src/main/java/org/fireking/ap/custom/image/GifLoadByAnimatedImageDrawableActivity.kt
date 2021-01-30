@@ -11,7 +11,7 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import org.fireking.ap.R
 import org.fireking.ap.databinding.ActivityGifLoadByAnimatedImageDrawableBinding
-import org.jetbrains.anko.intentFor
+import org.fireking.library.kotlin.ext.intentFor
 
 
 class GifLoadByAnimatedImageDrawableActivity : AppCompatActivity() {

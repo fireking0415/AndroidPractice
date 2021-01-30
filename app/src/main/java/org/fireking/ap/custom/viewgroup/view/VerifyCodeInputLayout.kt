@@ -17,9 +17,6 @@ import android.widget.*
 import androidx.core.view.forEach
 import androidx.recyclerview.widget.RecyclerView
 import org.fireking.ap.R
-import org.jetbrains.anko.backgroundColor
-import org.jetbrains.anko.backgroundResource
-import org.jetbrains.anko.textColor
 
 class VerifyCodeInputLayout(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
     RelativeLayout(context, attrs, defStyleAttr) {
@@ -150,8 +147,8 @@ class VerifyCodeInputLayout(context: Context, attrs: AttributeSet?, defStyleAttr
             textView.height = inputBoxSize
             textView.gravity = Gravity.CENTER
             textView.isFocusable = false
-            textView.textColor = inputTextColor
-            textView.backgroundResource = itemSelector
+            textView.setTextColor(inputTextColor)
+            textView.setBackgroundResource(itemSelector)
             inputTextView.add(textView)
         }
 

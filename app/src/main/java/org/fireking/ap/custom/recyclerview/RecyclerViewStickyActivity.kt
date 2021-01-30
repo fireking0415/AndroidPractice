@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import org.fireking.ap.R
 import org.fireking.ap.custom.recyclerview.v2.News2Adapter
 import org.fireking.ap.databinding.ActivityRecyclerViewStickyBinding
-import org.jetbrains.anko.intentFor
+import org.fireking.library.kotlin.ext.intentFor
 
 class RecyclerViewStickyActivity : AppCompatActivity() {
 

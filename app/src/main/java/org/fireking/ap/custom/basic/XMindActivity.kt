@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import org.fireking.ap.custom.basic.viewgroup.MapNode
 import org.fireking.ap.databinding.ActivityXMindBinding
-import org.jetbrains.anko.intentFor
+import org.fireking.library.kotlin.ext.intentFor
 
 class XMindActivity : AppCompatActivity() {
 

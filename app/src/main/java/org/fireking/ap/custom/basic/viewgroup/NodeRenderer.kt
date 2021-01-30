@@ -3,8 +3,8 @@ package org.fireking.ap.custom.basic.viewgroup
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.PointF
+import android.util.TypedValue
 import android.widget.LinearLayout
-import org.jetbrains.anko.dip
 
 abstract class NodeRenderer(context: Context?, private val xMindNode: XMindNode) :
     LinearLayout(context) {
@@ -46,5 +46,13 @@ abstract class NodeRenderer(context: Context?, private val xMindNode: XMindNode)
 
     fun getRightY(): Float {
         return (xMindNode.rect.top + xMindNode.rect.height() / 2).toFloat()
+    }
+
+    private fun dip(value: Int): Int {
+        return TypedValue.applyDimension(
+            TypedValue.COMPLEX_UNIT_DIP,
+            value.toFloat(),
+            resources.displayMetrics
+        ).toInt()
     }
 }

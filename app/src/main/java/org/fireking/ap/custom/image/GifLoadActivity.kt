@@ -11,7 +11,7 @@ import com.bumptech.glide.request.target.DrawableImageViewTarget
 import com.bumptech.glide.request.transition.Transition
 import okhttp3.*
 import org.fireking.ap.databinding.ActivityGifLoadBinding
-import org.jetbrains.anko.intentFor
+import org.fireking.library.kotlin.ext.intentFor
 import pl.droidsonroids.gif.GifDrawable
 import java.io.IOException
 

@@ -4,7 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import org.fireking.ap.R
-import org.jetbrains.anko.intentFor
+import org.fireking.library.kotlin.ext.intentFor
 
 class ConstaintLayoutV1 : AppCompatActivity() {
 

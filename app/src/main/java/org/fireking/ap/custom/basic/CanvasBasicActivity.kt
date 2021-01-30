@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import org.fireking.ap.custom.basic.path.TestPathActivity
 import org.fireking.ap.databinding.ActivityCanvasBasicBinding
-import org.jetbrains.anko.intentFor
+import org.fireking.library.kotlin.ext.intentFor
 
 class CanvasBasicActivity : AppCompatActivity() {
 

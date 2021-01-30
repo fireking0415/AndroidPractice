@@ -3,13 +3,12 @@ package org.fireking.ap.custom.recyclerview
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.ViewGroup
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.tabs.TabLayout
 import org.fireking.ap.R
 import org.fireking.ap.databinding.ActivityMagicIndicatorDemoBinding
-import org.jetbrains.anko.intentFor
+import org.fireking.library.kotlin.ext.intentFor
 
 class MagicIndicatorDemoActivity : AppCompatActivity() {
 

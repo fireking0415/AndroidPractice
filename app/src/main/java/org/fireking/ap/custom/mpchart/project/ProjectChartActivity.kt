@@ -15,7 +15,7 @@ import com.github.mikephil.charting.data.*
 import com.github.mikephil.charting.formatter.ValueFormatter
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet
 import org.fireking.ap.databinding.ActivityV11ChartBinding
-import org.jetbrains.anko.intentFor
+import org.fireking.library.kotlin.ext.intentFor
 
 
 class ProjectChartActivity : AppCompatActivity() {

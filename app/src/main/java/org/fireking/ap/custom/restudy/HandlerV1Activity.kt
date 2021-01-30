@@ -1,15 +1,14 @@
 package org.fireking.ap.custom.restudy
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.os.Message
 import android.view.LayoutInflater
-import org.fireking.ap.R
+import androidx.appcompat.app.AppCompatActivity
 import org.fireking.ap.databinding.ActivityHandlerV1Binding
-import org.jetbrains.anko.intentFor
+import org.fireking.library.kotlin.ext.intentFor
 
 class HandlerV1Activity : AppCompatActivity() {
 

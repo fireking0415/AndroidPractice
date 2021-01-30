@@ -3,10 +3,10 @@ package org.fireking.ap.custom.basic.viewgroup
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import org.fireking.ap.R
-import org.jetbrains.anko.dip
 
 class XMindView : View {
 
@@ -49,6 +49,14 @@ class XMindView : View {
 
         nodeTopBottomMargin = dip(8)
         nodeLeftRightMargin = dip(24)
+    }
+
+    private fun dip(value: Int): Int {
+        return TypedValue.applyDimension(
+            TypedValue.COMPLEX_UNIT_DIP,
+            value.toFloat(),
+            resources.displayMetrics
+        ).toInt()
     }
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {

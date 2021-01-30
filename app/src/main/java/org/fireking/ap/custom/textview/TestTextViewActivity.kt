@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import org.fireking.ap.custom.textview.custom.SpanExtTagHandler
 import org.fireking.ap.databinding.ActivityTestTextViewBinding
-import org.jetbrains.anko.intentFor
+import org.fireking.library.kotlin.ext.intentFor
 
 class TestTextViewActivity : AppCompatActivity() {
 

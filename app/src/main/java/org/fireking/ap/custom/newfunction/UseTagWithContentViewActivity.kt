@@ -1,10 +1,9 @@
 package org.fireking.ap.custom.newfunction
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import org.fireking.ap.R
-import org.jetbrains.anko.intentFor
+import androidx.appcompat.app.AppCompatActivity
+import org.fireking.library.kotlin.ext.intentFor
 
 class UseTagWithContentViewActivity : AppCompatActivity() {
 

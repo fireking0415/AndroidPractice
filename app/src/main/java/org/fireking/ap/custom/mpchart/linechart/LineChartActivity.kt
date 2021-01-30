@@ -11,8 +11,7 @@ import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.formatter.ValueFormatter
 import org.fireking.ap.databinding.ActivityMPChartBasicV1Binding
-import org.jetbrains.anko.backgroundColor
-import org.jetbrains.anko.intentFor
+import org.fireking.library.kotlin.ext.intentFor
 import kotlin.random.Random
 
 class LineChartActivity : AppCompatActivity() {
@@ -42,7 +41,7 @@ class LineChartActivity : AppCompatActivity() {
     }
 
     private fun drawLineChartView3() {
-        viewBinding?.lineChartView3?.backgroundColor = Color.parseColor("#80F14400")
+        viewBinding?.lineChartView3?.setBackgroundColor(Color.parseColor("#80F14400"))
         viewBinding?.lineChartView3?.xAxis?.position = XAxis.XAxisPosition.BOTTOM
     }
 

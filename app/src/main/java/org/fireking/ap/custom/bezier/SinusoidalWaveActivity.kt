@@ -10,7 +10,7 @@ import android.view.animation.LinearInterpolator
 import android.widget.SeekBar
 import androidx.appcompat.app.AppCompatActivity
 import org.fireking.ap.databinding.ActivitySinusoidalWaveBinding
-import org.jetbrains.anko.intentFor
+import org.fireking.library.kotlin.ext.intentFor
 
 class SinusoidalWaveActivity : AppCompatActivity() {
 

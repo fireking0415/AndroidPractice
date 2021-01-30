@@ -2,15 +2,12 @@ package org.fireking.ap.custom.recyclerview.diffutil
 
 import android.content.Context
 import android.os.Bundle
-import android.text.Layout
-import android.util.Log
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
-import org.fireking.ap.R
 import org.fireking.ap.databinding.ActivityDiffUtilBinding
-import org.jetbrains.anko.intentFor
+import org.fireking.library.kotlin.ext.intentFor
 
 class DiffUtilActivity : AppCompatActivity() {
 

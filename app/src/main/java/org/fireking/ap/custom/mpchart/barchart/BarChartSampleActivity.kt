@@ -9,7 +9,7 @@ import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 import org.fireking.ap.databinding.ActivityBarChartSampleBinding
-import org.jetbrains.anko.intentFor
+import org.fireking.library.kotlin.ext.intentFor
 
 class BarChartSampleActivity : AppCompatActivity() {
 

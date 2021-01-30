@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import org.fireking.ap.R
 import org.fireking.ap.databinding.ActivityTextAndViewAlignBinding
-import org.jetbrains.anko.intentFor
+import org.fireking.library.kotlin.ext.intentFor
 
 class TextAndViewAlignActivity : AppCompatActivity() {
 

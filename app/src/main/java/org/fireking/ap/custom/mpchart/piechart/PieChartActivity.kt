@@ -2,15 +2,14 @@ package org.fireking.ap.custom.mpchart.piechart
 
 import android.content.Context
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
+import androidx.appcompat.app.AppCompatActivity
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
-import org.fireking.ap.R
 import org.fireking.ap.databinding.ActivityPieChartBinding
-import org.jetbrains.anko.intentFor
+import org.fireking.library.kotlin.ext.intentFor
 
 class PieChartActivity : AppCompatActivity() {
 

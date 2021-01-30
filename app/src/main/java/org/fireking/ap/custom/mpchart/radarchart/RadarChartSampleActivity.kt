@@ -10,9 +10,8 @@ import com.github.mikephil.charting.data.RadarDataSet
 import com.github.mikephil.charting.data.RadarEntry
 import com.github.mikephil.charting.formatter.ValueFormatter
 import com.github.mikephil.charting.utils.Utils
-import org.fireking.ap.R
 import org.fireking.ap.databinding.ActivityRadarChartSampleBinding
-import org.jetbrains.anko.intentFor
+import org.fireking.library.kotlin.ext.intentFor
 
 class RadarChartSampleActivity : AppCompatActivity() {
 

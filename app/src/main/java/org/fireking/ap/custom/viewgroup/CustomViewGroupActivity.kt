@@ -7,7 +7,7 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import org.fireking.ap.R
 import org.fireking.ap.databinding.ActivityCustomViewGroupBinding
-import org.jetbrains.anko.intentFor
+import org.fireking.library.kotlin.ext.intentFor
 
 class CustomViewGroupActivity : AppCompatActivity() {
 

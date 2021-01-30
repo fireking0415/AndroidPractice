@@ -4,9 +4,8 @@ import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
-import org.fireking.ap.R
 import org.fireking.ap.databinding.ActivityViewEventSampleBinding
-import org.jetbrains.anko.intentFor
+import org.fireking.library.kotlin.ext.intentFor
 
 class ViewEventSampleActivity : AppCompatActivity() {
 

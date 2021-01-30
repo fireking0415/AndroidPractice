@@ -1,11 +1,10 @@
 package org.fireking.ap.custom.flip
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import org.fireking.ap.R
-import org.jetbrains.anko.intentFor
+import org.fireking.library.kotlin.ext.intentFor
 
 class NumberFlipActivity : AppCompatActivity() {
 

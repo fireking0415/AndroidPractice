@@ -5,11 +5,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import org.fireking.ap.databinding.ActivityViewBindingSampleBinding;
-import org.jetbrains.anko.ToastsKt;
 
 public class ViewBindingSampleActivity extends AppCompatActivity {
 
@@ -29,21 +29,21 @@ public class ViewBindingSampleActivity extends AppCompatActivity {
         bindingSampleBinding.btnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ToastsKt.toast(ViewBindingSampleActivity.this, "点解了Button");
+                Toast.makeText(ViewBindingSampleActivity.this, "点解了Button", Toast.LENGTH_SHORT).show();
             }
         });
 
         bindingSampleBinding.btnText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ToastsKt.toast(ViewBindingSampleActivity.this, "点击了文字");
+                Toast.makeText(ViewBindingSampleActivity.this, "点击了文字", Toast.LENGTH_SHORT).show();
             }
         });
 
         bindingSampleBinding.btnImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ToastsKt.toast(ViewBindingSampleActivity.this, "点击了图片");
+                Toast.makeText(ViewBindingSampleActivity.this, "点击了图片", Toast.LENGTH_SHORT).show();
             }
         });
     }

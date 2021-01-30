@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import org.fireking.ap.custom.anim.motionlayout.MotionSampleActivity
 import org.fireking.ap.databinding.ActivityAnimBinding
-import org.jetbrains.anko.intentFor
+import org.fireking.library.kotlin.ext.intentFor
 
 class AnimActivity : AppCompatActivity() {
 

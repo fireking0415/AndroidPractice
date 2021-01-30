@@ -10,7 +10,7 @@ import com.lxj.xpopup.core.BasePopupView
 import org.fireking.ap.R
 import org.fireking.ap.custom.image.widget.MatrixDescDialog
 import org.fireking.ap.databinding.ActivityMatrixTransformBinding
-import org.jetbrains.anko.intentFor
+import org.fireking.library.kotlin.ext.intentFor
 
 class MatrixTransformActivity : AppCompatActivity() {
 

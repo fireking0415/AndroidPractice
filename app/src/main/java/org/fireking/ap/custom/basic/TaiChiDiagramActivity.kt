@@ -1,10 +1,10 @@
 package org.fireking.ap.custom.basic
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import org.fireking.ap.R
-import org.jetbrains.anko.intentFor
+import org.fireking.library.kotlin.ext.intentFor
 
 class TaiChiDiagramActivity : AppCompatActivity() {
 

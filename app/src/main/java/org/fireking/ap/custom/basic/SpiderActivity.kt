@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import org.fireking.ap.custom.basic.view.SpiderView
 import org.fireking.ap.databinding.ActivitySpiderBinding
-import org.jetbrains.anko.intentFor
+import org.fireking.library.kotlin.ext.intentFor
 import java.util.*
 
 class SpiderActivity : AppCompatActivity() {

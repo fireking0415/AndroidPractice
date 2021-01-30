@@ -10,7 +10,7 @@ import org.fireking.ap.custom.mpchart.piechart.PieChartActivity
 import org.fireking.ap.custom.mpchart.project.ProjectChartActivity
 import org.fireking.ap.custom.mpchart.radarchart.RadarChartSampleActivity
 import org.fireking.ap.databinding.ActivityMPChartBinding
-import org.jetbrains.anko.intentFor
+import org.fireking.library.kotlin.ext.intentFor
 
 class MPChartActivity : AppCompatActivity() {
 

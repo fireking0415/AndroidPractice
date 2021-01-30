@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.fireking.ap.databinding.ActivityItemDecorationV1Binding
 import org.fireking.ap.databinding.DecorationSpaceLayoutBinding
-import org.jetbrains.anko.intentFor
+import org.fireking.library.kotlin.ext.intentFor
 
 class ItemDecorationV1Activity : AppCompatActivity() {
 

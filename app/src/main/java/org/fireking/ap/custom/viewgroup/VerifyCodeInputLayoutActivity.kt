@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import org.fireking.ap.R
 import org.fireking.ap.custom.viewgroup.view.VerifyCodeInputLayout
-import org.jetbrains.anko.intentFor
+import org.fireking.library.kotlin.ext.intentFor
 
 class VerifyCodeInputLayoutActivity : AppCompatActivity() {
 
