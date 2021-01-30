@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/basic"
+        android:enabled="true"
+        android:icon="@drawable/tab_basic"
+        android:title="基础" />
+
+    <item
+        android:id="@+id/library"
+        android:enabled="true"
+        android:icon="@drawable/tab_library"
+        android:title="实验室" />
+
+    <item
+        android:id="@+id/fight"
+        android:enabled="true"
+        android:icon="@drawable/tab_fight"
+        android:title="战场" />
+</menu>

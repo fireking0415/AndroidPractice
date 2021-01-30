@@ -1,142 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/rvContentList"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8F8F8"
-    tools:context=".MainActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.zhy.view.flowlayout.FlowLayout
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/contentViewPager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/coordinatorLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CoordinatorLayout" />
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/bottom_navigation" />
 
-        <Button
-            android:id="@+id/btnCanvas"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Canvas基本使用" />
-
-        <Button
-            android:id="@+id/btnPath"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Path基本使用" />
-
-        <Button
-            android:id="@+id/btnFlip"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Flip基本使用" />
-
-        <Button
-            android:id="@+id/btnBezier"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Bezier基本使用" />
-
-        <Button
-            android:id="@+id/btnViewGroup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="自定义ViewGroup" />
-
-        <Button
-            android:id="@+id/btnNested"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nested机制" />
-
-        <Button
-            android:id="@+id/btnRecyclerView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="RecyclerView使用" />
-
-        <Button
-            android:id="@+id/btnConstraintLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ConstraintLayout使用" />
-
-        <Button
-            android:id="@+id/btnWindowManager"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="WindowManager" />
-
-        <Button
-            android:id="@+id/btnAnim"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Anim" />
-
-        <Button
-            android:id="@+id/btnNotification"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Notification" />
-
-        <Button
-            android:id="@+id/btnNewFunction"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="新功能验证" />
-
-        <Button
-            android:id="@+id/btnThread"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="线程" />
-
-        <Button
-            android:id="@+id/btnViewEvent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="事件冲突处理" />
-
-        <Button
-            android:id="@+id/btnRestudy"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="重学Android" />
-
-        <Button
-            android:id="@+id/btnTestImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="测试图片使用" />
-
-        <Button
-            android:id="@+id/btnLiveDataViewModel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="LiveData + ViewModel" />
-
-        <Button
-            android:id="@+id/btnTestTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="测试TextView" />
-
-        <Button
-            android:id="@+id/btnMPLineChart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="MPLineChart" />
-
-        <Button
-            android:id="@+id/btnTestARouter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ARouter" />
-
-    </com.zhy.view.flowlayout.FlowLayout>
-</androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

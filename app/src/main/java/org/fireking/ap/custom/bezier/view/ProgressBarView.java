@@ -147,11 +147,11 @@ public class ProgressBarView extends View {
         canvas.rotate(-fengcheRadiusValue);
         canvas.drawCircle(0, 0, circleRadius, fengchePaint);
         canvas.drawCircle(0, 0, circleRadius, circleOvalPaint);
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.fengshan);
-        Matrix matrix = new Matrix();
-        Bitmap dstBitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
-        canvas.drawBitmap(dstBitmap, -circleRadius + (circleRadius - bitmap.getWidth() / 2), -circleRadius + (circleRadius - bitmap.getHeight() / 2), null);
-        canvas.restore();
+//        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.fengshan);
+//        Matrix matrix = new Matrix();
+//        Bitmap dstBitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
+//        canvas.drawBitmap(dstBitmap, -circleRadius + (circleRadius - bitmap.getWidth() / 2), -circleRadius + (circleRadius - bitmap.getHeight() / 2), null);
+//        canvas.restore();
 
         //绘制当前进度
         String currentProgressStr = "当前进度 " + currentProgress + " %";

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AndroidPractice</string>
+    <string name="app_name">安卓实验室</string>
     <string name="behavior_simple_title">org.fireking.ap.custom.recyclerview.SimpleTextBehavior</string>
     <string name="behavior_simple_header">org.fireking.ap.custom.recyclerview.SampleHeaderBehavior</string>
     <string name="behavior_simple_recyclerview">org.fireking.ap.custom.recyclerview.RecyclerViewBehavior</string>
