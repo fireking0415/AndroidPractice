@@ -6,9 +6,9 @@
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        tools:context=".custom.image.MatrixTransformActivity">
+        tools:context="org.fireking.basic.image.MatrixTransformActivity">
 
-        <org.fireking.ap.custom.image.widget.MatrixAppcompatImageView
+        <org.fireking.basic.image.widget.MatrixAppcompatImageView
             android:id="@+id/iv_matrix"
             android:layout_width="300dp"
             android:layout_height="300dp"

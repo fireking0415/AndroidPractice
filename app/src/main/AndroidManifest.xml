@@ -43,13 +43,13 @@
         <activity android:name="org.fireking.basic.view.DrawLayoutActivity" />
         <activity android:name=".custom.recyclerview.decoration.ItemDecorationV1Activity" />
         <activity android:name=".custom.textview.TestFontActivity" />
-        <activity android:name=".custom.image.MatrixTransformActivity" />
-        <activity android:name=".custom.image.GifLoadByAnimatedImageDrawableActivity" />
-        <activity android:name=".custom.image.GifLoadByCanvasActivity" />
+        <activity android:name="org.fireking.basic.image.MatrixTransformActivity" />
+        <activity android:name="org.fireking.basic.image.GifLoadByAnimatedImageDrawableActivity" />
+        <activity android:name="org.fireking.basic.image.GifLoadByCanvasActivity" />
         <activity android:name=".custom.livedata.LiveDataViewModelActivity" />
-        <activity android:name=".custom.image.GifLoadActivity" />
-        <activity android:name=".custom.image.ImageActivity" />
-        <activity android:name=".custom.image.ImageTestActivity" />
+        <activity android:name="org.fireking.basic.image.GifLoadActivity" />
+        <activity android:name="org.fireking.basic.image.ImageActivity" />
+        <activity android:name="org.fireking.basic.image.ImageTestActivity" />
         <activity android:name=".custom.thread.ThreadActivity" />
         <activity android:name=".custom.restudy.HandlerV1Activity" />
         <activity android:name=".custom.restudy.RestudyActivity" />
@@ -74,9 +74,6 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".custom.newfunction.NewFunctionActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".custom.newfunction.ViewBindingSampleActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".custom.recyclerview.WanNianLiRecyclerView2Activity"

@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import org.fireking.ap.databinding.NewBasicFragmentBinding
 import org.fireking.base.BaseFragment
 import org.fireking.basic.animator.AnimActivity
+import org.fireking.basic.image.ImageActivity
 import org.fireking.basic.textview.TextViewModuleActivity
 import org.fireking.basic.view.ViewModuleActivity
 
@@ -42,6 +43,7 @@ class BasicFragment : BaseFragment<NewBasicFragmentBinding>() {
                 BasicAdapter.BasicEntity("View&Canvas", ViewModuleActivity::class.java),
                 BasicAdapter.BasicEntity("TextView", TextViewModuleActivity::class.java),
                 BasicAdapter.BasicEntity("Animator", AnimActivity::class.java),
+                BasicAdapter.BasicEntity("ImageView", ImageActivity::class.java),
                 BasicAdapter.BasicEntity("EditText&Keyboard", null),
                 BasicAdapter.BasicEntity("ViewGroup", null),
                 BasicAdapter.BasicEntity("Thread", null),

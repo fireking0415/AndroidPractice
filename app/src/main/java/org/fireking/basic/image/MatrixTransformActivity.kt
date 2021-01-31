@@ -1,4 +1,4 @@
-package org.fireking.ap.custom.image
+package org.fireking.basic.image
 
 import android.content.Context
 import android.os.Bundle
@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.lxj.xpopup.XPopup
 import com.lxj.xpopup.core.BasePopupView
 import org.fireking.ap.R
-import org.fireking.ap.custom.image.widget.MatrixDescDialog
+import org.fireking.basic.image.widget.MatrixDescDialog
 import org.fireking.ap.databinding.ActivityMatrixTransformBinding
 import org.fireking.library.kotlin.ext.intentFor
 

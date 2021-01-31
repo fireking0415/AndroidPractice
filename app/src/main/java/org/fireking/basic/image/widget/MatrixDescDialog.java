@@ -1,4 +1,4 @@
-package org.fireking.ap.custom.image.widget;
+package org.fireking.basic.image.widget;
 
 import android.content.Context;
 

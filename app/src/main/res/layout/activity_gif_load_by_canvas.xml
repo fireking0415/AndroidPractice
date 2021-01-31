@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".custom.image.GifLoadByCanvasActivity">
+    tools:context="org.fireking.basic.image.GifLoadByCanvasActivity">
 
-    <org.fireking.ap.custom.image.widget.GifImageView
+    <org.fireking.basic.image.widget.GifImageView
         android:id="@+id/gifImageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

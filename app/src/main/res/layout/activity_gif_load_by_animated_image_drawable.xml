@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".custom.image.GifLoadByAnimatedImageDrawableActivity">
+    tools:context="org.fireking.basic.image.GifLoadByAnimatedImageDrawableActivity">
 
     <ImageView
         android:id="@+id/iv_load_gif"
@@ -17,7 +17,7 @@
         android:layout_height="1dip"
         android:background="#334455" />
 
-    <org.fireking.ap.custom.image.widget.AnimatedImageDrawableView
+    <org.fireking.basic.image.widget.AnimatedImageDrawableView
         android:id="@+id/iv_animated_image_drawable"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

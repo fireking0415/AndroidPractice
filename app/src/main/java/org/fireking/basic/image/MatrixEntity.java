@@ -1,4 +1,4 @@
-package org.fireking.ap.custom.image;
+package org.fireking.basic.image;
 
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
