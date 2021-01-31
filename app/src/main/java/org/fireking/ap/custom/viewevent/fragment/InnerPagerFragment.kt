@@ -7,18 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import org.fireking.ap.R
 
-/**
- * Desc:
- * <p>
- * Author: Wanggang
- * Date: 2020/8/31
- * Copyright: Copyright (c) 2016-2020
- * Company: @小牛科技
- * Update Comments:
- * 构建配置参见:
- * @author Wanggang
- */
-
 class InnerPagerFragment : Fragment() {
 
     companion object {

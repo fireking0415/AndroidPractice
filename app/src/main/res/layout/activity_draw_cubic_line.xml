@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".custom.basic.DrawCubicLineActivity">
+    tools:context="org.fireking.basic.view.DrawCubicLineActivity">
 
-    <org.fireking.ap.custom.basic.view.DrawCubicLine
+    <org.fireking.basic.view.widget.DrawCubicLine
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

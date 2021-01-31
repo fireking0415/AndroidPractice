@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".custom.anim.AnimActivity">
+    tools:context="org.fireking.basic.animator.AnimActivity">
 
     <Button
         android:layout_width="match_parent"

@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".custom.basic.DrawLayoutActivity">
+    tools:context="org.fireking.basic.view.DrawLayoutActivity">
 
-    <org.fireking.ap.custom.basic.view.LayoutCanvasView
+    <org.fireking.basic.view.widget.LayoutCanvasView
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>

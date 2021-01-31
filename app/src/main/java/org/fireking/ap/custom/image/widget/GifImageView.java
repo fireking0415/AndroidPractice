@@ -11,18 +11,6 @@ import androidx.annotation.Nullable;
 
 import org.fireking.ap.R;
 
-/**
- * Desc:
- * <p>
- * Author: Wanggang
- * Date: 2020/10/10
- * Copyright: Copyright (c) 2016-2020
- * Company: @小牛科技
- * Update Comments:
- * 构建配置参见:
- *
- * @author Wanggang
- */
 public class GifImageView extends View {
 
     private Movie mMovie;

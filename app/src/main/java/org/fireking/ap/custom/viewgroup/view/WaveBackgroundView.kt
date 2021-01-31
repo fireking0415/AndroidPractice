@@ -9,19 +9,6 @@ import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.View
 
-/**
- * Desc:
- *
- *
- * Author: Wanggang
- * Date: 2020/7/18
- * Copyright: Copyright (c) 2016-2020
- * Company: @小牛科技
- * Update Comments:
- * 构建配置参见:
- *
- * @author Wanggang
- */
 class WaveBackgroundView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
 
     private var borderPaint: Paint = Paint(Paint.ANTI_ALIAS_FLAG or Paint.CURSOR_AFTER)

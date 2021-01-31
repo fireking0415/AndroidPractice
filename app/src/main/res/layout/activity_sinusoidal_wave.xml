@@ -14,7 +14,7 @@
             android:textColor="#FFFFFF"
             android:textSize="30sp"/>
 
-    <org.fireking.ap.custom.bezier.view.SinusoidalWaveView
+    <org.fireking.basic.view.widget.SinusoidalWaveView
             android:id="@+id/sinusoidalWaveView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>

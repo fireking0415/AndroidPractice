@@ -7,14 +7,14 @@
         android:gravity="center"
         android:background="#334455"
         android:orientation="vertical"
-        tools:context=".custom.path.PathMeasureActivity">
+        tools:context="org.fireking.basic.view.PathMeasureActivity">
 
-    <org.fireking.ap.custom.path.view.SearchView
+    <org.fireking.basic.view.widget.SearchView
             android:layout_weight="1"
             android:layout_width="300dip"
             android:layout_height="300dip"/>
 
-    <org.fireking.ap.custom.path.view.ScrollBoxView
+    <org.fireking.basic.view.widget.ScrollBoxView
             android:layout_weight="1"
             android:layout_width="300dip"
             android:layout_height="300dip"/>

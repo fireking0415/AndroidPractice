@@ -9,7 +9,7 @@
     app:showPaths="true"
     app:applyMotionScene="true"
     app:motionProgress="1"
-    tools:context=".custom.anim.motionlayout.MotionLayoutV2Activity">
+    tools:context="org.fireking.basic.animator.motionlayout.MotionLayoutV2Activity">
 
     <View
         android:id="@+id/button"

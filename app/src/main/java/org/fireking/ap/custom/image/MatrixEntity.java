@@ -7,15 +7,6 @@ import org.fireking.ap.BR;
 
 /**
  * Desc:
- * <p>
- * Author: Wanggang
- * Date: 2020/10/16
- * Copyright: Copyright (c) 2016-2020
- * Company: @小牛科技
- * Update Comments:
- * 构建配置参见:
- *
- * @author Wanggang
  */
 public class MatrixEntity extends BaseObservable {
 

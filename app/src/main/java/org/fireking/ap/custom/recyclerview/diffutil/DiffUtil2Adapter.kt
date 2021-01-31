@@ -9,17 +9,6 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import org.fireking.ap.R
 
-/**
- * Desc:
- * <p>
- * Author: Wanggang
- * Date: 2020/7/22
- * Copyright: Copyright (c) 2016-2020
- * Company: @小牛科技
- * Update Comments:
- * 构建配置参见:
- * @author Wanggang
- */
 class DiffUtil2Adapter : RecyclerView.Adapter<DiffUtil2Adapter.DiffUtilViewHolder>() {
 
     private var dataSets = ArrayList<DiffBean>()

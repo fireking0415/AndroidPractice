@@ -11,18 +11,6 @@ import android.widget.TextView;
 
 import org.fireking.ap.R;
 
-/**
- * Desc:
- * <p>
- * Author: Wanggang
- * Date: 2020/7/13
- * Copyright: Copyright (c) 2016-2020
- * Company: @小牛科技
- * Update Comments:
- * 构建配置参见:
- *
- * @author Wanggang
- */
 public class TextAndViewAlignLayout extends RelativeLayout {
 
     private TextView tv_ad_desc;

@@ -7,18 +7,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".custom.basic.HistogramActivity">
+        tools:context="org.fireking.basic.view.HistogramActivity">
 
-        <org.fireking.ap.custom.basic.view.SimpleBarChart
-            android:id="@+id/barChart"
-            android:layout_width="match_parent"
-            android:layout_height="300dp" />
-
-        <org.fireking.ap.custom.basic.view.HistogramView
+        <org.fireking.basic.view.widget.HistogramView
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <org.fireking.ap.custom.basic.view.Histogram2View
+        <org.fireking.basic.view.widget.Histogram2View
             android:layout_width="match_parent"
             android:layout_height="300dp" />
     </LinearLayout>

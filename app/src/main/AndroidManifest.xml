@@ -7,7 +7,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-        android:name=".AndroidPracticeApp"
+        android:name="org.fireking.AndroidPracticeApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -16,31 +16,31 @@
         android:theme="@style/AppTheme">
         <activity android:name="org.fireking.library.kotlin.KotlinModuleActivity"></activity>
         <activity android:name="org.fireking.basic.view.ViewModuleActivity" />
-        <activity android:name=".custom.textview.TestShapeTextViewActivity" />
+        <activity android:name="org.fireking.basic.textview.ShapeTextViewActivity" />
         <activity android:name=".custom.arouter.ARouterSampleActivity" />
-        <activity android:name=".custom.basic.path.PathTestV1Activity" />
-        <activity android:name=".custom.basic.path.TestPathActivity" />
+        <activity android:name="org.fireking.basic.view.PathTestV1Activity" />
+        <activity android:name="org.fireking.basic.view.TestPathActivity" />
         <activity android:name=".custom.textview.TextViewClearBorderActivity" />
-        <activity android:name=".custom.textview.TestTextViewActivity" />
-        <activity android:name=".custom.basic.TaiChiDiagramActivity" />
-        <activity android:name=".custom.basic.DrawCubicLineActivity" />
-        <activity android:name=".custom.basic.XMindActivity" />
+        <activity android:name="org.fireking.basic.textview.TextViewModuleActivity" />
+        <activity android:name="org.fireking.basic.view.TaiChiDiagramActivity" />
+        <activity android:name="org.fireking.basic.view.DrawCubicLineActivity" />
+        <activity android:name="org.fireking.basic.view.XMindActivity" />
         <activity android:name=".custom.coordinatorLayout.CoorDemo1Activity" />
         <activity android:name=".custom.coordinatorLayout.CoordinatorLayoutActivity" />
         <activity android:name=".custom.recyclerview.MagicIndicatorDemoActivity" />
         <activity android:name=".custom.mpchart.project.ProjectChartActivity" />
         <activity android:name=".custom.mpchart.barchart.BarChartSampleActivity" />
         <activity android:name=".custom.mpchart.radarchart.RadarChartSampleActivity" />
-        <activity android:name=".custom.anim.motionlayout.MotionLayoutV4Activity" />
-        <activity android:name=".custom.anim.motionlayout.MotionLayoutV3Activity" />
+        <activity android:name="org.fireking.basic.animator.motionlayout.MotionLayoutV4Activity" />
+        <activity android:name="org.fireking.basic.animator.motionlayout.MotionLayoutV3Activity" />
         <activity android:name=".custom.newfunction.UseTagWithContentViewActivity" />
-        <activity android:name=".custom.anim.motionlayout.MotionLayoutV2Activity" />
-        <activity android:name=".custom.anim.motionlayout.MotionSampleActivity" />
-        <activity android:name=".custom.anim.motionlayout.MotionLayoutV1Activity" />
+        <activity android:name="org.fireking.basic.animator.motionlayout.MotionLayoutV2Activity" />
+        <activity android:name="org.fireking.basic.animator.motionlayout.MotionSampleActivity" />
+        <activity android:name="org.fireking.basic.animator.motionlayout.MotionLayoutV1Activity" />
         <activity android:name=".custom.mpchart.piechart.PieChartActivity" />
         <activity android:name=".custom.mpchart.linechart.LineChartActivity" />
         <activity android:name=".custom.mpchart.MPChartActivity" />
-        <activity android:name=".custom.basic.DrawLayoutActivity" />
+        <activity android:name="org.fireking.basic.view.DrawLayoutActivity" />
         <activity android:name=".custom.recyclerview.decoration.ItemDecorationV1Activity" />
         <activity android:name=".custom.textview.TestFontActivity" />
         <activity android:name=".custom.image.MatrixTransformActivity" />
@@ -63,7 +63,7 @@
         <activity android:name=".custom.viewgroup.TextAndViewAlignActivity" />
         <activity android:name=".custom.constraintlayout.ConstaintLayoutV1" />
         <activity android:name=".custom.constraintlayout.ConstraintLayoutSample" />
-        <activity android:name=".custom.anim.AnimActivity" />
+        <activity android:name="org.fireking.basic.animator.AnimActivity" />
         <activity android:name=".custom.notification.NotificationActivity" />
         <activity
             android:name=".custom.recyclerview.WanNianLiRecyclerView3Activity"
@@ -117,16 +117,16 @@
             android:name=".custom.viewgroup.CustomViewGroupActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".custom.bezier.BasicBezierActivity"
+            android:name="org.fireking.basic.view.BasicBezierActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".custom.bezier.SinusoidalWaveActivity"
+            android:name="org.fireking.basic.view.SinusoidalWaveActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".custom.bezier.DoubleWaveActivity"
+            android:name="org.fireking.basic.view.DoubleWaveActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".custom.flip.NumberFlipActivity"
+            android:name="org.fireking.basic.view.NumberFlipActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".custom.flip.BasicFlipActivity"
@@ -135,31 +135,31 @@
             android:name=".custom.path.PathSearchActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".custom.path.PathMeasureActivity"
+            android:name="org.fireking.basic.view.PathMeasureActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".custom.path.BasicPathActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".custom.basic.PieChatActivity"
+            android:name="org.fireking.basic.view.PieChatActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".custom.basic.SpiderActivity"
+            android:name="org.fireking.basic.view.SpiderActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".custom.basic.LineChatActivity"
+            android:name="org.fireking.basic.view.LineChatActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".custom.basic.CircleColorActivity"
+            android:name="org.fireking.basic.view.CircleColorActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".custom.basic.HistogramActivity"
+            android:name="org.fireking.basic.view.HistogramActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".custom.basic.CanvasBasicActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".custom.bezier.BezierSampleActivity"
+            android:name="org.fireking.basic.view.BezierSampleActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name="org.fireking.MainActivity"

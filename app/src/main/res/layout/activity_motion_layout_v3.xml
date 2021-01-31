@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layoutDescription="@xml/scene_03"
-    tools:context=".custom.anim.motionlayout.MotionLayoutV3Activity">
+    tools:context="org.fireking.basic.animator.motionlayout.MotionLayoutV3Activity">
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/image"

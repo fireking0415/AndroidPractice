@@ -15,18 +15,6 @@ import org.fireking.ap.R;
 
 import java.io.IOException;
 
-/**
- * Desc:
- * <p>
- * Author: Wanggang
- * Date: 2020/10/10
- * Copyright: Copyright (c) 2016-2020
- * Company: @小牛科技
- * Update Comments:
- * 构建配置参见:
- *
- * @author Wanggang
- */
 public class AnimatedImageDrawableView extends View {
 
     private Drawable aniDrawable;

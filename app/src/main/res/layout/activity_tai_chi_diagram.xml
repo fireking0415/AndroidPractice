@@ -10,19 +10,19 @@
         android:background="#334455"
         android:gravity="center"
         android:orientation="vertical"
-        tools:context=".custom.basic.TaiChiDiagramActivity">
+        tools:context="org.fireking.basic.view.TaiChiDiagramActivity">
 
-        <org.fireking.ap.custom.basic.view.TaiChiDiagramView
+        <org.fireking.basic.view.widget.TaiChiDiagramView
             android:layout_width="300dp"
             android:layout_height="300dp"
             android:layout_weight="1" />
 
-        <org.fireking.ap.custom.basic.view.PokeBallView
+        <org.fireking.basic.view.widget.PokeBallView
             android:layout_width="300dp"
             android:layout_height="300dp"
             android:layout_weight="1" />
 
-        <org.fireking.ap.custom.basic.view.ChromeIconView
+        <org.fireking.basic.view.widget.ChromeIconView
             android:layout_width="300dp"
             android:layout_height="300dp"
             android:layout_weight="1" />

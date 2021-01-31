@@ -6,14 +6,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".custom.basic.PieChatActivity">
+        tools:context="org.fireking.basic.view.PieChatActivity">
 
-    <org.fireking.ap.custom.basic.view.PieChatView
+    <org.fireking.basic.view.widget.PieChatView
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
-    <org.fireking.ap.custom.basic.view.PieChat2View
+    <org.fireking.basic.view.widget.PieChat2View
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>

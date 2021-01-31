@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".custom.basic.XMindActivity">
+    tools:context="org.fireking.basic.view.XMindActivity">
 
-    <org.fireking.ap.custom.basic.viewgroup.XMindView
+    <org.fireking.basic.view.widget.XMindView
         android:id="@+id/xMindView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

@@ -17,16 +17,22 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return getRootView(container)
+        return getRootView(inflater, container)
     }
 
-    private fun getRootView(container: ViewGroup?): View? {
+    private fun getRootView(inflater: LayoutInflater, container: ViewGroup?): View? {
         if (null == mViewBinding) {
             val parameterizedType = this.javaClass.genericSuperclass as ParameterizedType
             for (item in parameterizedType.actualTypeArguments) {
                 if (ViewBinding::class.java.isAssignableFrom(item as Class<*>)) {
-                    val inflateMethod = item.getMethod("inflate", LayoutInflater::class.java)
-                    mViewBinding = inflateMethod.invoke(null, layoutInflater, container, null) as VB
+                    val inflateMethod = item.getMethod(
+                        "inflate",
+                        LayoutInflater::class.java,
+                        ViewGroup::class.java,
+                        Boolean::class.java
+                    )
+                    mViewBinding =
+                        inflateMethod.invoke(null, inflater, container, false) as VB
                     return mViewBinding!!.root
                 }
             }

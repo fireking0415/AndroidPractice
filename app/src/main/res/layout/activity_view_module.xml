@@ -1,8 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="org.fireking.basic.view.ViewModuleActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnTestPath"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="测试Path" />
+
+        <Button
+            android:id="@+id/btnTaiChi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="太极图☯️" />
+
+        <Button
+            android:id="@+id/btnXmind"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="绘制思维导图" />
+
+        <Button
+            android:id="@+id/btnCubicLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="绘制平滑曲线链接亮点" />
+
+        <Button
+            android:id="@+id/btnHistogram"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="柱状图" />
+
+        <Button
+            android:id="@+id/btnCircleColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="环形颜色渐变" />
+
+        <Button
+            android:id="@+id/btnLineChat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="折线图" />
+
+        <Button
+            android:id="@+id/btnSpider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="蜘蛛网图" />
+
+        <Button
+            android:id="@+id/btnPieChat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="饼图" />
+
+        <Button
+            android:id="@+id/btnLoadLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="绘制Layout布局" />
+
+        <Button
+            android:id="@+id/btnBezier"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bezier曲线" />
+
+        <Button
+            android:id="@+id/btnNumberFlip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="数字翻滚效果" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.core.widget.NestedScrollView>

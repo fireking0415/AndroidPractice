@@ -1,25 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.fireking.basic.view.BasicBezierActivity">
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".custom.bezier.BasicBezierActivity">
-
-    <LinearLayout android:orientation="vertical" android:layout_width="match_parent"
-                  android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <Button
-                android:id="@+id/btnDoubleWave"
-                android:text="双重水波纹"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+            android:id="@+id/btnDoubleWave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="双重水波纹" />
 
         <Button
-                android:text="机械波"
-                android:id="@+id/btnSinusoidalWave"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+            android:id="@+id/btnSinusoidalWave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="机械波" />
+
+        <Button
+            android:id="@+id/btnWater"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bazier水滴" />
+
+        <Button
+            android:id="@+id/btnPathMeasure"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Path Measure使用" />
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>
