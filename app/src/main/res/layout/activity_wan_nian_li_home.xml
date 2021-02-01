@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<org.fireking.ap.custom.recyclerview.WanNianLiNestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<org.fireking.basic.recyclerview.WanNianLiNestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
@@ -42,4 +42,4 @@
             </LinearLayout>
         </com.necer.calendar.EmuiCalendar>
     </LinearLayout>
-</org.fireking.ap.custom.recyclerview.WanNianLiNestedScrollView>
+</org.fireking.basic.recyclerview.WanNianLiNestedScrollView>

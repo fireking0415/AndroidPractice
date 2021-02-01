@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".custom.mpchart.linechart.LineChartActivity">
+    tools:context="org.fireking.library.mpchart.linechart.LineChartActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <org.fireking.ap.custom.mpchart.linechart.SimpleLineChart
+        <org.fireking.library.mpchart.linechart.SimpleLineChart
             android:id="@+id/lineChartView3"
             android:layout_width="match_parent"
             android:layout_height="300dip" />

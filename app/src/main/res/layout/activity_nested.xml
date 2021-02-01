@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".custom.nested.NestedActivity">
+    tools:context="org.fireking.basic.nested.NestedActivity">
 
     <Button
         android:id="@+id/btnNested1"

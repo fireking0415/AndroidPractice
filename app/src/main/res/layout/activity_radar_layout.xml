@@ -6,9 +6,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#000000"
-        tools:context=".custom.viewgroup.RadarLayoutActivity">
+        tools:context="org.fireking.basic.viewgroup.RadarLayoutActivity">
 
-    <org.fireking.ap.custom.viewgroup.view.RadarLayout
+    <org.fireking.basic.viewgroup.view.RadarLayout
             android:layout_width="match_parent"
             android:layout_centerInParent="true"
             android:layout_height="wrap_content"/>

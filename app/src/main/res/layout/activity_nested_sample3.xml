@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<org.fireking.ap.custom.nested.NestedSample3Parent xmlns:android="http://schemas.android.com/apk/res/android"
+<org.fireking.basic.nested.NestedSample3Parent xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".custom.nested.NestedSample3Activity">
+    tools:context="org.fireking.basic.nested.NestedSample3Activity">
 
-    <org.fireking.ap.custom.nested.NestedScrollingChild2View
+    <org.fireking.basic.nested.NestedScrollingChild2View
         android:id="@+id/nested_sample3_child"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -18,7 +18,7 @@
             android:scaleType="center"
             android:src="@mipmap/meinv" />
 
-    </org.fireking.ap.custom.nested.NestedScrollingChild2View>
+    </org.fireking.basic.nested.NestedScrollingChild2View>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/contentList"
@@ -27,4 +27,4 @@
         tools:itemCount="20"
         tools:listitem="@layout/nested_sample2_item" />
 
-</org.fireking.ap.custom.nested.NestedSample3Parent>
+</org.fireking.basic.nested.NestedSample3Parent>

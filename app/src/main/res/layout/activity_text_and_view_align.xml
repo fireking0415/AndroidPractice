@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".custom.viewgroup.TextAndViewAlignActivity">
+    tools:context="org.fireking.basic.viewgroup.TextAndViewAlignActivity">
 
-    <org.fireking.ap.custom.viewgroup.view.TextAndViewAlignLayout
+    <org.fireking.basic.viewgroup.view.TextAndViewAlignLayout
         android:id="@+id/textAndViewAlignLayout"
         android:layout_width="102dp"
         android:layout_height="wrap_content"

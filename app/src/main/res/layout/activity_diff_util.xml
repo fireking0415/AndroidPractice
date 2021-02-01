@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".custom.recyclerview.diffutil.DiffUtilActivity">
+    tools:context="org.fireking.basic.recyclerview.diffutil.DiffUtilActivity">
 
     <Button
         android:id="@+id/btnChange"

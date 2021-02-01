@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <org.fireking.ap.custom.viewgroup.view.ZoomInAnimatorImageView
+    <org.fireking.basic.viewgroup.view.ZoomInAnimatorImageView
         android:id="@+id/ivHeaderPortrait"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -11,7 +11,7 @@
         android:scaleType="centerCrop"
         android:src="@mipmap/ic_meizi" />
 
-    <org.fireking.ap.custom.viewgroup.view.WaveBackgroundView
+    <org.fireking.basic.viewgroup.view.WaveBackgroundView
         android:id="@+id/waveBackgroundView"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".custom.mpchart.project.ProjectChartActivity">
+    tools:context="org.fireking.library.mpchart.project.ProjectChartActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,7 +20,7 @@
             android:textColor="@android:color/white"
             android:textSize="14sp" />
 
-        <org.fireking.ap.custom.mpchart.radarchart.SimpleRadarChart
+        <org.fireking.library.mpchart.radarchart.SimpleRadarChart
             android:id="@+id/chart_comprehensive_score"
             android:layout_width="match_parent"
             android:layout_height="250dp" />

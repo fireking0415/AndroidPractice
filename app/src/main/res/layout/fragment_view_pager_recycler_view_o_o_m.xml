@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".custom.recyclerview.ViewPagerRecyclerViewOOMFragment">
+    tools:context="org.fireking.basic.recyclerview.ViewPagerRecyclerViewOOMFragment">
 
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
         android:id="@+id/smartRefreshLayout"

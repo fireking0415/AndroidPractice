@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".custom.viewgroup.VerifyCodeInputLayoutActivity">
+        tools:context="org.fireking.basic.viewgroup.VerifyCodeInputLayoutActivity">
 
     <TextView
             android:text="默认效果"
@@ -15,7 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-    <org.fireking.ap.custom.viewgroup.view.VerifyCodeInputLayout
+    <org.fireking.basic.viewgroup.view.VerifyCodeInputLayout
             android:id="@+id/verifyCodeInputLayout"
             android:layout_width="wrap_content"
             android:layout_gravity="center"
@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-    <org.fireking.ap.custom.viewgroup.view.VerifyCodeInputLayout
+    <org.fireking.basic.viewgroup.view.VerifyCodeInputLayout
             android:layout_width="wrap_content"
             android:layout_gravity="center"
             app:maxLength="8"

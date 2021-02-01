@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context="org.fireking.MainActivity">
 
-    <org.fireking.ap.custom.nested.MyNestedScrollParent
+    <org.fireking.basic.nested.MyNestedScrollParent
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -22,7 +22,7 @@
             android:gravity="center"
             android:text="我是文案" />
 
-        <org.fireking.ap.custom.nested.MyNestedScrollChild
+        <org.fireking.basic.nested.MyNestedScrollChild
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -32,6 +32,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/content"
                 android:textSize="22sp" />
-        </org.fireking.ap.custom.nested.MyNestedScrollChild>
-    </org.fireking.ap.custom.nested.MyNestedScrollParent>
+        </org.fireking.basic.nested.MyNestedScrollChild>
+    </org.fireking.basic.nested.MyNestedScrollParent>
 </FrameLayout>

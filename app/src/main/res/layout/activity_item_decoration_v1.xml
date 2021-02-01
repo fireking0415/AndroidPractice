@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".custom.recyclerview.decoration.ItemDecorationV1Activity">
+    tools:context="org.fireking.basic.recyclerview.decoration.ItemDecorationV1Activity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_content_list"

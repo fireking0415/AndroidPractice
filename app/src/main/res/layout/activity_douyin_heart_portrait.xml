@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".custom.viewgroup.DouyinHeartPortraitActivity">
+    tools:context="org.fireking.basic.viewgroup.DouyinHeartPortraitActivity">
 
-    <org.fireking.ap.custom.viewgroup.view.HeartPortraitLayout
+    <org.fireking.basic.viewgroup.view.HeartPortraitLayout
         android:id="@+id/heartPortraitLayout"
         android:layout_width="200dp"
         android:layout_height="200dp"

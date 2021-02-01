@@ -10,7 +10,7 @@
         android:layout_height="50dp"
         android:background="@color/colorAccent" />
 
-    <org.fireking.ap.custom.recyclerview.v2.MeasureViewPager
+    <org.fireking.basic.recyclerview.v2.MeasureViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

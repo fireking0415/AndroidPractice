@@ -12,7 +12,7 @@
             android:id="@+id/rvContentList"
             android:visibility="gone"
             android:layout_height="match_parent"
-            tools:context=".custom.viewgroup.SwipeDeleteActivity">
+            tools:context="org.fireking.basic.viewgroup.SwipeDeleteActivity">
 
     </androidx.recyclerview.widget.RecyclerView>
 

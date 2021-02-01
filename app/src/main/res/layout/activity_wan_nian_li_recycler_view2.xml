@@ -6,7 +6,7 @@
     android:fitsSystemWindows="true"
     android:orientation="vertical"
     android:descendantFocusability="blocksDescendants"
-    tools:context=".custom.recyclerview.WanNianLiRecyclerView2Activity">
+    tools:context="org.fireking.basic.recyclerview.WanNianLiRecyclerView2Activity">
 
     <FrameLayout
         android:layout_width="match_parent"

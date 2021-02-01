@@ -7,8 +7,11 @@ import org.fireking.ap.databinding.NewBasicFragmentBinding
 import org.fireking.base.BaseFragment
 import org.fireking.basic.animator.AnimActivity
 import org.fireking.basic.image.ImageActivity
+import org.fireking.basic.nested.NestedActivity
+import org.fireking.basic.recyclerview.RecyclerViewSampleActivity
 import org.fireking.basic.textview.TextViewModuleActivity
 import org.fireking.basic.view.ViewModuleActivity
+import org.fireking.basic.viewgroup.CustomViewGroupActivity
 
 class BasicFragment : BaseFragment<NewBasicFragmentBinding>() {
 
@@ -44,14 +47,15 @@ class BasicFragment : BaseFragment<NewBasicFragmentBinding>() {
                 BasicAdapter.BasicEntity("TextView", TextViewModuleActivity::class.java),
                 BasicAdapter.BasicEntity("Animator", AnimActivity::class.java),
                 BasicAdapter.BasicEntity("ImageView", ImageActivity::class.java),
-                BasicAdapter.BasicEntity("EditText&Keyboard", null),
-                BasicAdapter.BasicEntity("ViewGroup", null),
+                BasicAdapter.BasicEntity("ViewGroup", CustomViewGroupActivity::class.java),
+                BasicAdapter.BasicEntity("RecyclerView", RecyclerViewSampleActivity::class.java),
+                BasicAdapter.BasicEntity("NestedScrolling", NestedActivity::class.java),
                 BasicAdapter.BasicEntity("Thread", null),
+                BasicAdapter.BasicEntity("EditText&Keyboard", null),
                 BasicAdapter.BasicEntity("Notification", null),
                 BasicAdapter.BasicEntity("MediaPlayer", null),
                 BasicAdapter.BasicEntity("Service", null),
                 BasicAdapter.BasicEntity("Aidl", null),
-                BasicAdapter.BasicEntity("RecyclerView", null),
             )
         )
     }
