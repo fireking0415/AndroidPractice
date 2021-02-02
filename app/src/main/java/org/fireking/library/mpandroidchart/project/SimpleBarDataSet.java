@@ -1,4 +1,4 @@
-package org.fireking.library.mpchart.project;
+package org.fireking.library.mpandroidchart.project;
 
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;

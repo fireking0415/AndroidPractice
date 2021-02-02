@@ -78,7 +78,6 @@ public class ImageTestActivity extends AppCompatActivity {
                             @Override
                             public void onLoadCleared(@Nullable Drawable placeholder) {
                                 super.onLoadCleared(placeholder);
-                                Glide.with(ImageTestActivity.this).clear(iv_imageView1);
                             }
                         });
             }

@@ -12,6 +12,7 @@ import org.fireking.basic.recyclerview.RecyclerViewSampleActivity
 import org.fireking.basic.textview.TextViewModuleActivity
 import org.fireking.basic.view.ViewModuleActivity
 import org.fireking.basic.viewgroup.CustomViewGroupActivity
+import org.fireking.library.mpandroidchart.MPChartActivity
 
 class BasicFragment : BaseFragment<NewBasicFragmentBinding>() {
 
@@ -50,6 +51,7 @@ class BasicFragment : BaseFragment<NewBasicFragmentBinding>() {
                 BasicAdapter.BasicEntity("ViewGroup", CustomViewGroupActivity::class.java),
                 BasicAdapter.BasicEntity("RecyclerView", RecyclerViewSampleActivity::class.java),
                 BasicAdapter.BasicEntity("NestedScrolling", NestedActivity::class.java),
+                BasicAdapter.BasicEntity("MPAndroidChart", MPChartActivity::class.java),
                 BasicAdapter.BasicEntity("Thread", null),
                 BasicAdapter.BasicEntity("EditText&Keyboard", null),
                 BasicAdapter.BasicEntity("Notification", null),

@@ -1,14 +1,14 @@
-package org.fireking.library.mpchart
+package org.fireking.library.mpandroidchart
 
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
-import org.fireking.library.mpchart.barchart.BarChartSampleActivity
-import org.fireking.library.mpchart.linechart.LineChartActivity
-import org.fireking.library.mpchart.piechart.PieChartActivity
-import org.fireking.library.mpchart.project.ProjectChartActivity
-import org.fireking.library.mpchart.radarchart.RadarChartSampleActivity
+import org.fireking.library.mpandroidchart.barchart.BarChartSampleActivity
+import org.fireking.library.mpandroidchart.linechart.LineChartActivity
+import org.fireking.library.mpandroidchart.piechart.PieChartActivity
+import org.fireking.library.mpandroidchart.project.ProjectChartActivity
+import org.fireking.library.mpandroidchart.radarchart.RadarChartSampleActivity
 import org.fireking.ap.databinding.ActivityMPChartBinding
 import org.fireking.library.kotlin.ext.intentFor
 

@@ -6,6 +6,6 @@ import org.fireking.base.BaseActivity
 class KotlinModuleActivity : BaseActivity<NewActivityKotlinModuleBinding>() {
 
     override fun initView() {
-
+        
     }
 }

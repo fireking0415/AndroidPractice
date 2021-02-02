@@ -1,4 +1,4 @@
-package org.fireking.library.mpchart.project
+package org.fireking.library.mpandroidchart.project
 
 import android.content.Context
 import android.graphics.Color

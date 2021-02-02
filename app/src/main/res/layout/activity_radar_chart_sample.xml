@@ -4,19 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="org.fireking.library.mpchart.radarchart.RadarChartSampleActivity">
+    tools:context="org.fireking.library.mpandroidchart.radarchart.RadarChartSampleActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <org.fireking.library.mpchart.radarchart.SimpleRadarChart
+        <org.fireking.library.mpandroidchart.radarchart.SimpleRadarChart
             android:id="@+id/radarChart2"
             android:layout_width="match_parent"
             android:layout_height="300dp" />
 
-        <org.fireking.library.mpchart.radarchart.SimpleRadarChart
+        <org.fireking.library.mpandroidchart.radarchart.SimpleRadarChart
             android:id="@+id/radarChart3"
             android:layout_width="match_parent"
             android:layout_height="300dp" />

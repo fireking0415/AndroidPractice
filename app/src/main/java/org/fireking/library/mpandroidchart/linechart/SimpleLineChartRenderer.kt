@@ -1,4 +1,4 @@
-package org.fireking.library.mpchart.linechart
+package org.fireking.library.mpandroidchart.linechart
 
 import android.content.Context
 import android.graphics.*

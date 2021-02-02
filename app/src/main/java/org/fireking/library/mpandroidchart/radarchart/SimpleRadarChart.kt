@@ -1,4 +1,4 @@
-package org.fireking.library.mpchart.radarchart
+package org.fireking.library.mpandroidchart.radarchart
 
 import android.content.Context
 import android.util.AttributeSet

@@ -14,67 +14,110 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="org.fireking.library.kotlin.KotlinModuleActivity"></activity>
-        <activity android:name="org.fireking.basic.view.ViewModuleActivity" />
-        <activity android:name="org.fireking.basic.textview.ShapeTextViewActivity" />
-        <activity android:name=".custom.arouter.ARouterSampleActivity" />
-        <activity android:name="org.fireking.basic.view.PathTestV1Activity" />
-        <activity android:name="org.fireking.basic.view.TestPathActivity" />
-        <activity android:name=".custom.textview.TextViewClearBorderActivity" />
-        <activity android:name="org.fireking.basic.textview.TextViewModuleActivity" />
-        <activity android:name="org.fireking.basic.view.TaiChiDiagramActivity" />
-        <activity android:name="org.fireking.basic.view.DrawCubicLineActivity" />
-        <activity android:name="org.fireking.basic.view.XMindActivity" />
-        <activity android:name=".custom.coordinatorLayout.CoorDemo1Activity" />
-        <activity android:name=".custom.coordinatorLayout.CoordinatorLayoutActivity" />
-        <activity android:name="org.fireking.basic.recyclerview.MagicIndicatorDemoActivity" />
-        <activity android:name="org.fireking.library.mpchart.project.ProjectChartActivity" />
-        <activity android:name="org.fireking.library.mpchart.barchart.BarChartSampleActivity" />
-        <activity android:name="org.fireking.library.mpchart.radarchart.RadarChartSampleActivity" />
-        <activity android:name="org.fireking.basic.animator.motionlayout.MotionLayoutV4Activity" />
-        <activity android:name="org.fireking.basic.animator.motionlayout.MotionLayoutV3Activity" />
-        <activity android:name=".custom.newfunction.UseTagWithContentViewActivity" />
-        <activity android:name="org.fireking.basic.animator.motionlayout.MotionLayoutV2Activity" />
-        <activity android:name="org.fireking.basic.animator.motionlayout.MotionSampleActivity" />
-        <activity android:name="org.fireking.basic.animator.motionlayout.MotionLayoutV1Activity" />
-        <activity android:name="org.fireking.library.mpchart.piechart.PieChartActivity" />
-        <activity android:name="org.fireking.library.mpchart.linechart.LineChartActivity" />
-        <activity android:name="org.fireking.library.mpchart.MPChartActivity" />
-        <activity android:name="org.fireking.basic.view.DrawLayoutActivity" />
-        <activity android:name="org.fireking.basic.recyclerview.decoration.ItemDecorationV1Activity" />
-        <activity android:name=".custom.textview.TestFontActivity" />
-        <activity android:name="org.fireking.basic.image.MatrixTransformActivity" />
-        <activity android:name="org.fireking.basic.image.GifLoadByAnimatedImageDrawableActivity" />
-        <activity android:name="org.fireking.basic.image.GifLoadByCanvasActivity" />
-        <activity android:name=".custom.livedata.LiveDataViewModelActivity" />
-        <activity android:name="org.fireking.basic.image.GifLoadActivity" />
-        <activity android:name="org.fireking.basic.image.ImageActivity" />
+        <activity
+            android:name="org.fireking.library.kotlin.KotlinModuleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.fireking.basic.view.ViewModuleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.fireking.basic.view.PathTestV1Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.fireking.basic.textview.TextViewModuleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.fireking.basic.view.TaiChiDiagramActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.fireking.basic.view.DrawCubicLineActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.fireking.basic.view.XMindActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.fireking.basic.recyclerview.MagicIndicatorDemoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.fireking.library.mpandroidchart.project.ProjectChartActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.fireking.library.mpandroidchart.barchart.BarChartSampleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.fireking.library.mpandroidchart.radarchart.RadarChartSampleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.fireking.basic.animator.motionlayout.MotionLayoutV4Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.fireking.basic.animator.motionlayout.MotionLayoutV3Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.fireking.basic.animator.motionlayout.MotionLayoutV2Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.fireking.basic.animator.motionlayout.MotionSampleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.fireking.basic.animator.motionlayout.MotionLayoutV1Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.fireking.library.mpandroidchart.piechart.PieChartActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.fireking.library.mpandroidchart.linechart.LineChartActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.fireking.library.mpandroidchart.MPChartActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.fireking.basic.view.DrawLayoutActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.fireking.basic.recyclerview.decoration.ItemDecorationV1Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.fireking.basic.image.MatrixTransformActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.fireking.basic.image.GifLoadByAnimatedImageDrawableActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.fireking.basic.image.GifLoadByCanvasActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.fireking.basic.image.GifLoadActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.fireking.basic.image.ImageActivity"
+            android:screenOrientation="portrait" />
         <activity android:name="org.fireking.basic.image.ImageTestActivity" />
-        <activity android:name=".custom.thread.ThreadActivity" />
-        <activity android:name=".custom.restudy.HandlerV1Activity" />
-        <activity android:name=".custom.restudy.RestudyActivity" />
-        <activity android:name=".custom.viewevent.ViewPagerPlusViewPagerActivity" />
-        <activity android:name=".custom.viewevent.ViewEventSampleActivity" />
-        <activity android:name="org.fireking.basic.recyclerview.ViewPagerRecyclerOOMViewActivity" />
-        <activity android:name="org.fireking.basic.recyclerview.RecyclerViewStickyActivity" />
-        <activity android:name="org.fireking.basic.recyclerview.diffutil.DiffUtil2Activity" />
-        <activity android:name="org.fireking.basic.recyclerview.diffutil.DiffUtilActivity" />
-        <activity android:name="org.fireking.basic.viewgroup.DouyinHeartPortraitActivity" />
-        <activity android:name="org.fireking.basic.viewgroup.TextAndViewAlignActivity" />
-        <activity android:name=".custom.constraintlayout.ConstaintLayoutV1" />
-        <activity android:name=".custom.constraintlayout.ConstraintLayoutSample" />
-        <activity android:name="org.fireking.basic.animator.AnimActivity" />
-        <activity android:name=".custom.notification.NotificationActivity" />
+        <activity
+            android:name="org.fireking.basic.recyclerview.ViewPagerRecyclerOOMViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.fireking.basic.recyclerview.RecyclerViewStickyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.fireking.basic.recyclerview.diffutil.DiffUtil2Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.fireking.basic.recyclerview.diffutil.DiffUtilActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.fireking.basic.viewgroup.DouyinHeartPortraitActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.fireking.basic.viewgroup.TextAndViewAlignActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.fireking.basic.animator.AnimActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name="org.fireking.basic.recyclerview.WanNianLiRecyclerView3Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeNoActionBar" />
-        <activity
-            android:name=".custom.windowmanager.WindowManagerSampleActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".custom.newfunction.NewFunctionActivity"
-            android:screenOrientation="portrait" />
         <activity
             android:name="org.fireking.basic.recyclerview.WanNianLiRecyclerView2Activity"
             android:screenOrientation="portrait"
@@ -126,16 +169,7 @@
             android:name="org.fireking.basic.view.NumberFlipActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".custom.flip.BasicFlipActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".custom.path.PathSearchActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name="org.fireking.basic.view.PathMeasureActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".custom.path.BasicPathActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name="org.fireking.basic.view.PieChatActivity"
@@ -151,9 +185,6 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="org.fireking.basic.view.HistogramActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".custom.basic.CanvasBasicActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name="org.fireking.basic.view.BezierSampleActivity"
