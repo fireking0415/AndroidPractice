@@ -18,11 +18,11 @@ public class ExcludeInnerLineSpaceSpan implements LineHeightSpan {
                              int spanstartv, int lineHeight,
                              Paint.FontMetricsInt fm) {
         // 原始行高
+        Log.e("info", "fm.descent: " + fm.descent + ", fm.ascent: " + fm.ascent);
         final int originHeight = fm.descent - fm.ascent;
         if (originHeight <= 0) {
             return;
         }
-        Log.e("info", "originHeight: " + originHeight);
         // 计算比例值
         final float ratio = mHeight * 1.1f / originHeight;
         // 根据最新行高，修改descent
