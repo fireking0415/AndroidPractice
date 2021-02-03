@@ -39,7 +39,7 @@ class LibraryFragment : BaseFragment<NewLibraryFragmentBinding>() {
     override fun loadData() {
         mBasicAdapter?.submitList(
             arrayListOf(
-                BasicAdapter.BasicEntity("Kotlin扩展函数", KotlinModuleActivity::class.java),
+                BasicAdapter.BasicEntity("Kotlin", KotlinModuleActivity::class.java),
             )
         )
     }

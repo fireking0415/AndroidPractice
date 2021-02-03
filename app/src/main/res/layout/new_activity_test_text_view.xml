@@ -12,6 +12,49 @@
         tools:context="org.fireking.basic.textview.TextViewModuleActivity">
 
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#8087F399"
+            android:includeFontPadding="false"
+            android:text="À à)اللغة العربية； (Â â)Côté d’Ivoire该使用，HeYyGF"
+            android:textColor="@android:color/black"
+            android:textSize="40dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#80334455"
+            android:includeFontPadding="false"
+            android:text="[正常TextView]该方案使用系统公开API，简单，侵入性低。并已在百度App热议页面上线，适配效果前后对比，如下图所示"
+            android:textColor="@android:color/black" />
+
+        <org.fireking.basic.textview.ETextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#80908977"
+            android:includeFontPadding="false"
+            android:text="[ETextView]该方案使用系统公开API，简单，侵入性低。并已在百度App热议页面上线，适配效果前后对比，如下图所示"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#80f14400"
+            android:includeFontPadding="false"
+            android:text="[TextView]该方案使用系统公开API，简单，侵入性低。并已在百度App热议页面上线，适配效果前后对比，如下图所示"
+            android:textColor="@android:color/black"
+            android:textSize="30dp" />
+
+        <org.fireking.basic.textview.ETextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#80908977"
+            android:includeFontPadding="false"
+            android:text="[ETextView]该方案使用系统公开API，简单，侵入性低。并已在百度App热议页面上线，适配效果前后对比，如下图所示"
+            android:textColor="@android:color/black"
+            android:textSize="30dp" />
+
+        <TextView
             android:id="@+id/tvTest"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
