@@ -1,7 +1,11 @@
 package org.fireking.basic.textview
 
 import android.content.Context
+import android.graphics.Paint
+import android.graphics.Rect
 import android.text.Html
+import android.util.Log
+import android.util.TypedValue
 import org.fireking.ap.databinding.NewActivityTestTextViewBinding
 import org.fireking.base.BaseActivity
 import org.fireking.basic.textview.html.SpanExtTagHandler
@@ -19,7 +23,67 @@ class TextViewModuleActivity : BaseActivity<NewActivityTestTextViewBinding>() {
     override fun initView() {
         title = "TextView"
         bindView {
-
+            val paint = Paint(Paint.ANTI_ALIAS_FLAG)
+            tvSize10.post {
+                paint.textSize = TypedValue.applyDimension(
+                    TypedValue.COMPLEX_UNIT_SP,
+                    10F,
+                    resources.displayMetrics
+                )
+                val rect = Rect()
+                paint.getTextBounds(tvSize10.text.toString(), 0, tvSize10.text.length, rect)
+                Log.e("info", "size10->" + tvSize10.height + ", " + rect.height())
+            }
+            tvSize12.post {
+                paint.textSize = TypedValue.applyDimension(
+                    TypedValue.COMPLEX_UNIT_SP,
+                    12F,
+                    resources.displayMetrics
+                )
+                val rect = Rect()
+                paint.getTextBounds(tvSize12.text.toString(), 0, tvSize12.text.length, rect)
+                Log.e("info", "size12->" + tvSize12.height + ", " + rect.height())
+            }
+            tvSize14.post {
+                paint.textSize = TypedValue.applyDimension(
+                    TypedValue.COMPLEX_UNIT_SP,
+                    14F,
+                    resources.displayMetrics
+                )
+                val rect = Rect()
+                paint.getTextBounds(tvSize14.text.toString(), 0, tvSize14.text.length, rect)
+                Log.e("info", "size14->" + tvSize14.height + ", " + rect.height())
+            }
+            tvSize16.post {
+                paint.textSize = TypedValue.applyDimension(
+                    TypedValue.COMPLEX_UNIT_SP,
+                    16F,
+                    resources.displayMetrics
+                )
+                val rect = Rect()
+                paint.getTextBounds(tvSize16.text.toString(), 0, tvSize16.text.length, rect)
+                Log.e("info", "size16->" + tvSize16.height + ", " + rect.height())
+            }
+            tvSize18.post {
+                paint.textSize = TypedValue.applyDimension(
+                    TypedValue.COMPLEX_UNIT_SP,
+                    18F,
+                    resources.displayMetrics
+                )
+                val rect = Rect()
+                paint.getTextBounds(tvSize18.text.toString(), 0, tvSize18.text.length, rect)
+                Log.e("info", "size18->" + tvSize18.height + ", " + rect.height())
+            }
+            tvSize20.post {
+                paint.textSize = TypedValue.applyDimension(
+                    TypedValue.COMPLEX_UNIT_SP,
+                    20F,
+                    resources.displayMetrics
+                )
+                val rect = Rect()
+                paint.getTextBounds(tvSize20.text.toString(), 0, tvSize20.text.length, rect)
+                Log.e("info", "size20->" + tvSize20.height + ", " + rect.height())
+            }
             val result = "<spanExt>攀钢钒钛所属行业为\n" +
                     "<spanExt style=\"color:#333333; font-weight:bold; font-size:18px;\">其他采掘</spanExt>；\n" +
                     "</spanExt>\n" +
