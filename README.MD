@@ -10,16 +10,19 @@
 * 
 #### 1-2、自定义ViewGroup
 * 
-### 2、Animator
+### 2、TextView
+* [`TextView`的扩展函数使用](./article/basic/textview/TextView扩展函数使用.md)
+* [`TextView`适配Html文字大小和文字颜色、文字权重](./article/basic/textview/TextView适配Html文字大小和文字颜色、文字权重.md)
+### 3、Animator
 * Animated Vector Drawable
 * Property Animation framework
 * LayoutTransition animations
 * Layout transitions with TransitionManager
 * CoordinatorLayout & MotionLayout
-### 3、Window
-### 4、Thread
-### 5、Notification
-### 6、
+### 4、Window
+### 5、Thread
+### 6、Notification
+### 7、
 ## 实验室：
 ### 1、Kotlin
 * [`ContextExt.kt`](./app/src/main/java/org/fireking/library/kotlin/ext/ContextExt.kt) --> [ContextExt 针对`Context`对象的Kotlin扩展](./article/library/kotlin/Context扩展函数使用.md)
