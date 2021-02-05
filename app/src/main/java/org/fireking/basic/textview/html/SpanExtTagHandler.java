@@ -111,24 +111,15 @@ public class SpanExtTagHandler implements Html.TagHandler {
             Field lengthField = atts.getClass().getDeclaredField("length");
             lengthField.setAccessible(true);
             int len = (Integer) lengthField.get(atts);
-
-            /**
-             * MSH: Look for supported attributes and add to hash map. 
-             * This is as tight as things can get :) 
-             * The data index is "just" where the keys and values are stored.  
-             */
             for (int i = 0; i < len; i++)
                 attributes.put(data[i * 5 + 1], data[i * 5 + 4]);
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
     /**
      * 还原为原来的颜色
-     *
-     * @param startIndex
-     * @param stopIndex
-     * @param editable
      */
     private void reductionFontColor(int startIndex, int stopIndex, Editable editable) {
         if (null != mOriginColors) {
@@ -142,11 +133,6 @@ public class SpanExtTagHandler implements Html.TagHandler {
 
     /**
      * 解析style属性
-     *
-     * @param startIndex
-     * @param stopIndex
-     * @param editable
-     * @param style
      */
     private void analysisStyle(int startIndex, int stopIndex, Editable editable, String style) {
         Log.e(TAG, "style：" + style);
