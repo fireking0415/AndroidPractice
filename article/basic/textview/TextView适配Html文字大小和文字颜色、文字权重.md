@@ -47,8 +47,8 @@ val result = "<span>攀钢钒钛所属行业为\n" +
 tvTest.text = Html.fromHtml(result)
 ```
 可是，结果真的会是我们想象的那样吗？
+![<img src='./images/basic_textview_span_1.png' />](https://img-blog.csdnimg.cn/20210205163651978.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dhbmdnYW5nNTE0MjYwNjYz,size_16,color_FFFFFF,t_70)
 
-<img src='https://img-blog.csdnimg.cn/20210205163651978.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dhbmdnYW5nNTE0MjYwNjYz,size_16,color_FFFFFF,t_70' />
 
 可以从上面的图看出来，文字的颜色生效了，但是文字的大小设置和权重设置都没有任何的效果。那么，android的`Html`处理真的是支持完整的属性支持吗？这个时候，就需要
 呆着这个疑问看源代码了。
@@ -323,7 +323,8 @@ tvTest.text =
     )
 ```
 效果如下：
-<img src="https://img-blog.csdnimg.cn/20210205163703386.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dhbmdnYW5nNTE0MjYwNjYz,size_16,color_FFFFFF,t_70" />
+![<img src="./images/basic_textview_span_2.png" />](https://img-blog.csdnimg.cn/20210205163703386.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dhbmdnYW5nNTE0MjYwNjYz,size_16,color_FFFFFF,t_70)
+
 
 感谢您的阅读!!!🙏🙏🙏
 
