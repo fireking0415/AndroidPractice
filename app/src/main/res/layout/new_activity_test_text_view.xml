@@ -11,6 +11,10 @@
         android:orientation="vertical"
         tools:context="org.fireking.basic.textview.TextViewModuleActivity">
 
+        <org.fireking.basic.textview.widget.CanvasDrawTextSample
+            android:layout_width="match_parent"
+            android:layout_height="120dp" />
+
         <org.fireking.basic.textview.NoPaddingTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -33,54 +37,6 @@
             android:background="#f14400"
             android:text="Python国Python国，Python国Python国Python国Python国"
             android:textColor="@android:color/white"
-            android:textSize="20dp" />
-
-        <TextView
-            android:id="@+id/tvSize10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:includeFontPadding="false"
-            android:text="Python国Python国Python国Python国"
-            android:textSize="10dp" />
-
-        <TextView
-            android:id="@+id/tvSize12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:includeFontPadding="false"
-            android:text="Python国Python国Python国Python国"
-            android:textSize="12dp" />
-
-        <TextView
-            android:id="@+id/tvSize14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:includeFontPadding="false"
-            android:text="Python国Python国Python国Python国"
-            android:textSize="14dp" />
-
-        <TextView
-            android:id="@+id/tvSize16"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:includeFontPadding="false"
-            android:text="Python国Python国Python国Python国"
-            android:textSize="16dp" />
-
-        <TextView
-            android:id="@+id/tvSize18"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:includeFontPadding="false"
-            android:text="Python国Python国Python国Python国"
-            android:textSize="18dp" />
-
-        <TextView
-            android:id="@+id/tvSize20"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:includeFontPadding="false"
-            android:text="Python国Python国Python国Python国"
             android:textSize="20dp" />
 
         <TextView

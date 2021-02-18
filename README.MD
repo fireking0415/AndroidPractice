@@ -12,7 +12,9 @@
 * 
 ### 2、TextView
 * [`TextView`的扩展函数使用](./article/basic/textview/TextView扩展函数使用.md)
-* [`TextView`适配Html文字大小和文字颜色、文字权重](./article/basic/textview/TextView适配Html文字大小和文字颜色、文字权重.md)
+* [`TextView`扩展支持Shape](./article/basic/textview/TextView扩展支持Shape.md)
+* [`TextView`适配`Html`文字大小和文字颜色、文字权重](./article/basic/textview/TextView适配Html文字大小和文字颜色、文字权重.md)
+* [`canvas.drawText`理解和`FontMetrics`理解](./article/basic/textview/FontMetrics介绍和drawText理解.md)
 ### 3、Animator
 * Animated Vector Drawable
 * Property Animation framework
