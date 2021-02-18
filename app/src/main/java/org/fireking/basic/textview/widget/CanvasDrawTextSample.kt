@@ -25,6 +25,10 @@ class CanvasDrawTextSample(context: Context?, attrs: AttributeSet?) : View(conte
         paint.color = Color.parseColor("#80334555")
     }
 
+    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+    }
+
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
         val fontMetrics = paint.fontMetrics

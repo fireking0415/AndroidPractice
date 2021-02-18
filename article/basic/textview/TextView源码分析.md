@@ -23,6 +23,16 @@ TextView是一个自定义的View对象，那么根据传统的自定义View三�
 
 ### 1、量体裁衣之onMeasure
 
+```java
+@Override
+protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+    ...
+    setMeasuredDimension(width, height);
+}
+```
+根据对自定义View对象知识积累，可以得知，我们主要需要做的就是确定上面的width和height的值。
+
+
 ### 2、排兵布阵之onLayout
 
 ### 3、跃然纸上之onDraw
