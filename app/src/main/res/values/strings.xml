@@ -67,4 +67,5 @@
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_zhihu">ZhihuActivity</string>
 </resources>

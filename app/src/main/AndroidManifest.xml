@@ -15,6 +15,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name="org.fireking.fight.compose.ZhihuActivity"
+            android:exported="true"
+            android:label="@string/title_activity_zhihu"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name="org.fireking.library.kotlin.KotlinModuleActivity"
             android:screenOrientation="portrait" />
         <activity
