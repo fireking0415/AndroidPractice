@@ -1,6 +1,10 @@
 package org.fireking.library
 
 import android.content.Intent
+import androidx.activity.result.ActivityResultCallback
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.ActivityResultRegistry
+import androidx.activity.result.contract.ActivityResultContract
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.fireking.ap.databinding.NewLibraryFragmentBinding
@@ -40,6 +44,7 @@ class LibraryFragment : BaseFragment<NewLibraryFragmentBinding>() {
         mBasicAdapter?.submitList(
             arrayListOf(
                 BasicAdapter.BasicEntity("Kotlin", KotlinModuleActivity::class.java),
+                BasicAdapter.BasicEntity("Compose", KotlinModuleActivity::class.java),
             )
         )
     }

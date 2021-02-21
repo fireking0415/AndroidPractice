@@ -17,4 +17,5 @@ class FightFragment : BaseFragment<NewFightFragmentBinding>() {
     override fun initView() {
 
     }
+
 }
