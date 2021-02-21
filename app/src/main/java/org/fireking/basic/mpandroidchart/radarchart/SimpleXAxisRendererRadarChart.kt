@@ -1,4 +1,4 @@
-package org.fireking.library.mpandroidchart.radarchart
+package org.fireking.basic.mpandroidchart.radarchart
 
 import android.graphics.Canvas
 import com.github.mikephil.charting.charts.RadarChart

@@ -1,15 +1,12 @@
 package org.fireking.library
 
 import android.content.Intent
-import androidx.activity.result.ActivityResultCallback
-import androidx.activity.result.ActivityResultLauncher
-import androidx.activity.result.ActivityResultRegistry
-import androidx.activity.result.contract.ActivityResultContract
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.fireking.ap.databinding.NewLibraryFragmentBinding
 import org.fireking.base.BaseFragment
 import org.fireking.basic.BasicAdapter
+import org.fireking.library.jetpack.JetpackModuleActivity
 import org.fireking.library.kotlin.KotlinModuleActivity
 
 class LibraryFragment : BaseFragment<NewLibraryFragmentBinding>() {
@@ -45,6 +42,7 @@ class LibraryFragment : BaseFragment<NewLibraryFragmentBinding>() {
             arrayListOf(
                 BasicAdapter.BasicEntity("Kotlin", KotlinModuleActivity::class.java),
                 BasicAdapter.BasicEntity("Compose", KotlinModuleActivity::class.java),
+                BasicAdapter.BasicEntity("Jetpack", JetpackModuleActivity::class.java),
             )
         )
     }

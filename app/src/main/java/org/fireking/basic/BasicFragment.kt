@@ -12,7 +12,7 @@ import org.fireking.basic.recyclerview.RecyclerViewSampleActivity
 import org.fireking.basic.textview.TextViewModuleActivity
 import org.fireking.basic.view.ViewModuleActivity
 import org.fireking.basic.viewgroup.CustomViewGroupActivity
-import org.fireking.library.mpandroidchart.MPChartActivity
+import org.fireking.basic.mpandroidchart.MPChartActivity
 
 class BasicFragment : BaseFragment<NewBasicFragmentBinding>() {
 

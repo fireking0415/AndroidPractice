@@ -1,4 +1,4 @@
-package org.fireking.library.mpandroidchart.barchart
+package org.fireking.basic.mpandroidchart.barchart
 
 import android.content.Context
 import android.graphics.Color

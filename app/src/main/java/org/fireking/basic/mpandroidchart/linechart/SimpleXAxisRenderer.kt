@@ -1,4 +1,4 @@
-package org.fireking.library.mpandroidchart.linechart
+package org.fireking.basic.mpandroidchart.linechart
 
 import android.graphics.Canvas
 import com.github.mikephil.charting.components.XAxis
