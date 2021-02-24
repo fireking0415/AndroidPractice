@@ -1,0 +1,41 @@
+@startuml
+interface Spanned extends CharSequence {
+    + {field} <T> T getSpans
+    + {field} int getSpanStart
+    + {field} int getSpanEnd
+    + {field} int getSpanFlags
+    + {field} int nextSpanTransition
+}
+abstract class Layout {
+    void draw()
+}
+class BoringLayout extends Layout implements TextUtils.EllipsizeCallback{
+    - {field} String mDirect
+    ~ {field} int mBottom
+    ~ {field} int mDesc
+    + {method} BoringLayout BoringLayout(...)
+    + {static} {method} Metrics isBoring(...)
+    + {static} {method} BoringLayout make(...)
+    + {method} BoringLayout replaceOrMake(...)
+}
+class Paint.FontMetricsInt {
+    + {field} int top
+    + {field} int ascent
+    + {field} int descent
+    + {field} int bottom
+    + {field} int leading
+}
+class Metrics extends Paint.FontMetricsInt{
+    + {field} int width
+    + {method} void reset()
+}
+Metrics +-- BoringLayout
+class TextLine {
+}
+BoringLayout .. TextLine
+BoringLayout .. Metrics
+BoringLayout .. Spanned
+TextLine .. Spanned
+class StaticLayout extends Layout {}
+class DynamicLayout extends Layout {}
+@enduml
