@@ -15,6 +15,7 @@
 * [`TextView`扩展支持Shape](./article/basic/textview/TextView扩展支持Shape.md)
 * [`TextView`适配`Html`文字大小和文字颜色、文字权重](./article/basic/textview/TextView适配Html文字大小和文字颜色、文字权重.md)
 * [`canvas.drawText`理解和`FontMetrics`理解](./article/basic/textview/FontMetrics介绍和drawText理解.md)
+* [TextView绘制流程第一篇、onMeasure-onLayout-onDraw](./article/basic/textview/TextView源码分析.md)
 ### 3、Animator
 * Animated Vector Drawable
 * Property Animation framework
