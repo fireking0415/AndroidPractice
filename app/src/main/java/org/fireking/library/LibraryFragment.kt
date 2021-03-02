@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import org.fireking.ap.databinding.NewLibraryFragmentBinding
 import org.fireking.base.BaseFragment
 import org.fireking.basic.BasicAdapter
+import org.fireking.library.compose.ComposeModuleActivity
 import org.fireking.library.jetpack.JetpackModuleActivity
 import org.fireking.library.kotlin.KotlinModuleActivity
 
@@ -41,7 +42,7 @@ class LibraryFragment : BaseFragment<NewLibraryFragmentBinding>() {
         mBasicAdapter?.submitList(
             arrayListOf(
                 BasicAdapter.BasicEntity("Kotlin", KotlinModuleActivity::class.java),
-                BasicAdapter.BasicEntity("Compose", KotlinModuleActivity::class.java),
+                BasicAdapter.BasicEntity("Compose", ComposeModuleActivity::class.java),
                 BasicAdapter.BasicEntity("Jetpack", JetpackModuleActivity::class.java),
             )
         )

@@ -1,6 +1,5 @@
 package org.fireking
 
-import androidx.compose.ui.window.Dialog
 import androidx.fragment.app.Fragment
 import org.fireking.ap.R
 import org.fireking.ap.databinding.ActivityMainBinding

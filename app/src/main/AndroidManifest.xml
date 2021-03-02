@@ -15,16 +15,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name="org.fireking.library.compose.ComposeLayoutActivity"
+            android:exported="true"
+            android:label="@string/title_activity_compose_layout"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name="org.fireking.library.jetpack.JetpackModuleActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name="org.fireking.library.compose.ComposeModuleActivity"
             android:exported="true" />
-        <activity
-            android:name="org.fireking.fight.compose.ZhihuActivity"
-            android:exported="true"
-            android:label="@string/title_activity_zhihu"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="org.fireking.library.kotlin.KotlinModuleActivity"
             android:screenOrientation="portrait" />
