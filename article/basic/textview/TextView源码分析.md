@@ -7,7 +7,6 @@ TextView本身是一个自定义View控件，所以对于Textview的分析，可
 * onMeasure
 * onLayout
 * onDraw
-* onTouchEvent
 
 ### onMeasure
 在onMeasure中，按照常规对于自定义View的流程，我们主要是确定控件本身的宽、高是如何确定出来的。
