@@ -6,15 +6,31 @@
     android:orientation="vertical"
     tools:context="org.fireking.basic.recyclerview.diffutil.DiffUtilActivity">
 
-    <Button
-        android:id="@+id/btnChange"
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/btnAdd"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="增加数据" />
+
+        <Button
+            android:id="@+id/btnRemove"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="删除数据" />
+
+        <Button
+            android:id="@+id/btnUpdate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="局部刷新" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_content_list"

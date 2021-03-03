@@ -126,14 +126,6 @@
             android:name="org.fireking.basic.animator.AnimActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="org.fireking.basic.recyclerview.WanNianLiRecyclerView3Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeNoActionBar" />
-        <activity
-            android:name="org.fireking.basic.recyclerview.WanNianLiRecyclerView2Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeNoActionBar" />
-        <activity
             android:name="org.fireking.basic.nested.NestedSample4Activity"
             android:screenOrientation="portrait" />
         <activity
@@ -148,10 +140,6 @@
         <activity
             android:name="org.fireking.basic.nested.NestedActivity"
             android:screenOrientation="portrait" />
-        <activity
-            android:name="org.fireking.basic.recyclerview.WanNianLiHomeActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name="org.fireking.basic.viewgroup.ShaderCardActivity"
             android:screenOrientation="portrait" />

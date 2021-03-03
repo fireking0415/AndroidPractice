@@ -7,56 +7,15 @@
     tools:context="org.fireking.basic.recyclerview.RecyclerViewSampleActivity">
 
     <Button
-        android:id="@+id/btnTabLayout"
+        android:id="@+id/btnTestDecoration"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="测试自定义TabLayout" />
-
-    <Button
-        android:id="@+id/btnTestDecoration"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="测试ItemDecoration版本1" />
-
-    <Button
-        android:id="@+id/btnCalendarV1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="万年历首页（NestedScrollView + ViewPager）" />
-
-    <Button
-        android:id="@+id/btnCalendarV2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="万年历首页（RecyclerView嵌套实现）VLayout" />
-
-    <Button
-        android:id="@+id/btnCalendarV3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="万年历首页（RecyclerView嵌套实现）原生" />
+        android:text="使用ItemDecoration实现吸顶效果" />
 
     <Button
         android:id="@+id/btnDiffUtil"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="测试DiffUtil" />
 
-    <Button
-        android:id="@+id/btnDiffUtil2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="测试DiffUtil-2" />
-
-    <Button
-        android:id="@+id/btnSticky"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="测试吸顶状态" />
-
-    <Button
-        android:id="@+id/btnOOM"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="测试Viewpager + RecyclerView内存释放" />
 </com.zhy.view.flowlayout.FlowLayout>

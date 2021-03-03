@@ -2,10 +2,12 @@ package org.fireking.basic.recyclerview.diffutil
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.esotericsoftware.kryo.Kryo
 import org.fireking.ap.databinding.ActivityDiffUtilBinding
 import org.fireking.library.kotlin.ext.intentFor
 
@@ -26,52 +28,31 @@ class DiffUtilActivity : AppCompatActivity() {
         viewBinding = ActivityDiffUtilBinding.inflate(LayoutInflater.from(this))
         setContentView(viewBinding?.root)
 
-        val diffCallback = object : DiffUtil.ItemCallback<DiffBean>() {
-            override fun areItemsTheSame(oldItem: DiffBean, newItem: DiffBean): Boolean {
-                return oldItem.id == newItem.id
-            }
-
-            override fun areContentsTheSame(oldItem: DiffBean, newItem: DiffBean): Boolean {
-                return oldItem == newItem
-            }
-        }
-
         viewBinding?.rvContentList?.layoutManager = LinearLayoutManager(this)
-        mDiffUtilAdapter = DiffUtilAdapter(diffCallback)
+        mDiffUtilAdapter = DiffUtilAdapter()
         viewBinding?.rvContentList?.adapter = mDiffUtilAdapter
 
-        val result2 = ArrayList<DiffBean>()
+        val result = ArrayList<DiffBean>()
 
-        result2.add(DiffBean(1, "测试1"))
-        result2.add(DiffBean(2, "测试1"))
-        result2.add(DiffBean(3, "测试2"))
-        result2.add(DiffBean(4, "测试4"))
-        result2.add(DiffBean(5, "测试5"))
+        result.add(DiffBean(1, "测试1", "测试内容描述1"))
+        result.add(DiffBean(2, "测试2", "测试内容描述2"))
+        result.add(DiffBean(3, "测试3", "测试内容描述3"))
+        result.add(DiffBean(4, "测试4", "测试内容描述4"))
+        result.add(DiffBean(5, "测试5", "测试内容描述5"))
 
-        mDiffUtilAdapter.submitList(
-            result2
-        )
+        mDiffUtilAdapter.submitList(result)
 
-        val result3 = ArrayList<DiffBean>()
-        result3.add(DiffBean(1, "测试1"))
-        result3.add(DiffBean(2, "测试1"))
-        result3.add(DiffBean(3, "测试3"))
-        result3.add(DiffBean(4, "测试4"))
-        result3.add(DiffBean(6, "测试6"))
-
-        viewBinding?.btnChange?.setOnClickListener {
-            mDiffUtilAdapter.submitList(result3)
-        }
-
-        val result4 = ArrayList<DiffBean>()
-        result4.add(DiffBean(1, "测试1"))
-        result4.add(DiffBean(2, "测试1"))
-        result4.add(DiffBean(3, "测试2"))
-        result4.add(DiffBean(4, "测试4444"))
-        result4.add(DiffBean(5, "测试5"))
-        result4.add(DiffBean(6, "测试666"))
         viewBinding?.btnAdd?.setOnClickListener {
-            mDiffUtilAdapter.submitList(result4)
+            result.add(DiffBean(6, "测试6", "测试内容描述6"))
+            mDiffUtilAdapter.submitList(result)
+        }
+        viewBinding?.btnRemove?.setOnClickListener {
+            result.removeAt(3)
+            mDiffUtilAdapter.submitList(result)
+        }
+        viewBinding?.btnUpdate?.setOnClickListener {
+            result[3].desc = "测试内容描述变更3"
+            mDiffUtilAdapter.submitList(result)
         }
     }
 }

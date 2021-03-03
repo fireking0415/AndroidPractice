@@ -1,0 +1,42 @@
+@startuml
+'https://plantuml.com/class-diagram
+interface BarLineScatterCandleBubbleDataProvider extends ChartInterface{
+}
+interface BarDataProvider extends BarLineScatterCandleBubbleDataProvider{
+}
+abstract class Chart extends ViewGroup implements ChartInterface{
+}
+abstract class BarLineChartBase extends Chart implements BarLineScatterCandleBubbleDataProvider{
+}
+class BarChart extends BarLineChartBase implements BarDataProvider{
+}
+class HorizontalBarChart extends BarChart{
+}
+class ValueFormatter{
+}
+class DefaultValueFormatter extends ValueFormatter{
+}
+class LegendRenderer extends Renderer{
+}
+class ViewPortHandler{}
+class ChartAnimator{}
+class Highlight{}
+interface IMarker{}
+abstract class DataRenderer extends Renderer{}
+class XAxis extends AxisBase {}
+class IDataSet{}
+class Transformer{}
+Chart .. LegendRenderer
+Chart .. ViewPortHandler
+Chart .. ChartAnimator
+Chart .. Highlight
+Chart .. IMarker
+Chart .. DataRenderer
+Chart .. Transformer
+Chart .. XAxis
+Chart .. IDataSet
+XAxis .. ValueFormatter
+XAxis .. DefaultValueFormatter
+XAxis .. Transformer
+
+@enduml
